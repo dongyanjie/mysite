@@ -1,0 +1,38 @@
+{% extends './base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+   文章详情页
+{% endblock %}
+
+{% block left_content %}
+          <div>
+             <h1>  {{curr_article.title}}  </h1>
+             <p>{{curr_article.brief_content}}</p>
+             <span>浏览量 {{ curr_article.article_click }} </span>&nbsp;&nbsp;&nbsp;&nbsp;
+             <span>点赞数 {{ curr_article.article_dianzan }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+             <span><a href="#">点赞</a></span>
+          </div>
+{% endblock %}
+
+{% block right_content %}
+        <div>
+            <h2>最新文章</h2>
+          {% for article in top5_article_list %}
+            <h4>
+              <a href="/blog/detail/{{article.article_id}}">{{ article.title }}</a>
+            </h4>
+          {% endfor %}
+        </div>
+{% endblock %}
+
+{% block pager %}
+<div>
+   <nav aria-label="...">
+    <ul class="pager" >
+     <li><a href="/blog/detail/{{ previous_article.article_id }}">上一篇：{{ previous_article.title }}</a></li>
+     <li><a href="/blog/detail/{{ next_article.article_id }}">下一篇：{{ next_article.title }}</a></li>
+    </ul>
+  </nav>
+</div>
+{% endblock %}

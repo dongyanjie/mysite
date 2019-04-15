@@ -1,0 +1,28 @@
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>用户注册</h1>
+<smail>如您已有帐号，请点击<a href="/account/login">Login</a>登录</smail>
+<br><br>
+<div></div>
+<form action="." method="post">
+    {% csrf_token %}
+    Username: <div class="col-md-6">{{form.username}}</div>
+    Email: <div class="col-md-6">{{form.email}}</div>
+    Password: <div class="col-md-6">{{form.password}}</div>
+    Confirm Password: <div class="col-md-6">{{form.password2}}</div>
+
+<br><br>
+    <input type="submit" value="Register">
+</form>
+
+
+</body>
+</html>
