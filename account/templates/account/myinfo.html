@@ -13,7 +13,7 @@
 <div>
     Username: <div class="col-md-6">{{user.username}}</div>
     Email: <div class="col-md-6">{{user.email}}</div>
-    Birth: <div class="col-md-6">{{userinfo.birth}}</div>
+    Birth: <div class="col-md-6">{{userinfo.birth | date:'Y-m-d'}}</div>
     Phone: <div class="col-md-6">{{userinfo.phone}}</div>
     about: <div class="col-md-6">{{userinfo.about}}</div>
 <br><br>

@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 # 用户信息表
 class UserInfo(models.Model):
+    id = models.IntegerField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)   #关联User表
     register_time = models.DateTimeField(auto_now_add=True, verbose_name='注册时间')  # 注册时间
     last_login_time = models.DateTimeField(auto_now=True, verbose_name='最后一次登录时间')  # 最后一次登录时间

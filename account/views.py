@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 
@@ -17,7 +18,7 @@ def user_login(request):
             user = authenticate(username=cd['username'], password=cd['password'])
             if user:
                 login(request, user)
-                return redirect(user_login)
+                return redirect(reverse('account:user_login'))
             else:
                 return HttpResponse('error')
         else:
@@ -29,7 +30,7 @@ def user_login(request):
 #用户注销
 def user_logout(request):
     logout(request)
-    return redirect(user_login)
+    return redirect(reverse('account:user_login'))
 
 #用户注册
 def user_register(request):

@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #我的应用
-    'blog.apps.BlogConfig',
-    'account.apps.AccountConfig',
+    'blog.apps.BlogConfig',   #博客
+    'account.apps.AccountConfig',  #用户管理
+    'itadmin.apps.ItadminConfig', #用户个人后台
 
 ]
 

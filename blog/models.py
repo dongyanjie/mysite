@@ -10,7 +10,7 @@ class Article(models.Model):
     publish_date = models.DateTimeField(auto_now=True, verbose_name='发布时间')  # 发布日期
     article_click = models.IntegerField(verbose_name='浏览量', default=0)  # 浏览量（点击数）
     article_dianzan = models.IntegerField(verbose_name='点赞数', default=0)  # 点赞数
-    article_column = models.CharField(max_length=30, verbose_name='标签(栏目)')  # 文章所属标签(栏目)
+    article_key = models.CharField(max_length=30, verbose_name='标签(栏目)')  # 文章所属标签(栏目)
 
     def __str__(self):
         return self.title

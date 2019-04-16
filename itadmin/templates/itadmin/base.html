@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+{% load staticfiles %}
+<body>
+<div>
+    <ul>
+        <li><a href="{% url 'itadmin:article_column' %}">文章管理</a></li>
+    </ul>
+        <span>
+            <a href="/blog/">网站首页</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;{{ user.username }}
+            &nbsp;&nbsp;&nbsp;<a href="{% url 'account:user_logout' %}">logout</a>
+        </span>
+<p>----------------------------------------------------------------------</p> <br>
+{#侧边栏#}
+       <div class="col-md-2">
+          <p><a href="{% url 'itadmin:article_column' %}">栏目管理</a></p>
+          <p><a href="{% url 'itadmin:article_column' %}">发布文章</a></p>
+          <p><a href="{% url 'itadmin:article_column' %}">文章列表</a></p>
+
+       </div>
+{#内容显示#}
+       <div class="col-md-10" style="margin-left: 200px">
+        {% block content %}{% endblock %}
+       </div>
+
+</div>
+</body>
+
+</html>
