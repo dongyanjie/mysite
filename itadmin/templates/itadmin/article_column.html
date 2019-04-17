@@ -1,11 +1,11 @@
 {% extends './base.html' %}
 {% load staticfiles %}
 {% block title %}
-   column
+   article column Manage
 {% endblock %}
 
 {% block content %}
-    <input type="button" value="Add Column" id="add_column" onclick="add_column()" />
+    <input type="button" value="添加新栏目" id="add_column" onclick="add_column()" />
     <table>
         <tr>
             <td>序号</td>
@@ -29,14 +29,14 @@
 <script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
 <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
 <script>
-{# 新增栏目ajax方式 #}
+{# 新增栏目    ajax方式 #}
 function add_column(){
     var index = layer.open({
         title:"新增栏目",
         area: ['400px', '200px'],
         skin: "layui-layer-rim",
         type:1,
-        content:'<div align="center"><p>请输入栏目名称：</p>{{ column_form.column }}</div>',
+        content:'<div align="center"><p>&nbsp;&nbsp;请输入栏目名称：</p>{{ column_form.column }}</div>',
         btn:['确定', '取消'],
         yes: function (index, layero) {
             column_name = $('#id_column').val();
@@ -70,7 +70,7 @@ function edit_column(the, column_id){
         area: ['400px', '200px'],
         skin: "layui-layer-rim",
         type:1,
-        content:'<div align="center"><p>请编辑栏目名称：</p><input type="text" id="new_name" value="'+name+'" /></div>',
+        content:'<div align="center"><p>&nbsp;&nbsp;请编辑栏目名称：</p><input type="text" id="new_name" value="'+name+'" /></div>',
         btn:['确定', '取消'],
         yes: function (index, layero) {
             new_name = $('#new_name').val();

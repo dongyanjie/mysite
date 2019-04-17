@@ -1,0 +1,162 @@
+{% extends './base.html' %}
+{% load staticfiles %}
+{% block title %}
+   article Manage
+{% endblock %}
+{% block content %}
+    <input type="button" value="添加新文章" id="add_article" onclick="add_article()" />
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>标题</td>
+            <td>栏目名称</td>
+            <td>摘要</td>
+            <td>内容</td>
+            <td>发布时间</td>
+            <td>操作</td>
+        </tr>
+        {% for article in articles %}
+        <tr id="{{ article.article_id }}">
+            <td>{{ forloop.counter }}</td>
+            <td><a href="/itadmin/article_detail/{{article.article_id}}">{{ article.title }}</a></td>
+            <td>{{ article.column }}</td>
+            <td>{{ article.brief_content }}</td>
+            <td>{{ article.content |slice:'10' }}</td>
+            <td>{{ article.publish_date |date:'Y-m-d H:i:s' }}</td>
+            <td>
+               <input type="button" value="编辑" id="edit_article" onclick="edit_article(this, {{ article.article_id }})" />&nbsp;&nbsp;
+               <input type="button" value="删除" id="del_article" onclick="del_article(this, {{ article.article_id }})" />
+            </td>
+        </tr>
+        {% empty %}
+          <p>还没有文章~</p>
+        {% endfor %}
+    </table>
+
+<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+<script>
+{# 新增文章    ajax方式 #}
+function add_article(){
+    var index = layer.open({
+        title:"新增栏目",
+        area: ['900px', '600px'],
+        skin: "layui-layer-rim",
+        type:1,
+        content:'<div><p>&nbsp;&nbsp;标题：{{ article_form.title }}</p>'+
+                                    '<p>&nbsp;&nbsp;所属栏目：<select id="which_column">'+
+                                           '{% for column in article_columns %}'+
+                                                  '<option value="{{ column.id }}">{{ column.column }}</option>'+
+                                            '{% endfor %}</select></p>'+
+                                    '<p>&nbsp;&nbsp;摘要：<textarea name="brief_content" cols="100" rows="5" id="id_brief_content"></textarea></p>'+
+                                    '<p id="editormd">&nbsp;&nbsp;内容：<textarea name="content" cols="100" rows="10" required id="id_content"></textarea></p></div>',
+        btn:['确定', '取消'],
+        yes: function (index, layero) {
+            var title = $('#id_title').val();
+            var column_id = $('#which_column').val();
+            var brief_content = $('#id_brief_content').val();
+            var content = $('#id_content').val();
+
+            $.ajax({
+                url:"{% url 'itadmin:article' %}",
+                type:'POST',
+                data:{'title':title, 'column_id':column_id, 'brief_content':brief_content, 'content':content},
+                success:function (e) {
+                      if(e == "1"){
+                        parent.location.reload();
+                        layer.msg('添加成功');
+                    } else if (e == 'null') {
+                          layer.msg('标题和内容都不能为空，请重填');
+                      } else {
+                        layer.msg('添加失败，请重试');
+                    }
+            },
+        });
+  },
+        btn2:function (index,layero) {
+            layer.close(index);
+        }
+    });
+}
+{#编辑文章 #}
+function edit_article(the, article_id){
+    var the_title=$(the).parents('tr').children('td').eq(1).text();
+    var the_column=$(the).parents('tr').children('td').eq(2).text();
+    var the_brief_content=$(the).parents('tr').children('td').eq(3).text();
+    var the_content=$(the).parents('tr').children('td').eq(4).text();
+
+    var index = layer.open({
+        title:"编辑文章",
+        area: ['900px', '600px'],
+        skin: "layui-layer-rim",
+        type:1,
+        content:'<div><p>&nbsp;&nbsp;标题：<input type="text" id="new_name" value=" '+the_title+'" /></p>'+
+                                    '<p>&nbsp;&nbsp;所属栏目：<select id="which_column">'+
+                                           '{% for column in article_columns %}'+
+                                               '{% if column == the_column %}'+
+                                                  '<option value="{{ column.id }}" selected="selected">{{ column.column }}</option>'+
+                                               '{% else %}<option value="{{ column.id }}" >{{ column.column }}</option>'+
+                                            '{% endif %} {% endfor %}</select></p>'+
+                                    '<p>&nbsp;&nbsp;摘要：<textarea name="brief_content" cols="100" rows="5" id="id_brief_content">'+the_brief_content+'</textarea></p>'+
+                                    '<p>&nbsp;&nbsp;内容：<textarea name="content" cols="100" rows="10" required id="id_content">'+the_content+'</textarea></p></div>',
+        btn:['确定', '取消'],
+        yes: function (index, layero) {
+            var title = $('#id_title').val();
+            var column_id = $('#which_column').val();
+            var brief_content = $('#id_brief_content').val();
+            var content = $('#id_content').val();
+
+            $.ajax({
+                url:"{% url 'itadmin:edit_article' %}",
+                type:'POST',
+                data:{'article_id':article_id, 'title':title, 'column_id':column_id, 'brief_content':brief_content, 'content':content},
+                success:function (e) {
+                      if(e == "1"){
+                        parent.location.reload();
+                        layer.msg('修改成功');
+                      } else if (e == 'null') {
+                          layer.msg('标题和内容都不能为空，请重填');
+                      }else {
+                        layer.msg('修改失败，请重试');
+                    }
+            },
+        });
+  },
+        btn2:function (index,layero) {
+            layer.close(index);
+        }
+    });
+}
+{#删除文章 #}
+function del_article(the, article_id){
+    var article_title=$(the).parents('tr').children('td').eq(1).text();
+    var index = layer.open({
+        title:"删除文章",
+        area: ['400px', '200px'],
+        skin: "layui-layer-rim",
+        type:1,
+        content:'<div align="center">确定要删除 <span style="color:red">'+article_title+' </span>文章吗？</div>',
+        btn:['确定', '取消'],
+        yes: function (index, layero) {
+            $.ajax({
+                url:"{% url 'itadmin:del_article' %}",
+                type:'POST',
+                data:{'article_id':article_id},
+                success:function (e) {
+                      if(e == "1"){
+                        parent.location.reload();
+                        layer.msg('删除成功');
+                    } else {
+                        layer.msg('删除失败，请重试');
+                    }
+            },
+        });
+  },
+        btn2:function (index,layero) {
+            layer.close(index);
+        }
+    });
+}
+</script>
+
+{% endblock %}

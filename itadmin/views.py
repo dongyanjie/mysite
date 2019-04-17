@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required  #装饰器 判断是否登录
 from django.views.decorators.csrf import csrf_exempt   #装饰器  解决csrf问题
 from django.views.decorators.http import require_POST  #装饰器 只接受post提交
 
-from .models import ArticleColumn
-from .forms import ArticleColumnForm
+from .models import ArticleColumn, Article
+from .forms import ArticleColumnForm, ArticleForm
 
 #新增文章栏目
 @login_required(login_url='/account/login')
@@ -28,7 +28,7 @@ def article_column(request):
                                                                'column_form': column_form,
                                                                })
 
-#编辑文章栏目
+#修改文章栏目
 @login_required(login_url='/account/login')
 @require_POST
 @csrf_exempt
@@ -53,6 +53,71 @@ def del_article_column(request):
     column_id = request.POST['column_id']
     try:
         line = ArticleColumn.objects.get(id=column_id)
+        line.delete()
+        return HttpResponse('1')
+    except:
+        return HttpResponse('0')
+#文章详情页
+@login_required(login_url='/account/login')
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, article_id=article_id)
+    return render(request, 'itadmin/article_detail.html', {'article': article})
+
+#新增文章
+@login_required(login_url='/account/login')
+@csrf_exempt   #解决提交表单时遇到的csrf问题
+def article(request):
+    if request.method == 'POST':
+        article_form = ArticleForm(data=request.POST)
+        title = request.POST['title']
+        content = request.POST['content']
+        if not title or not content:
+            return HttpResponse('null')
+        if article_form.is_valid():
+            cd = article_form.cleaned_data
+            try:
+                new_article = article_form.save(commit=False)
+                new_article.author = request.user
+                new_article.column = request.user.article_column.get(id=request.POST['column_id'])
+                new_article.save()
+                return HttpResponse('1')
+            except:
+                return HttpResponse('0')
+    if request.method == 'GET':
+        articles = Article.objects.filter(author=request.user).order_by('-publish_date')  # 当前登录用户所属的所有栏目
+        article_form = ArticleForm()
+        article_columns = request.user.article_column.all()
+        return render(request, 'itadmin/article.html', {'article_form': article_form,
+                                                        'article_columns': article_columns,
+                                                        'articles': articles,
+                                                               })
+
+#编辑文章
+@login_required(login_url='/account/login')
+@csrf_exempt
+def edit_article(request):
+
+    if request.method == 'POST':
+        article_id = request.POST['article_id']
+        edit_article =Article.objects.get(article_id=article_id)
+        try:
+            edit_article.column = request.user.article_column.get(id=request.POST['column_id'])
+            edit_article.title = request.POST['title']
+            edit_article.brief_content = request.POST['brief_content']
+            edit_article.content = request.POST['content']
+            edit_article.save()
+            return HttpResponse('1')
+        except:
+            return HttpResponse('0')
+
+#删除文章
+@login_required(login_url='/account/login')
+@require_POST
+@csrf_exempt
+def del_article(request):
+    article_id = request.POST['article_id']
+    try:
+        line = Article.objects.get(article_id=article_id)
         line.delete()
         return HttpResponse('1')
     except:
