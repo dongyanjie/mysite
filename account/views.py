@@ -45,7 +45,7 @@ def user_register(request):
             new_userinfo.user = new_user
             new_userinfo.save()
             UserInfo.objects.create(user=new_user)
-            return HttpResponse('register successful')
+            return HttpResponseRedirect(reverse('account:user_login'))
         else:
             return HttpResponse('error')
     if request.method == 'GET':
@@ -79,7 +79,7 @@ def myinfo_edit(request):
             userinfo.about = userinfo_cd['about']
             user.save()
             userinfo.save()
-        return HttpResponseRedirect('/account/myinfo/')
+        return HttpResponseRedirect(reverse('account:my_info'))
     else:
         user_form = UserForm(instance=request.user)
         userinfo_form = UserInfoForm({'birth': userinfo.birth,

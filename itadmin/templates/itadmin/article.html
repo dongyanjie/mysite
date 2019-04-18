@@ -1,7 +1,7 @@
 {% extends './base.html' %}
 {% load staticfiles %}
 {% block title %}
-   article Manage
+   Article Manage
 {% endblock %}
 {% block content %}
     <input type="button" value="添加新文章" id="add_article" onclick="add_article()" />
@@ -32,6 +32,8 @@
           <p>还没有文章~</p>
         {% endfor %}
     </table>
+    <br>
+{% include "./paginator.html" %}
 
 <script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
 <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
@@ -39,7 +41,7 @@
 {# 新增文章    ajax方式 #}
 function add_article(){
     var index = layer.open({
-        title:"新增栏目",
+        title:"新增文章",
         area: ['900px', '600px'],
         skin: "layui-layer-rim",
         type:1,
@@ -135,7 +137,7 @@ function del_article(the, article_id){
         area: ['400px', '200px'],
         skin: "layui-layer-rim",
         type:1,
-        content:'<div align="center">确定要删除 <span style="color:red">'+article_title+' </span>文章吗？</div>',
+        content:'<div align="center">确定要删除标题为 <span style="color:red">'+article_title+' </span>文章吗？</div>',
         btn:['确定', '取消'],
         yes: function (index, layero) {
             $.ajax({

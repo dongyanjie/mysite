@@ -1,38 +1,108 @@
 {% extends './base.html' %}
 {% load staticfiles %}
 
-{% block title %}
-   文章详情页
-{% endblock %}
+{% block title %}文章详情页{% endblock %}
 
 {% block left_content %}
-          <div>
+{% if curr_article %}
+    <div>
+       <br><strong>点赞本文的读者：</strong>
+     <p>
+         {% for user in curr_article.dianzan.all %}
+          <span>{{ user.username }},&nbsp;</span>
+          {% empty %}
+            <p><small>此文章还没有人点赞呢~</small></p>
+         {% endfor %}
+     </p>
+    </div>
+{#        详细内容展示模块    #}
+       <div>
              <h1>  {{curr_article.title}}  </h1>
              <p>{{curr_article.brief_content}}</p>
-             <span>浏览量 {{ curr_article.article_click }} </span>&nbsp;&nbsp;&nbsp;&nbsp;
-             <span>点赞数 {{ curr_article.article_dianzan }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
-             <span><a href="#">点赞</a></span>
-          </div>
-{% endblock %}
+             <span>浏览量 {{ total_click }} </span>&nbsp;&nbsp;&nbsp;&nbsp;
+             <span>点赞数 {{ curr_article.dianzan.count }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
 
-{% block right_content %}
-        <div>
-            <h2>最新文章</h2>
-          {% for article in top5_article_list %}
-            <h4>
-              <a href="/blog/detail/{{article.article_id}}">{{ article.title }}</a>
-            </h4>
-          {% endfor %}
+         {% if user in curr_article.dianzan.all %}
+          <span>已点赞</span>
+          {% else %}
+             <span><a href="#" onclick="article_dianzan({{ article.article_id }}, 'like')">点赞</a></span>
+         {% endif %}
+       </div>
+{#    评论模块    #}
+    <hr>
+    <div>
+       {% for comment in curr_article.article_comment.order_by %}
+              <div><p style="background: #92B8B1">{{ comment.created_time |date:'Y-m-d H:i:s'}}&nbsp;&nbsp;&nbsp;<strong>{{comment.commentator}}&nbsp;说：</p></strong><h5>{{ comment.content }}</h5> </div>
+        {% empty %}
+           <br> <p>快来第一个评论吧~</p>
+       {% endfor %}
+             <h3>看文章，发评论，不要沉默</h3>
+  {% if user.is_authenticated %}
+{#        <form action="." method="post" role="form">#}
+{#            {% csrf_token %}#}
+                 <div>用户： {{ user.username }}</div>
+                 <div>评论：&nbsp;&nbsp;<br> <textarea name="id_content" id="id_content" cols="80" rows="3"></textarea>
+                   <br><input type="button" id="add_comment" onclick="add_comment()" value="发评论" />
+                 </div>
+{#         </form>#}
+   {% else %}
+      <br>  <p style="color: red">您还未登录，请在右上角登录后再来评论~</p>
+   {% endif %}
         </div>
-{% endblock %}
 
-{% block pager %}
-<div>
-   <nav aria-label="...">
+{#    上一篇 下一篇   #}
+  <div>
+   <span aria-label="...">
     <ul class="pager" >
      <li><a href="/blog/detail/{{ previous_article.article_id }}">上一篇：{{ previous_article.title }}</a></li>
      <li><a href="/blog/detail/{{ next_article.article_id }}">下一篇：{{ next_article.title }}</a></li>
     </ul>
-  </nav>
+  </span>
 </div>
+ {% else %}
+    没有找到您要的文章，请正确操作哦~
+{% endif %}
+
+
+<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+<script>
+{# 文章点赞    ajax方式 #}
+function article_dianzan(id,action){
+            $.ajax({
+                url:"{% url 'blog:article_dianzan' %}",
+                type:'POST',
+                data:{'id':id, 'action':action},
+                success:function (e) {
+                      if(e == "1"){
+                        layer.msg('感谢点赞');
+                        window.location.reload();
+                    } else {
+                        layer.msg('我会继续努力.');
+                        window.location.reload();
+                    }
+            },
+        });
+  }
+
+{#  发表评论   #}
+function add_comment(){
+    var content = $('#id_content').val();
+            $.ajax({
+                url:"{% url 'blog:get_detail_page' curr_article.article_id %}",
+                type:'POST',
+                data:{'article_id':{{ curr_article.article_id }}, 'content':content},
+                success:function (e) {
+                      if(e == "1"){
+                        layer.msg('感谢您的评论');
+                        window.location.reload();
+                    } else if (e == "null"){
+                         layer.msg('内容不能为空');
+                    } else {
+                        layer.msg('评论失败，请重试.');
+                    }
+            },
+        });
+  }
+</script>
 {% endblock %}

@@ -12,3 +12,4 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = ('title', 'brief_content', 'content')
+

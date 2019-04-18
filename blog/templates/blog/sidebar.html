@@ -1,0 +1,38 @@
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">最新</a></li>
+  <li role="presentation"><a href="#">热门</a></li>
+  <li role="presentation"><a href="#">评论最多~</a></li>
+</ul>
+        <div>
+            <h2>最新文章</h2>
+          {% for article in recently_article_list %}
+            <h4>
+              <a href="/blog/detail/{{article.article_id}}">
+                    {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->
+              </a>
+            </h4>
+          {% endfor %}
+        </div>
+
+        <div>
+            <h2>最热文章</h2>
+          {% for article in hot_article_list  %}
+            <h4>
+              <a href="/blog/detail/{{article.article_id}}">
+                    {{ article.title | slice:'10' }}  <!-- 最多显示10个字符 -->
+              </a>
+            </h4>
+          {% endfor %}
+        </div>
+
+        <div>
+            <h2>评论最多文章</h2>
+          {% for article in recently_article_list %}
+            <h4>
+              <a href="/blog/detail/{{article.article_id}}">
+                    {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->
+              </a>
+            </h4>
+          {% endfor %}
+        </div>

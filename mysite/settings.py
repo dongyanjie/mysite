@@ -127,6 +127,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+# redis配置
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
+
+
 # #邮件相关
 # # SMTP服务器，改为你的邮箱的smtp
 # EMAIL_HOST = 'smtp.qq.com'

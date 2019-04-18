@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required  #装饰器 判断是否登录
 from django.views.decorators.csrf import csrf_exempt   #装饰器  解决csrf问题
 from django.views.decorators.http import require_POST  #装饰器 只接受post提交
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import ArticleColumn, Article
 from .forms import ArticleColumnForm, ArticleForm
@@ -84,12 +85,23 @@ def article(request):
             except:
                 return HttpResponse('0')
     if request.method == 'GET':
-        articles = Article.objects.filter(author=request.user).order_by('-publish_date')  # 当前登录用户所属的所有栏目
         article_form = ArticleForm()
         article_columns = request.user.article_column.all()
+        articles_all = Article.objects.filter(author=request.user).order_by('-publish_date')  # 当前登录用户所属的所有栏目
+
+        # 分页功能
+        paginator = Paginator(articles_all, 3)  #创建分页的实例对象
+        page = request.GET.get('page') #用户输入的页数
+        try:
+            current_page = paginator.page(page) #指定页面内容
+            articles = current_page.object_list #得到该页所有对象列表
+        except (PageNotAnInteger, EmptyPage):   #判断是否是证书 或是否为空
+            current_page = paginator.page(1)
+            articles = current_page.object_list
         return render(request, 'itadmin/article.html', {'article_form': article_form,
                                                         'article_columns': article_columns,
                                                         'articles': articles,
+                                                        'page': current_page,
                                                                })
 
 #编辑文章

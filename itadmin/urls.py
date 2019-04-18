@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from django.views.generic import TemplateView   #通用视图
 
 app_name = 'itadmin'
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path('edit-article/', views.edit_article, name='edit_article'),
     path('del-article/', views.del_article, name='del_article'),
 
+    path('home/', TemplateView.as_view(template_name="home.html"))
 ]
