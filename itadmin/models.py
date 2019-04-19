@@ -36,7 +36,7 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-#评论表
+# 评论表
 class ArticleComment(models.Model):
     article = models.ForeignKey(Article, related_name="article_comment", on_delete=models.CASCADE)  # 评论的文章
     commentator = models.CharField(max_length=80, verbose_name='评论者')

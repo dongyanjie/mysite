@@ -9,7 +9,7 @@ import json
 from .models import ArticleColumn, ArticleTag, Article
 from .forms import ArticleColumnForm, ArticleTagForm, ArticleForm
 
-#新增文章栏目
+# 新增文章栏目
 @login_required(login_url='/account/login')
 @csrf_exempt   #解决提交表单时遇到的csrf问题
 def article_column(request):
@@ -30,7 +30,7 @@ def article_column(request):
                                                                'column_form': column_form,
                                                                })
 
-#修改文章栏目
+# 修改文章栏目
 @login_required(login_url='/account/login')
 @require_POST
 @csrf_exempt
@@ -47,7 +47,7 @@ def edit_article_column(request):
     except:
         return HttpResponse('0')
 
-#删除文章栏目
+# 删除文章栏目
 @login_required(login_url='/account/login')
 @require_POST
 @csrf_exempt
@@ -95,13 +95,13 @@ def del_article_tag(request):
     except:
         return HttpResponse('0')
 
-#文章详情页
+# 文章详情页
 @login_required(login_url='/account/login')
 def article_detail(request, article_id):
     article = get_object_or_404(Article, article_id=article_id)
     return render(request, 'itadmin/article_detail.html', {'article': article})
 
-#新增文章
+# 新增文章
 @login_required(login_url='/account/login')
 @csrf_exempt   #解决提交表单时遇到的csrf问题
 def article(request):
@@ -149,7 +149,7 @@ def article(request):
                                                         'page': current_page,
                                                                })
 
-#编辑文章
+# 编辑文章
 @login_required(login_url='/account/login')
 @csrf_exempt
 def edit_article(request):
@@ -167,7 +167,7 @@ def edit_article(request):
         except:
             return HttpResponse('0')
 
-#删除文章
+# 删除文章
 @login_required(login_url='/account/login')
 @require_POST
 @csrf_exempt

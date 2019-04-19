@@ -11,7 +11,6 @@ import redis
 from django.conf import settings   # 引入settiongs中的变量
 r = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB)
 
-
 # 首页
 def get_index_page(request):
     all_article = Article.objects.all()
