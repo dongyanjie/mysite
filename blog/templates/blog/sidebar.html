@@ -4,6 +4,7 @@
   <li role="presentation"><a href="#">热门</a></li>
   <li role="presentation"><a href="#">评论最多~</a></li>
 </ul>
+{#   最新文章   #}
         <div>
             <h2>最新文章</h2>
           {% for article in recently_article_list %}
@@ -14,7 +15,7 @@
             </h4>
           {% endfor %}
         </div>
-
+{#   最热文章  #}
         <div>
             <h2>最热文章</h2>
           {% for article in hot_article_list  %}
@@ -26,9 +27,10 @@
           {% endfor %}
         </div>
 
+{#    评论最多文章   #}
         <div>
             <h2>评论最多文章</h2>
-          {% for article in recently_article_list %}
+          {% for article in most_comment_article_list %}
             <h4>
               <a href="/blog/detail/{{article.article_id}}">
                     {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->

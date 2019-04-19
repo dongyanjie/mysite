@@ -37,6 +37,7 @@
 
 <script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
 <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/json2.js' %}"></script>
 <script>
 {# 新增文章    ajax方式 #}
 function add_article(){
@@ -50,6 +51,12 @@ function add_article(){
                                            '{% for column in article_columns %}'+
                                                   '<option value="{{ column.id }}">{{ column.column }}</option>'+
                                             '{% endfor %}</select></p>'+
+                                    '<p>&nbsp;&nbsp;文章标签：'+
+                                           '{% for tag in article_tags %}'+
+                                                  '<input type="checkbox" id="{{ tag.id }}" name="article_tag" value="{{ tag.tag }}" />{{ tag.tag }}'+
+                                           '{% empty %}'+
+                                               '您还没有文章标签，可以先<a href="{% url 'itadmin:article_tag' %}">创建标签</a>'+
+                                           '{% endfor %}</p>'+
                                     '<p>&nbsp;&nbsp;摘要：<textarea name="brief_content" cols="100" rows="5" id="id_brief_content"></textarea></p>'+
                                     '<p id="editormd">&nbsp;&nbsp;内容：<textarea name="content" cols="100" rows="10" required id="id_content"></textarea></p></div>',
         btn:['确定', '取消'],
@@ -58,11 +65,16 @@ function add_article(){
             var column_id = $('#which_column').val();
             var brief_content = $('#id_brief_content').val();
             var content = $('#id_content').val();
-
+            var article_tags =[];   {#  获取选中的所有标题，组成一个列表  #}
+            $.each($("input[name='article_tag']:checked"),
+                function () {
+                   article_tags.push($(this).val());
+                  });
             $.ajax({
                 url:"{% url 'itadmin:article' %}",
                 type:'POST',
-                data:{'title':title, 'column_id':column_id, 'brief_content':brief_content, 'content':content},
+{# JSON.stringify() 将array类型转换为json对象#}
+                data:{'title':title, 'column_id':column_id, 'brief_content':brief_content, 'content':content, 'tags':JSON.stringify(article_tags)},
                 success:function (e) {
                       if(e == "1"){
                         parent.location.reload();

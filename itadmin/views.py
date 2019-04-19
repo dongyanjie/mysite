@@ -5,8 +5,9 @@ from django.views.decorators.csrf import csrf_exempt   #装饰器  解决csrf问
 from django.views.decorators.http import require_POST  #装饰器 只接受post提交
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import ArticleColumn, Article
-from .forms import ArticleColumnForm, ArticleForm
+import json
+from .models import ArticleColumn, ArticleTag, Article
+from .forms import ArticleColumnForm, ArticleTagForm, ArticleForm
 
 #新增文章栏目
 @login_required(login_url='/account/login')
@@ -58,6 +59,42 @@ def del_article_column(request):
         return HttpResponse('1')
     except:
         return HttpResponse('0')
+
+
+# 新增文章标签
+@login_required(login_url='/account/login')
+@csrf_exempt  # 解决提交表单时遇到的csrf问题
+def article_tag(request):
+    if request.method == 'POST':
+        tag_name = request.POST['tag']
+        if not tag_name:
+            return HttpResponse('null')
+        tags = ArticleTag.objects.filter(user_id=request.user.id, tag=tag_name)  # 当前用户是否已有该标签
+        if tags:
+            return HttpResponse('0')
+        else:
+            ArticleTag.objects.create(user=request.user, tag=tag_name)
+            return HttpResponse('1')
+    if request.method == 'GET':
+        tags = ArticleTag.objects.filter(user=request.user)  # 当前登录用户所属的所有标签
+        tag_form = ArticleTagForm()
+        return render(request, 'itadmin/article_tag.html', {'tags': tags,
+                                                            'tag_form': tag_form,
+                                                            })
+
+# 删除文章标签
+@login_required(login_url='/account/login')
+@require_POST
+@csrf_exempt
+def del_article_tag(request):
+    tag_id = request.POST['tag_id']
+    try:
+        line = ArticleTag.objects.get(id=tag_id)
+        line.delete()
+        return HttpResponse('1')
+    except:
+        return HttpResponse('0')
+
 #文章详情页
 @login_required(login_url='/account/login')
 def article_detail(request, article_id):
@@ -72,6 +109,7 @@ def article(request):
         article_form = ArticleForm(data=request.POST)
         title = request.POST['title']
         content = request.POST['content']
+        tags = request.POST['tags']
         if not title or not content:
             return HttpResponse('null')
         if article_form.is_valid():
@@ -81,6 +119,11 @@ def article(request):
                 new_article.author = request.user
                 new_article.column = request.user.article_column.get(id=request.POST['column_id'])
                 new_article.save()
+        # json.loads()将json格式数据转换为列表
+                if tags:
+                    for atag in json.loads(tags):
+                        tag = request.user.article_tag.get(tag=atag)
+                        new_article.tag.add(tag)
                 return HttpResponse('1')
             except:
                 return HttpResponse('0')
@@ -88,6 +131,7 @@ def article(request):
         article_form = ArticleForm()
         article_columns = request.user.article_column.all()
         articles_all = Article.objects.filter(author=request.user).order_by('-publish_date')  # 当前登录用户所属的所有栏目
+        article_tags =request.user.article_tag.all()
 
         # 分页功能
         paginator = Paginator(articles_all, 3)  #创建分页的实例对象
@@ -101,6 +145,7 @@ def article(request):
         return render(request, 'itadmin/article.html', {'article_form': article_form,
                                                         'article_columns': article_columns,
                                                         'articles': articles,
+                                                        'article_tags': article_tags,
                                                         'page': current_page,
                                                                })
 

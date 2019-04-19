@@ -64,13 +64,13 @@ function add_column(){
 
 {#编辑栏目 #}
 function edit_column(the, column_id){
-    var name=$(the).parents('tr').children('td').eq(1).text();
+    var column_name=$(the).parents('tr').children('td').eq(1).text();
     var index = layer.open({
         title:"编辑栏目",
         area: ['400px', '200px'],
         skin: "layui-layer-rim",
         type:1,
-        content:'<div align="center"><p>&nbsp;&nbsp;请编辑栏目名称：</p><input type="text" id="new_name" value="'+name+'" /></div>',
+        content:'<div align="center"><p>&nbsp;&nbsp;请编辑栏目名称：</p><input type="text" id="new_name" value="'+column_name+'" /></div>',
         btn:['确定', '取消'],
         yes: function (index, layero) {
             new_name = $('#new_name').val();
@@ -97,13 +97,13 @@ function edit_column(the, column_id){
 }
 {#删除栏目 #}
 function del_column(the, column_id){
-    var name=$(the).parents('tr').children('td').eq(1).text();
+    var column_name=$(the).parents('tr').children('td').eq(1).text();
     var index = layer.open({
         title:"删除栏目",
         area: ['400px', '200px'],
         skin: "layui-layer-rim",
         type:1,
-        content:'<div align="center">确定要删除 <span style="color:red">'+name+' </span>栏目吗？</div>',
+        content:'<div align="center">确定要删除 <span style="color:red">'+column_name+' </span>栏目吗？</div>',
         btn:['确定', '取消'],
         yes: function (index, layero) {
             $.ajax({

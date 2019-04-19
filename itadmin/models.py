@@ -11,12 +11,22 @@ class  ArticleColumn(models.Model):
     def __str__(self):
         return self.column
 
+# 文章标签表
+class  ArticleTag(models.Model):
+    user = models.ForeignKey(User, related_name='article_tag', on_delete=models.CASCADE, verbose_name='创建者') #一对多
+    tag = models.CharField(max_length=100, verbose_name='标签')
+    created_time = models.DateField(auto_now_add=True, verbose_name='创建时间')
+
+    def __str__(self):
+        return self.tag
+
 # 文章表
 class Article(models.Model):
     article_id = models.AutoField(primary_key=True)  # 文章唯一id
     author = models.ForeignKey(User, related_name='article_author', on_delete=models.CASCADE)  # 作者
     title = models.CharField(max_length=100, verbose_name='标题',)  # 标题
     column = models.ForeignKey(ArticleColumn, related_name='article_column', on_delete=models.CASCADE)  # 文章所属(栏目)
+    tag = models.ManyToManyField(ArticleTag, related_name='article_tag', verbose_name='标签', blank=True)  # 文章标签
     brief_content = models.TextField(verbose_name='摘要', blank=True, null=True)  # 摘要
     content = models.TextField(verbose_name='内容')  # 主要内容
     publish_date = models.DateTimeField(auto_now_add=True, verbose_name='发布时间')  # 发布日期

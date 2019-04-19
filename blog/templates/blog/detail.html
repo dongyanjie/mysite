@@ -18,6 +18,7 @@
 {#        详细内容展示模块    #}
        <div>
              <h1>  {{curr_article.title}}  </h1>
+             <p>Tags:{{ curr_article.tag.all |join:',' }} </p>
              <p>{{curr_article.brief_content}}</p>
              <span>浏览量 {{ total_click }} </span>&nbsp;&nbsp;&nbsp;&nbsp;
              <span>点赞数 {{ curr_article.dianzan.count }}</span>&nbsp;&nbsp;&nbsp;&nbsp;

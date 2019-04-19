@@ -29,11 +29,26 @@
          {% include './sidebar.html' %}
     </div>
 </div>
- {% block pager %}{% endblock %} <!-- 上页下页 -->
 </body>
+
+
+
 <!--底部-->
 <div class="container page-footer">
-    {% block footer %} {% endblock %}
+   <div class="panel panel-default">
+       <div class="panel-body">
+    Basic panel example footer
+      </div>
+
+    <ul class="footer-nav hidden-xs">
+          <li><a rel="nofollow" href="https://" target="_blank">文章归档</a>
+              <a rel="nofollow" href="https://" target="_blank">网站地图</a>
+              <a rel="nofollow" href="https://" target="_blank">举报中心</a>
+              <a href="http://" rel="nofollow" target="_blank" title="">备案</a>
+          </li>
+    </ul>
+</div>
+
 </div>
 
 </html>
