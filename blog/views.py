@@ -67,6 +67,12 @@ def get_detail_page(request, article_id):
         # 显示评论最多的文章(5条)
         # Count()给每篇文章的评论计数, annotate()是给查询到的文章以Count('article_comment')进行标注
         most_comment_article_list = Article.objects.annotate(total_comments=Count('article_comment')).order_by('-total_comments')[:5]
+        # 推荐相似的文章(3条)
+        temp_article = Article.objects.get(article_id=article_id)
+        article_tags_ids = temp_article.tag.values_list("id", flat=True)  #设置True生成列表，设置False生成元组
+        # 找出文章标签中的id在article_tags_ids(列表)里面所有Article对象(文章),同时将当前文章排除
+        silimar_article_list = Article.objects.filter(tag__in=article_tags_ids).exclude(article_id=article_id)
+        silimar_article_list = silimar_article_list.annotate(same_tags=Count('tag')).order_by('-same_tags', '-publish_date')[:3]
 
         curr_article = None  # 指定文章
         previous_index = 0  # 文章索引
@@ -104,7 +110,7 @@ def get_detail_page(request, article_id):
                    'recently_article_list': recently_article_list,
                    'hot_article_list': hot_article_list,
                    'most_comment_article_list': most_comment_article_list,
-
+                   'silimar_article_list': silimar_article_list,
                    }
                   )
 

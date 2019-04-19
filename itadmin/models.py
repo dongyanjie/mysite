@@ -36,9 +36,6 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-    def get_url_path(self):
-        return reverse("itadmin:article_detail", args=[self.id])
-
 #评论表
 class ArticleComment(models.Model):
     article = models.ForeignKey(Article, related_name="article_comment", on_delete=models.CASCADE)  # 评论的文章

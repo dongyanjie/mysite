@@ -38,3 +38,17 @@
             </h4>
           {% endfor %}
         </div>
+
+{#    推荐相似文章   #}
+{% if silimar_article_list %}
+       <div>
+            <h2>推荐相似文章</h2>
+          {% for article in silimar_article_list %}
+            <h4>
+              <a href="/blog/detail/{{article.article_id}}">
+                    {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->
+              </a>
+            </h4>
+          {% endfor %}
+       </div>
+{% endif %}
