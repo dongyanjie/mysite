@@ -11,6 +11,9 @@
 <h1>编辑我的信息</h1>
 <form action="." method="post">
     {% csrf_token %}
+       {% for error in user_form.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+       {% endfor %}
     Username: <div class="col-md-6">{{user.username}}</div>
     Email: <div class="col-md-6">{{user_form.email}}</div>
     Birth: <div class="col-md-6">{{userinfo_form.birth}}</div>

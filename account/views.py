@@ -4,14 +4,20 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.decorators import login_required   #装饰器 用户判断用户是否登录
+from django.views.decorators.csrf import csrf_exempt   #装饰器  解决csrf问题
+
 from django.contrib.auth.models import User
 from .models import UserInfo
 from .forms import LoginForm, RegisterForm, UserInfoForm, UserForm
 
-# Create your views here.
-#用户登录
+
+# json.loads()函数是将字符串转化为字典, json.dumps()函数是将字典转化为字符串
+# 用户登录
 def user_login(request):
     if request.method == 'POST':
+        # last_login_ip = request.META['REMOTE_ADDR']  #获取登录ip
+        # error_message = {'status': False, 'message': None} # 返回错误信息
+
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             cd = login_form.cleaned_data
@@ -95,7 +101,7 @@ def myinfo_edit(request):
 def my_image(request):
     if request.method == 'POST':
         img = request.POST['img']
-        userinfo=UserInfo.objects.get(user=request.user.id)
+        userinfo = UserInfo.objects.get(user=request.user.id)
         userinfo.photo_url = img
         userinfo.save()
         return HttpResponse("1")

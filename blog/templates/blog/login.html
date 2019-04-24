@@ -3,10 +3,11 @@
 <div>
 {% if user.is_authenticated %}
      {% if userinfo.photo_url %}
-        <img src="{{ userinfo.photo_url | striptags }}" class="img-circle" id="my_photo" name="user_face">
+        <img src="/{{ userinfo.photo_url | striptags }}" class="img-circle" id="my_photo" name="user_face" style="height: 120px;width: 120px;">
       {% else %}
-        <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle" id="my_photo" style="height: 120px;width: 160px">
-      {% endif %}<br>
+        <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle" id="my_photo" style="height: 160px;width: 120px;">
+      {% endif %}
+    <br>
 <br><p>欢迎您： {{ user.username }} &nbsp;&nbsp;&nbsp;</p>
     {% if userinfo %}
        <p>{{ userinfo.about }}</p>

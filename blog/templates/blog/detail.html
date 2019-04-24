@@ -1,5 +1,6 @@
 {% extends './base.html' %}
 {% load staticfiles %}
+{% load humanize %}
 
 {% block title %}文章详情页{% endblock %}
 
@@ -33,7 +34,7 @@
     <hr>
     <div>
        {% for comment in curr_article.article_comment.order_by %}
-              <div><p style="background: #92B8B1">{{ comment.created_time |date:'Y-m-d H:i:s'}}&nbsp;&nbsp;&nbsp;<strong>{{comment.commentator}}&nbsp;说：</p></strong><h5>{{ comment.content }}</h5> </div>
+              <div><p style="background: #92B8B1">{{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}&nbsp;&nbsp;&nbsp;<strong>{{comment.commentator}}&nbsp;说：</p></strong><h5>{{ comment.content }}</h5> </div>
         {% empty %}
            <br> <p>快来第一个评论吧~</p>
        {% endfor %}

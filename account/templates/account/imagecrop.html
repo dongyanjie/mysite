@@ -3,9 +3,10 @@
 {% load staticfiles %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>jQuery头像裁剪cropbox</title>
+<title>jQuery头像裁剪</title>
 <link rel="stylesheet" href="{% static 'css/imagecrop.css' %}" type="text/css" />
 </head>
+
 <body>
 <div class="container">
   <div class="imageBox">
@@ -19,18 +20,18 @@
       </a>
       <input type="file" class="" name="upload-file" id="upload-file" />
     </div>
-    <input type="button"   class="Btnsty_peyton" value="OK">
-    <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+">
-    <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-">
-
+    <input type="button" id="btnCrop" class="Btnsty_peyton" value="OK">
+    <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+"  >
+    <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-" >
   </div>
+  <div class="cropped"></div>
 </div>
-<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/cropbox-min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/csrf.js' %}"></script>
 
+<script type="text/javascript" src="{% static 'js/jquery1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cropbox.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/csrf.js' %}"></script>
 <script type="text/javascript">
-  $(window).load(function() {
+$(window).load(function() {
 	var options =
 	{
 		thumbBox: '.thumbBox',
@@ -50,14 +51,14 @@
 		this.files = [];
 		//getImg();
 	})
-	$('#btnCrop').on('click', function(){
-		//alert("图片上传喽");
-        $.ajax({
-            url:"{% url 'account:my_image' %}",
-            type:'POST',
-            data:{'img':img},
-            success:function (e) {
-                if(e == "1"){
+    	$('#btnCrop').on('click', function(){
+		   {#alert("图片上传喽");#}
+           $.ajax({
+              url:"{% url 'account:my_image' %}",
+              type:'POST',
+              data:{'img':img},
+              success:function (e) {
+                  if(e == "1"){
                         parent.location.reload();
                     } else {
                         alert("sorry, you are not lucky. the picutre can't been uploaded.")
@@ -65,6 +66,7 @@
             }
         })
 	})
+
 	function getImg(){
 		img = cropper.getDataURL();
 		$('.cropped').html('');
@@ -76,11 +78,16 @@
 	$(".imageBox").on("mouseup",function(){
  		getImg();
   		});
-        $('#btnZoomIn').on('click', function(){ cropper.zoomIn();})
-        $('#btnZoomOut').on('click', function(){cropper.zoomOut(); })
 
+	$('#btnZoomIn').on('click', function(){
+		cropper.zoomIn();
+	})
+	$('#btnZoomOut').on('click', function(){
+		cropper.zoomOut();
+	})
 });
 </script>
-
 </body>
 </html>
+
+

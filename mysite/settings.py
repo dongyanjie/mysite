@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',   # 新的过滤器
     #我的应用
     'blog.apps.BlogConfig',   #博客
     'account.apps.AccountConfig',  #用户管理
     'itadmin.apps.ItadminConfig', #用户个人后台
+    # 'debug_toolbar.apps.DebugToolbarConfig',
 
 ]
 
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -82,6 +85,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        # #配置mysql
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'mysite_db',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '3306',
+
     }
 }
 
@@ -132,6 +144,7 @@ REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_DB = 0
 
+# django-debug-toolbar配置
 
 # #邮件相关
 # # SMTP服务器，改为你的邮箱的smtp

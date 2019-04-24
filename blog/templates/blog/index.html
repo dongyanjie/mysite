@@ -11,7 +11,7 @@
              <h2>
                <a href="/blog/detail/{{article.article_id}}">{{ article.title }}</a>
              </h2>
-             <p>{{ article.brief_content }}</p>
+               <p>{{ article.brief_content |truncatewords:30 }}</p>  {# 显示 变量的前30个单词#}
              <span>点赞数 {{ article.dianzan.count }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
 
          {% if user in article.dianzan.all %}

@@ -7,12 +7,18 @@ from django.contrib.auth.decorators import login_required  # 装饰器 判断是
 from django.views.decorators.csrf import csrf_exempt   # 装饰器  解决csrf问题
 from django.views.decorators.http import require_POST  # 装饰器 只接受post提交
 from itadmin.models import Article, ArticleComment  # 文章模型,文章评论模型
+from account.models import UserInfo
 import redis
 from django.conf import settings   # 引入settiongs中的变量
 r = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB)
 
+# print(str(xx.query))  查看执行的原生sql
+# 例如 print(str(UserInfo.objects.all().query))
+
 # 首页
 def get_index_page(request):
+    userinfo = UserInfo.objects.filter(user=request.user)
+
     all_article = Article.objects.all()
     # 显示最热文章(5条)
     hot_article_list = Article.objects.order_by('-click')[:5]
@@ -33,7 +39,8 @@ def get_index_page(request):
 
     # 渲染
     return render(request, 'blog/index.html',
-                  {'page_article_list': page_article_list,
+                  {'userinfo': userinfo,
+                   'page_article_list': page_article_list,
                    'page_num': range(1, page_num+1),
                    'recently_article_list': recently_article_list,
                    'hot_article_list': hot_article_list,
