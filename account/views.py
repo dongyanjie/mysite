@@ -3,8 +3,8 @@ from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 
-from django.contrib.auth.decorators import login_required   #装饰器 用户判断用户是否登录
-from django.views.decorators.csrf import csrf_exempt   #装饰器  解决csrf问题
+from django.contrib.auth.decorators import login_required  # 装饰器 用户判断用户是否登录
+from django.views.decorators.csrf import csrf_exempt  # 装饰器  解决csrf问题
 
 from django.contrib.auth.models import User
 from .models import UserInfo
@@ -14,10 +14,10 @@ from .forms import LoginForm, RegisterForm, UserInfoForm, UserForm
 # json.loads()函数是将字符串转化为字典, json.dumps()函数是将字典转化为字符串
 # 用户登录
 def user_login(request):
-    if request.method == 'POST':
-        # last_login_ip = request.META['REMOTE_ADDR']  #获取登录ip
-        # error_message = {'status': False, 'message': None} # 返回错误信息
+    # last_login_ip = request.META['REMOTE_ADDR']  #获取登录ip
+    # error_message = {'status': False, 'message': None} # 返回错误信息
 
+    if request.method == 'POST':
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             cd = login_form.cleaned_data
@@ -26,19 +26,21 @@ def user_login(request):
                 login(request, user)
                 return redirect(reverse('account:user_login'))
             else:
-                return HttpResponse('error')
+                return HttpResponse('null')
         else:
-            return HttpResponse('Invalid login')
+            return HttpResponse('0')
     if request.method == 'GET':
         login_form = LoginForm()
         return render(request, 'account/login.html', {'form': login_form})
 
-#用户注销
+
+# 用户注销
 def user_logout(request):
     logout(request)
-    return redirect(reverse('account:user_login'))
+    return redirect(reverse('blog:get_index_page'))
 
-#用户注册
+
+# 用户注册
 def user_register(request):
     if request.method == 'POST':
         user_form = RegisterForm(request.POST)
@@ -60,14 +62,15 @@ def user_register(request):
         return render(request, 'account/register.html', {'form': user_form, 'info_form': userinfo_form})
 
 
-#用户信息展示
+# 用户信息展示
 @login_required(login_url='/account/login/')
 def my_info(request):
     user = User.objects.get(username=request.user.username)
     userinfo = UserInfo.objects.get(user=user)
     return render(request, 'account/myinfo.html', {'user': user, 'userinfo': userinfo})
 
-#编辑用户信息
+
+# 编辑用户信息
 @login_required(login_url='/account/login/')
 def myinfo_edit(request):
     user = User.objects.get(username=request.user.username)
@@ -96,7 +99,8 @@ def myinfo_edit(request):
                                                             'userinfo_form': userinfo_form,
                                                             })
 
-#用户头像上传
+
+# 用户头像上传
 @login_required(login_url='/account/login/')
 def my_image(request):
     if request.method == 'POST':

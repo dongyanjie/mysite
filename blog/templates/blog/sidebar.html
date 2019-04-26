@@ -1,3 +1,17 @@
+{# 天气预报#}
+ <div class="layui-card">
+        <div class="layui-card-header">天气预报</div>
+        <div class="layui-card-body">
+          卡片式面板面板通常用于非白色背景色的主体内 而映衬出边框投影
+        </div>
+ </div><br>
+{# 日历 #}
+ <div class="layui-card">
+        <div class="layui-card-header">日历</div>
+        <div class="layui-card-body">
+          卡片式面板面板通常用于非白色背景色的主体内 而映衬出边框投影
+        </div>
+ </div><br>
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">最新</a></li>
@@ -8,22 +22,22 @@
         <div>
             <h2>最新文章</h2>
           {% for article in recently_article_list %}
-            <h4>
+            <h5>
               <a href="/blog/detail/{{article.article_id}}">
                     {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->
               </a>
-            </h4>
+            </h5>
           {% endfor %}
         </div>
 {#   最热文章  #}
         <div>
             <h2>最热文章</h2>
           {% for article in hot_article_list  %}
-            <h4>
+            <h5>
               <a href="/blog/detail/{{article.article_id}}">
                     {{ article.title | slice:'10' }}  <!-- 最多显示10个字符 -->
               </a>
-            </h4>
+            </h5>
           {% endfor %}
         </div>
 
@@ -31,11 +45,11 @@
         <div>
             <h2>评论最多文章</h2>
           {% for article in most_comment_article_list %}
-            <h4>
+            <h5>
               <a href="/blog/detail/{{article.article_id}}">
                     {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->
               </a>
-            </h4>
+            </h5>
           {% endfor %}
         </div>
 
@@ -45,11 +59,11 @@
        <div>
             <h2>推荐相似文章</h2>
           {% for article in silimar_article_list %}
-            <h4>
+            <h5>
               <a href="/blog/detail/{{article.article_id}}">
                     {{ article.title | slice:':10' }}  <!-- 最多显示10个字符 -->
               </a>
-            </h4>
+            </h5>
           {% endfor %}
        </div>
 {% endif %}

@@ -6,8 +6,8 @@ from django.forms import widgets
 
 # 登录表单
 class LoginForm(forms.Form):
-    username = forms.CharField(label='Your name')
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(label='userName')
+    password = forms.CharField(label='passWord', widget=forms.PasswordInput)
 
 # 注册表单
 class RegisterForm(forms.ModelForm):

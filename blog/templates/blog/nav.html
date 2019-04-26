@@ -1,39 +1,58 @@
-
+{% load staticfiles %}
+<div>
 <nav class="navbar navbar-default navbar-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">首页 </a>
+      <a class="navbar-brand active" href="#">首页 &nbsp;</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">资源分享 </a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">心得笔记 <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">资源分享 <span class="caret"></span>&nbsp;</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Python&Django</a></li>
-            <li><a href="#">网络爬虫</a></li>
+            <li><a href="#">web前端</a></li>
+            <li><a href="#">后端开发</a></li>
+            <li><a href="#">Linux</a></li>
             <li><a href="#">数据分析</a></li>
           </ul>
         </li>
-        <li><a href="#">给我留言</a></li>
-        <li><a href="#">关于我</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">心得笔记 <span class="caret"></span>&nbsp;</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">生活感悟</a></li>
+            <li><a href="#">技术杂谈</a></li>
+            <li><a href="#">日常搞笑</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="navbar-brand">给我留言&nbsp;</a></li>
+        <li><a href="#" class="navbar-brand">关于我&nbsp;</a></li>
       </ul>
-      <form class="navbar-form navbar-right">
-        {% csrf_token %}
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+{% if user.is_authenticated %}
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown avbar-right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+{% if userinfo.photo_url %}
+        <img src="/{{ userinfo.photo_url | striptags }}" class="img-circle" id="my_photo" name="user_face" style="height: 25px;width: 30px;">
+{% else %}
+        <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle" id="my_photo" style="height: 25px;width: 30px;">
+{% endif %}
+              &nbsp;欢迎您： {{ user.username }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'account:my_info' %}">基本资料</a></li>
+            <li><a href="#">修改密码</a></li>
+            <li><a href="{% url 'account:user_logout' %}">注销</a></li>
+          </ul>
+        </li>
+      </ul>
+{% else %}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" id="userLogin"><span>登录</span></a></li>
+
+        </ul>
+{% endif %}
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -45,6 +64,26 @@
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
 
+</div>
 
+<script src="/static/js/layer.js"></script>
+<script>
 
+  //弹出一个页面层
+  $('#userLogin').on('click', function(){
+    layer.open({
+      title:'用户登录',
+      {#type:1,#}
+      type: 2,
+      area: ['500px', '300px'],
+      shadeClose: true, //点击遮罩关闭
+      content:'{% url "account:user_login" %}',
+      btn:['Cancel'],
+         btn1: function (index, layero) {
+              parent.location.reload();
+   }
+    });
+  });
+
+</script>
 
