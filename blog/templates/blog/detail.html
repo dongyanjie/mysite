@@ -18,7 +18,7 @@
                 {% endfor %}
             </p>
         </div>
-        {#        详细内容展示模块    #}
+{#        详细内容展示模块    #}
         <div>
             <h1>  {{ curr_article.title }}  </h1>
             <p><span style="color: #009f95">Tags:</span>&nbsp;{{ curr_article.tag.all |join:',' }} </p>
@@ -33,7 +33,7 @@
                          onclick="article_dianzan({{ curr_article.article_id }}, 'like')">点赞</a></span>
             {% endif %}
         </div>
-        {#    评论模块    #}
+{#    评论模块    #}
         <hr>
         <div>
             {% for comment in curr_article.article_comment.order_by %}
@@ -44,19 +44,17 @@
             {% endfor %}
             <h3>看文章，发评论，不要沉默</h3>
             {% if user.is_authenticated %}
-                <form action="." method="post" role="form">
-                    {% csrf_token %}
-                    <div>用户： {{ user.username }}</div>
-                    <div>评论：&nbsp;&nbsp;<br> <textarea name="id_content" id="id_content" cols="80" rows="3"></textarea>
-                        <br><input type="button" id="add_comment" value="发评论"/>
-                    </div>
-                </form>
+                <div>用户： {{ user.username }}</div>
+                <div>评论：&nbsp;&nbsp;<br> <textarea name="id_content" id="id_content" cols="80" rows="3"></textarea>
+                    <br><input type="button" id="add_comment" value="发评论"/>
+                </div>
+
             {% else %}
                 <br>  <p style="color: red">您还未登录，请在右上角登录后再来评论~</p>
             {% endif %}
         </div>
 
-        {#    上一篇 下一篇   #}
+{#    上一篇 下一篇   #}
         <div>
    <span aria-label="...">
     <ul class="pager">
@@ -85,13 +83,13 @@
                     console.log("run");
 
                     if (e == "1") {
-                        layer.msg('感谢点赞');
+                        layer.msg('感谢点赞,我会继续努力...');
                         setTimeout(function () {
                             window.location.reload();
                         }, 1000);
 
                     } else {
-                        layer.msg('我会继续努力.');
+                        layer.msg('亲爱的，登录后再来点赞哦~');
                     }
                 },
             });
@@ -102,12 +100,12 @@
             var content = $('#id_content').val();
 
             $.ajax({
-                url: "{% url 'blog:get_detail_page' curr_article.article_id %}",
+                url: "{% url 'blog:article_comment' %}",
                 type: 'POST',
                 data: {'article_id':{{ curr_article.article_id }}, 'content': content},
                 success: function (e) {
                     if (e == "1") {
-                        layer.msg('感谢您的评论');
+                        layer.msg('感谢您的评论,我会继续努力...');
                         setTimeout(function () {
                             window.location.reload();
                         }, 1000);
