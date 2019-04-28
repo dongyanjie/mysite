@@ -22,7 +22,8 @@
         <div>
             <h1>  {{ curr_article.title }}  </h1>
             <p><span style="color: #009f95">Tags:</span>&nbsp;{{ curr_article.tag.all |join:',' }} </p>
-            <p>{{ curr_article.brief_content }}</p>
+            <p>摘要：{{ curr_article.brief_content }}</p>
+            <p><h3>内容：{{ curr_article.content }}</h3></p>
             <span>浏览量 {{ total_click }} </span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span>点赞数 {{ curr_article.dianzan.count }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -64,7 +65,7 @@
   </span>
         </div>
     {% else %}
-        没有找到您要的文章，请正确操作哦~
+        <p>没有找到您要的文章，请正确操作哦~</p>
     {% endif %}
 
     <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>

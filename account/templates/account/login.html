@@ -1,5 +1,7 @@
+{% extends './base.html' %}
 {% load staticfiles %}
 
+{% block content %}
 {% if user.is_authenticated %}
  <p style="font-family: 楷体;font-size: 20px;color: #4476A7;">您目光深邃，一看您就是一位有思想的人。</p>
     <p> {{ user.username }}，欢迎您的到来！</p>
@@ -8,17 +10,18 @@
 {#<br>点击<a href="{% url 'account:my_info' %}">查看</a>我的信息#}
 {#<br><a href="{% url 'itadmin:article_column' %}">后台管理</a>#}
 {% else %}
-如您还没有注册，请点击<a href="{% url 'account:user_register' %}">Register</a>注册
+    <br>
 <form action="." method="post">
      {% csrf_token %}
+    <p style="color: red">{{ error_message }}</p>
     <p>用户名： {{ form.username }}</p>
     <p>密码：&nbsp;&nbsp;&nbsp;{{ form.password }}</p>
  <input type="submit" value="登录" style="width: 150px;font-size: 16px;border-radius: 10px; ">
 
     {#    <!-- {{form.as_p}}  每个表单元素在一个p标签内，类似的还有as_ul as_table 等等-->#}
 </form>
+{#<p>如您还没有注册，请点击<a href="{% url 'account:user_register' %}">Register</a>注册</p>#}
 
 {% endif%}
 
-</body>
-</html>
+{% endblock %}

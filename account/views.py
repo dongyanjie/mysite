@@ -22,11 +22,16 @@ def user_login(request):
         if login_form.is_valid():
             cd = login_form.cleaned_data
             user = authenticate(username=cd['username'], password=cd['password'])
+            # if request.META.has_key('HTTP_X_FORWARDED_FOR'):
+            #     ip = request.META['HTTP_X_FORWARDED_FOR']
+            # else:
+            #     ip = request.META['REMOTE_ADDR']
             if user:
                 login(request, user)
                 return redirect(reverse('account:user_login'))
             else:
-                return HttpResponse('null')
+                login_form = LoginForm()
+                return render(request, 'account/login.html', {'form': login_form, 'error_message': '用户名或密码不正确，请重新输入~'})
         else:
             return HttpResponse('0')
     if request.method == 'GET':
@@ -45,6 +50,9 @@ def user_register(request):
     if request.method == 'POST':
         user_form = RegisterForm(request.POST)
         userinfo_form = UserInfoForm(request.POST)
+        user_val = request.POST['username']
+        if User.objects.filter(username=user_val):
+            return render(request, 'account/register.html', {'form': user_form, 'error_message': '· 该用户名已注册，请重新输入.'})
         if user_form.is_valid():
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
@@ -52,10 +60,10 @@ def user_register(request):
             new_userinfo = userinfo_form.save(commit=False)
             new_userinfo.user = new_user
             new_userinfo.save()
-            UserInfo.objects.create(user=new_user)
-            return HttpResponseRedirect(reverse('account:user_login'))
+            # UserInfo.objects.create(user=new_user)
+            return HttpResponse('· 恭喜,注册成功，请点击<a href="/account/login/">Login</a>登录.')
         else:
-            return HttpResponse('error')
+            return render(request, 'account/register.html', {'form': user_form, 'error_message': '· 两次密码不一致，请重新输入.'})
     if request.method == 'GET':
         user_form = RegisterForm()
         userinfo_form = UserInfoForm()
