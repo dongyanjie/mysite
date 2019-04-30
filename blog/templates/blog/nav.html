@@ -44,7 +44,7 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li><a href="#" class="navbar-brand">给我留言&nbsp;</a></li>
+                    <li><a href="{% url 'blog:guestbook' %}" class="navbar-brand">给我留言&nbsp;</a></li>
                     <li><a href="#" class="navbar-brand">关于我&nbsp;</a></li>
                 </ul>
                 {% if user.is_authenticated %}
@@ -95,7 +95,7 @@
             title: '用户注册/登录',
             {#type:1,#}
             type: 2,
-            area: ['400px', '300px'],
+            area: ['500px', '500px'],
             shadeClose: true, //点击遮罩关闭
             content: '{% url "account:user_login" %}',
             btn: ['Cancel'],
@@ -110,7 +110,7 @@
                 title: '用户注册/登录',
                 {#type:1,#}
                 type: 2,
-                area: ['400px', '450px'],
+                area: ['500px', '620px'],
                 shadeClose: true, //点击遮罩关闭
                 content: '{% url "account:user_register" %}',
                 btn: ['Cancel'],

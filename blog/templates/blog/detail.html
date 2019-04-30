@@ -3,50 +3,62 @@
 {% load humanize %}
 
 {% block title %}文章详情页{% endblock %}
-
 {% block left_content %}
     {% if curr_article %}
         <div>
-            <br><strong>点赞本文的读者：</strong>
-            <p>
-                {% for user in curr_article.dianzan.all %}
-                    <span>{{ user.username }},&nbsp;</span>
-                {% empty %}
-                    <p>
-                        <small>此文章还没有人点赞呢~</small>
-                    </p>
-                {% endfor %}
+            <strong>&nbsp;点赞本文的读者：</strong>
+            {% for user in curr_article.dianzan.all %}
+                <p> &nbsp;<span class="glyphicon glyphicon-user">{{ user.username }}，&nbsp;</span></p>
+            {% empty %}
+                <p>
+                    <small>&nbsp;此文章还没有人点赞呢~</small>
+                </p>
+            {% endfor %}
+        </div> <br>
+        {#        详细内容展示模块    #}
+        <div style="border:1px solid #9F9F9F;">
+            <h2 style="color:#806973;">&nbsp;{{ curr_article.title }}  </h2>
+            <p>&nbsp;<span
+                    class="glyphicon glyphicon-time">{{ curr_article.publish_date |date:'Y-m-d ' }} &nbsp;&nbsp;</span>
+                <span class="glyphicon glyphicon-eye-open">浏览量 {{ total_click }} &nbsp;&nbsp;</span>
+                <span class="glyphicon glyphicon-heart">点赞数 {{ curr_article.dianzan.count }}&nbsp;&nbsp;&nbsp;</span>
+                {% if user in curr_article.dianzan.all %}
+                    <span style="color: #f38e81;">您已点赞</span>
+                {% else %}
+                    <span><a href="javascript:;" onclick="article_dianzan({{ curr_article.article_id }}, 'like')"><span
+                            class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                {% endif %}
             </p>
+            <p>&nbsp;<span class="glyphicon glyphicon-tags"
+                           style="color: #009f95">Tags:</span>&nbsp;{{ curr_article.tag.all |join:', ' }}</p>
+            <hr>
+            <p style="border:1px dashed #2980B9;border-radius: 12px;">&nbsp;<span
+                    class="glyphicon glyphicon-send">摘要：</span>{{ curr_article.brief_content }}</p>
+            <p>
+            <h3 style="border:1px dashed #2980B9;border-radius: 12px;">&nbsp;内容：</span>{{ curr_article.content }}</h3></p>
+            <hr>
         </div>
-{#        详细内容展示模块    #}
-        <div>
-            <h1>  {{ curr_article.title }}  </h1>
-            <p><span style="color: #009f95">Tags:</span>&nbsp;{{ curr_article.tag.all |join:',' }} </p>
-            <p>摘要：{{ curr_article.brief_content }}</p>
-            <p><h3>内容：{{ curr_article.content }}</h3></p>
-            <span>浏览量 {{ total_click }} </span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span>点赞数 {{ curr_article.dianzan.count }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
 
-            {% if user in curr_article.dianzan.all %}
-                <span style="color: crimson">已点赞</span>
-            {% else %}
-                <span><a href="javascript:;"
-                         onclick="article_dianzan({{ curr_article.article_id }}, 'like')">点赞</a></span>
-            {% endif %}
-        </div>
-{#    评论模块    #}
+        {#    评论模块    #}
         <hr>
-        <div>
+        <div class="comment">
             {% for comment in curr_article.article_comment.order_by %}
-                <div><p style="background: #92B8B1">{{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}&nbsp;&nbsp;&nbsp;<strong>{{ comment.commentator }}&nbsp;说：</strong>
-                </p></strong><h5>{{ comment.content }}</h5></div>
+                <div>
+              <span>
+{#              <img src="" style="width: 30px;height: 30px;">#}
+                 <strong style="color: #393D49;font-size: 15px;color:#2F4056">{{ comment.commentator }}</strong> - &nbsp;{{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}
+                  &nbsp;<span class="glyphicon glyphicon-comment"></span>
+              </span>
+                    <div class="comment-content"><br> &nbsp;&nbsp;&nbsp;{{ comment.content }}</div>
+                    &nbsp;&nbsp;<hr>
+                </div>
             {% empty %}
                 <br> <p>快来第一个评论吧~</p>
             {% endfor %}
             <h3>看文章，发评论，不要沉默</h3>
             {% if user.is_authenticated %}
-                <div>用户： {{ user.username }}</div>
-                <div>评论：&nbsp;&nbsp;<br> <textarea name="id_content" id="id_content" cols="80" rows="3"></textarea>
+                <div style="color: #393D49;font-size: 15px;color:#2F4056">用户：{{ user.username }}</div>
+                <div>写评论：&nbsp;&nbsp;<br> <textarea name="id_content" id="id_content" cols="80" rows="3" placeholder="在这里写评论哦~"></textarea>
                     <br><input type="button" id="add_comment" value="发评论"/>
                 </div>
 
@@ -55,7 +67,7 @@
             {% endif %}
         </div>
 
-{#    上一篇 下一篇   #}
+        {#    上一篇 下一篇   #}
         <div>
    <span aria-label="...">
     <ul class="pager">
@@ -70,7 +82,8 @@
 
     <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
     <script>
-{#文章点赞    ajax方式#}
+        {#文章点赞    ajax方式#}
+
         function article_dianzan(id, action) {
             $.ajax({
                 url: "{% url 'blog:article_dianzan' %}",
@@ -96,7 +109,7 @@
             });
         }
 
-{#  发表评论   #}
+        {#  发表评论   #}
         $('#add_comment').on('click', function () {
             var content = $('#id_content').val();
 

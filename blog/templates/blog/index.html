@@ -2,24 +2,32 @@
 {% load staticfiles %}
 
 {% block title %}首页{% endblock %}
-
 {% block left_content %}
-
     <div class="body-main">
         {% for article in page_article_list %}
-            <div>
-                <h2>
+            <div style="border:1px solid #9F9F9F">
+                <h3>
                     <a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a>
-                </h2>
-                <p>{{ article.brief_content |truncatewords:30 }}</p> {# 显示 变量的前30个单词#}
-                <span>点赞数 {{ article.dianzan.count }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                </h3>
 
-                {% if user in article.dianzan.all %}
-                    <span>已点赞</span>
-                {% else %}
-                    <span><a href="javascript:;" onclick="article_dianzan({{ article.article_id }}, 'like')">点赞</a></span>
-                {% endif %}
+                <div class="col-md-12">
+                    <img src="" class="col-md-3" width="50px" height="80px">
+                    <span class="col-md-9">{{ article.brief_content |truncatewords:30 }}</span> {# 显示 变量的前30个单词#}
+                </div>
+                <div style="text-align: right">
+                    <span class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
+                    <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
+                    <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    {% if user in article.dianzan.all %}
+                        <span>已点赞</span>
+                    {% else %}
+                        <span><a href="javascript:;" onclick="article_dianzan({{ article.article_id }}, 'like')"><span
+                                class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                    {% endif %}
+                    <span><a href="/blog/detail/{{ article.article_id }}" title="阅读全文">&nbsp;&nbsp;阅读全文&nbsp;&nbsp;&nbsp;</a></span>
+                </div>
             </div>
+            <hr>
         {% endfor %}
     </div>
 
@@ -55,6 +63,7 @@
     <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
     <script>
         {#文章点赞    ajax方式#}
+
         function article_dianzan(id, action) {
             $.ajax({
                 url: "{% url 'blog:article_dianzan' %}",

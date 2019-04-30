@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core.paginator import Paginator, EmptyPage, InvalidPage, PageNotAnInteger
 from django.db.models import Count
 
@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required  # 装饰器 判断是
 from django.views.decorators.csrf import csrf_exempt  # 装饰器  解决csrf问题
 from django.views.decorators.http import require_POST  # 装饰器 只接受post提交
 from itadmin.models import Article, ArticleComment, ArticleColumn  # 文章模型,文章评论模型,文章栏目
+from .models import GuestBook
 
 import redis
 from django.conf import settings  # 引入settiongs中的变量
@@ -194,3 +195,24 @@ def article_comment(request):
         return HttpResponse('1')
     except:
         return HttpResponse('0')
+
+
+# 留言板
+@csrf_exempt
+def guestbook(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        content = request.POST['content']
+        try:
+            GuestBook.objects.create(name=name, email=email, content=content)
+            return JsonResponse({'status': '1'})
+        except:
+            return JsonResponse({'status': '0'})
+
+    if request.method == 'GET':
+        columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+        guests_list = GuestBook.objects.all().order_by('-create_date')
+        return render(request, 'blog/guestbook.html', {'columns': columns,
+                                                       'guests_list': guests_list,
+                                                       })
