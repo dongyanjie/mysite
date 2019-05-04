@@ -31,7 +31,7 @@
 </div>
 {#   最新文章   #}
 <div>
-    <h2>最新文章</h2>
+    <h2 style="font-family: 楷体">最新文章</h2>
     {% for article in recently_article_list %}
         <h5>
             <a href="/blog/detail/{{ article.article_id }}">
@@ -42,7 +42,7 @@
 </div>
 {#   最热文章  #}
 <div>
-    <h2>最热文章</h2>
+    <h2 style="font-family: 楷体">最热文章</h2>
     {% for article in hot_article_list %}
         <h5>
             <a href="/blog/detail/{{ article.article_id }}">
@@ -54,7 +54,7 @@
 
 {#    评论最多文章   #}
 <div>
-    <h2>评论最多文章</h2>
+    <h2 style="font-family: 楷体">评论最多文章</h2>
     {% for article in most_comment_article_list %}
         <h5>
             <a href="/blog/detail/{{ article.article_id }}">
@@ -68,7 +68,7 @@
 {#    推荐相似文章   #}
 {% if silimar_article_list %}
     <div>
-        <h2>推荐相似文章</h2>
+        <h2 style="font-family: 楷体">推荐相似文章</h2>
         {% for article in silimar_article_list %}
             <h5>
                 <a href="/blog/detail/{{ article.article_id }}">

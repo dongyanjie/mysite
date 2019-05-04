@@ -1,26 +1,27 @@
 {% load staticfiles %}
 <!--底部-->
 <div class="container page-footer">
-    <div class="panel panel-default">
+    <div class="panel panel-default" style="text-align: center">
         {#        <div class="footer-col footer-col-logo">#}
         {#            <img src="" alt="个人博客">#}
         {#        </div>#}
         <div class="panel-body">
-            Basic panel example footer <br>
-            从免费分享开始，致力做到最好的IT分享网站
+             <br>从免费分享开始，致力做到最好的IT分享网站
+
         </div>
 
-        <ul class="">
-            <li><a rel="nofollow" href="https://" target="_blank">文章归档</a>
+        <ul>
+            <li>
+                <a href="http://" rel="nofollow" target="_blank" title="ICP备案号：鲁ICP备xxx号">ICP备案号：鲁ICP备xxx号</a>
+                <a rel="nofollow" href="https://" target="_blank">文章归档</a>
                 <a rel="nofollow" href="https://" target="_blank">网站地图</a>
                 <a rel="nofollow" href="https://" target="_blank">举报中心</a>
-                <a href="http://" rel="nofollow" target="_blank" title="ICP备案号：辽ICP备15015379号">ICP备案号：辽ICP备15015379号</a>
                 <a href="{% url 'itadmin:article_column' %}">后台管理</a>
             </li>
         </ul>
         <ul>
-            <li class="copyright">Copyright<strong>2015-2017</strong>
-                <a href="https://">xxx博客.</a>
+            <li class="copyright">Copyright<strong>2019-xxx</strong>
+               &nbsp;&nbsp;&nbsp; <a href="https://">我的博客.</a>
             </li>
         </ul>
     </div>
