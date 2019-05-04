@@ -2,40 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
     <title>{% block title %}{% endblock %}</title>
 </head>
 {% load staticfiles %}
 <body>
-<div>
-    <ul>
-        <li><a href="{% url 'itadmin:article' %}">文章管理</a></li>
-    </ul>
-        <span>
-            <a href="/blog/">网站首页</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;{{ user.username }}
-            &nbsp;&nbsp;&nbsp;<a href="{% url 'account:user_logout' %}">logout</a>
-        </span>
-<p>----------------------------------------------------------------------</p> <br>
-{#侧边栏#}
-       <div class="col-md-2">
-          <p><a href="{% url 'itadmin:article_column' %}">栏目管理</a></p>
-          <p><a href="{% url 'itadmin:article_tag' %}">标签管理</a></p>
-          <p><a href="{% url 'itadmin:article' %}">文章管理</a></p>
+<h2 class="container page-header">后台管理系统</h2>
+<div class="container page-header">
+    <nav class="navbar navbar-default navbar-top">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/blog/" class="navbar-brand"><strong>网站首页&nbsp;</strong></a></li>
+                    <li><a href="{% url 'itadmin:article_column' %}"
+                           class="navbar-brand"><strong>栏目管理&nbsp;</strong></a></li>
+                    <li><a href="{% url 'itadmin:article_tag' %}" class="navbar-brand"><strong>标签管理&nbsp;</strong></a>
+                    </li>
+                    <li><a href="{% url 'itadmin:article' %}" class="navbar-brand"><strong>文章管理&nbsp;</strong></a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown avbar-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                {% if user.userinfo.photo_url %}
+                                    <img src="/{{ user.userinfo.photo_url | striptags }}" class="img-circle"
+                                         id="my_photo"
+                                         name="user_face" style="height: 25px;width: 30px;">
+                                {% else %}
+                                    <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle"
+                                         id="my_photo" style="height: 25px;width: 30px;">
+                                {% endif %}
+                                &nbsp;欢迎您： {{ user.username }} </a>
 
-       </div>
-{#内容显示#}
-       <div class="col-md-10" style="margin-left: 200px">
-        {% block content %}{% endblock %}
-       </div>
+                        </li>
+                        <li class="dropdown avbar-right"><a href="{% url 'account:user_logout' %}">注销</a></li>
+                    </ul>
+                {% endif %}
 
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
 </div>
+
+<div class="col-md-10" style="margin-left: 200px">
+    {% block content %}{% endblock %}
+</div>
+
 </body>
 
 </html>

@@ -1,95 +1,100 @@
 {% extends './base.html' %}
 {% load staticfiles %}
 {% block title %}
-   Articletag Manage
+    Articletag Manage
 {% endblock %}
 
 {% block content %}
-    <input type="button" value="添加新标签" id="add_tag" onclick="add_tag()" />
-    <table>
-        <tr>
-            <td>序号</td>
-            <td>标签名称</td>
-            <td>操作</td>
-        </tr>
-        {% for tag in tags %}
-        <tr>
-            <td>{{ forloop.counter }}</td>
-            <td>{{ tag.tag }}</td>
-            <td>
-               <input type="button" value="删除" id="del_tag" onclick="del_tag(this, {{ tag.id }})" />
-            </td>
-        </tr>
-        {% empty %}
-          <p>还没有设置标签~</p>
-        {% endfor %}
-    </table>
+    <div class="panel-heading"><input type="button" value="添加新标签" id="add_tag" onclick="add_tag()"
+                                      class="btn btn-success"/></div>
+    <div class="panel panel-default">
+        <table class="table">
+            <tr>
+                <td>序号</td>
+                <td>标签名称</td>
+                <td>操作</td>
+            </tr>
+            {% for tag in tags %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ tag.tag }}</td>
+                    <td>
+                        <input type="button" value="删除" id="del_tag" onclick="del_tag(this, {{ tag.id }})"/>
+                    </td>
+                </tr>
+            {% empty %}
+                <p>还没有设置标签~</p>
+            {% endfor %}
+        </table>
+    </div>
 
-<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-<script>
-{# 新增标签    ajax方式 #}
-function add_tag(){
-    var index = layer.open({
-        title:"新增标签",
-        area: ['400px', '200px'],
-        skin: "layui-layer-rim",
-        type:1,
-        content:'<div align="center"><p>&nbsp;&nbsp;请输入标签名称：</p>{{ tag_form.tag }}</div>',
-        btn:['确定', '取消'],
-        yes: function (index, layero) {
-            tag_name = $('#id_tag').val();
-            $.ajax({
-                url:"{% url 'itadmin:article_tag' %}",
-                type:'POST',
-                data:{'tag':tag_name},
-                success:function (e) {
-                      if(e == "1"){
-                        parent.location.reload();
-                        layer.msg('添加成功');
-                    } else if (e == 'null') {
-                          layer.msg('标签不能为空，请重填');
-                      } else {
-                        layer.msg('此标签已有，请更换');
-                    }
-            },
-        });
-  },
-        btn2:function (index,layero) {
-            layer.close(index);
-        }
-    });
-}
+    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+    <script>
+        {# 新增标签    ajax方式 #}
 
-{#删除标签 #}
-function del_tag(the, tag_id){
-    var tag_name=$(the).parents('tr').children('td').eq(1).text();
-    var index = layer.open({
-        title:"删除标签",
-        area: ['400px', '200px'],
-        skin: "layui-layer-rim",
-        type:1,
-        content:'<div align="center">确定要删除 <span style="color:red">'+tag_name+' </span>标签吗？</div>',
-        btn:['确定', '取消'],
-        yes: function (index, layero) {
-            $.ajax({
-                url:"{% url 'itadmin:del_article_tag' %}",
-                type:'POST',
-                data:{'tag_id':tag_id},
-                success:function (e) {
-                      if(e == "1"){
-                        parent.location.reload();
-                        layer.msg('删除成功');
-                    } else {
-                        layer.msg('删除失败，请重试');
-                    }
-            },
-        });
-  },
-        btn2:function (index,layero) {
-            layer.close(index);
+        function add_tag() {
+            var index = layer.open({
+                title: "新增标签",
+                area: ['400px', '200px'],
+                skin: "layui-layer-rim",
+                type: 1,
+                content: '<div align="center"><p>&nbsp;&nbsp;请输入标签名称：</p>{{ tag_form.tag }}</div>',
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    tag_name = $('#id_tag').val();
+                    $.ajax({
+                        url: "{% url 'itadmin:article_tag' %}",
+                        type: 'POST',
+                        data: {'tag': tag_name},
+                        success: function (e) {
+                            if (e == "1") {
+                                parent.location.reload();
+                                layer.msg('添加成功');
+                            } else if (e == 'null') {
+                                layer.msg('标签不能为空，请重填');
+                            } else {
+                                layer.msg('此标签已有，请更换');
+                            }
+                        },
+                    });
+                },
+                btn2: function (index, layero) {
+                    layer.close(index);
+                }
+            });
         }
-    });
-}
-</script>
+
+        {#删除标签 #}
+
+        function del_tag(the, tag_id) {
+            var tag_name = $(the).parents('tr').children('td').eq(1).text();
+            var index = layer.open({
+                title: "删除标签",
+                area: ['400px', '200px'],
+                skin: "layui-layer-rim",
+                type: 1,
+                content: '<div align="center">确定要删除 <span style="color:red">' + tag_name + ' </span>标签吗？</div>',
+                btn: ['确定', '取消'],
+                yes: function (index, layero) {
+                    $.ajax({
+                        url: "{% url 'itadmin:del_article_tag' %}",
+                        type: 'POST',
+                        data: {'tag_id': tag_id},
+                        success: function (e) {
+                            if (e == "1") {
+                                parent.location.reload();
+                                layer.msg('删除成功');
+                            } else {
+                                layer.msg('删除失败，请重试');
+                            }
+                        },
+                    });
+                },
+                btn2: function (index, layero) {
+                    layer.close(index);
+                }
+            });
+        }
+    </script>
 
 {% endblock %}

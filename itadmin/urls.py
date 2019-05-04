@@ -18,5 +18,4 @@ urlpatterns = [
     path('edit-article/', views.edit_article, name='edit_article'),
     path('del-article/', views.del_article, name='del_article'),
 
-    path('home/', TemplateView.as_view(template_name="home.html"))
 ]
