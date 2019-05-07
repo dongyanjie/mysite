@@ -7,7 +7,10 @@ urlpatterns = [
     path('index/', views.get_index_page, name='get_index_page'),
     path('detail/<int:article_id>/', views.get_detail_page, name='get_detail_page'),  # 详情页
     path('cetegory/<int:id>/', views.get_cetegory_page, name='get_cetegory_page'),  # 搜索指定类别页
+
+    path('resources/', views.resources, name='resources'),  # 关于我
     path('guestbook/', views.guestbook, name='guestbook'),  # 留言板
+    path('aboutme/', views.aboutme, name='aboutme'),  # 关于我
 
     path('article-dianzan/', views.article_dianzan, name='article_dianzan'),
     path('article-comment/', views.article_comment, name='article_comment'),

@@ -1,99 +1,85 @@
 {% load staticfiles %}
-<div style="font-family: 楷体;font-size: 23px;">
-    <nav class="navbar navbar-default navbar-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand active" href="/blog/"><strong>首页 &nbsp;</strong></a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false"><strong>资源分享 </strong><span class="caret"></span>&nbsp;</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">测试中，暂未开放...</a></li>
-
-                            {#            <li><a href="#">web前端</a></li>#}
-                            {#            <li><a href="#">后端开发</a></li>#}
-                            {#            <li><a href="#">Linux</a></li>#}
-                            {#            <li><a href="#">数据分析</a></li>#}
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false"><strong>技术杂谈 </strong><span class="caret"></span>&nbsp;</a>
-                        <ul class="dropdown-menu">
-                            {% for column in columns %}
-                                {% if column.id is not 6 %}
-                                    <li><a href="/blog/cetegory/{{ column.id }}">{{ column.column }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" aria-expanded="false"><strong>生活感悟 </strong><span class="caret"></span>&nbsp;</a>
-                        <ul class="dropdown-menu">
-                            {% for column in columns %}
-                                {% if column.id is 6 %}
-                                    <li><a href="/blog/cetegory/{{ column.id }}">{{ column.column }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    <li><a href="{% url 'blog:guestbook' %}" class="navbar-brand"><strong>给我留言&nbsp;</strong></a></li>
-                    <li><a href="#" class="navbar-brand"><strong>关于我&nbsp;</strong></a></li>
+<!-- Main Navigation -->
+<div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="index.html">
+        <img class="img-fluid" src="{% static 'img/logo.png' %}" alt="logo">
+    </a>
+    <!-- Toggle get grouped for better mobile display -->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav nav-pills ml-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/blog/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog:aboutme' %}">关于<span>我</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog:resources' %}">资源分享</a>
+            </li>
+            <li class="nav-item" onmouseover="onMouseover('cate_list')" onmouseout="onMouseout('cate_list')">
+                <a class="nav-link" href="javascript:;">技术杂谈</a>
+                <ul id="cate_list" style="display: none">
+                    {% for column in columns %}
+                        {% if column.id is not 6 %}
+                            <li><a href="/blog/cetegory/{{ column.id }}">{{ column.column }}()</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
-                {% if user.is_authenticated %}
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown avbar-right">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                {% if user.userinfo.photo_url %}
-                                    <img src="/{{ user.userinfo.photo_url | striptags }}" class="img-circle" id="my_photo"
-                                         name="user_face" style="height: 25px;width: 30px;">
-                                {% else %}
-                                    <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle"
-                                         id="my_photo" style="height: 25px;width: 30px;">
-                                {% endif %}
-                                &nbsp;欢迎您： {{ user.username }} <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'account:my_info' %}">基本资料</a></li>
-                                <li><a href="#">修改密码</a></li>
-                                <li><a href="{% url 'account:user_logout' %}">注销</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                {% else %}
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" id="userLogin"><span>登录</span></a></li>
-                        <li><a href="#" id="userRegister"><span>注册</span></a></li>
-                    </ul>
-                {% endif %}
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blog/cetegory/6">生活感悟</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog:guestbook' %}">给<span>我</span>留言&nbsp;&nbsp;</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="#" class="nav-link">
+                        {% if user.userinfo.photo_url %}
+                            <img src="/{{ user.userinfo.photo_url | striptags }}" class="img-circle" id="my_photo"
+                                 name="user_face" style="height: 25px;width: 30px;">
+                        {% else %}
+                            <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle"
+                                 id="my_photo" style="height: 25px;width: 30px;">
+                        {% endif %}
+                        &nbsp;欢迎您：<span> {{ user.username }}</span></a>
+                </li>
+                <li class="nav-item"><a href="{% url 'account:user_logout' %}" class="nav-link"><span>注销</span></a></li>
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
-    {#  轮播图 #}
-    {#<div class="jumbotron col-md-9">#}
-    {#  <h1>Hello, django!</h1>#}
-    {#  <p>记录生活，分享交流...</p>#}
-    {#  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>#}
-    {#</div>#}
-
+            {% else %}
+                <ul>
+                    <li><a href="#" id="userLogin"><span>登录</span></a></li>
+                    <li><a href="#" id="userRegister"><span>注册</span></a></li>
+                </ul>
+            {% endif %}
+        </ul>
+    </div>
 </div>
 
-<script src="/static/js/layer.js"></script>
-<script>
+{#  轮播图 #}
+{#<div class="jumbotron col-md-9">#}
+{#  <h1>Hello, django!</h1>#}
+{#  <p>记录生活，分享交流...</p>#}
+{#  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>#}
+{#</div>#}
+{##}
+{#</div>#}
+{##}
 
+<script src="{% static 'js/layer.js' %}"></script>
+<script>
     //弹出一个页面层 登录页
     $('#userLogin').on('click', function () {
         layer.open({
             title: '用户注册/登录',
-            {#type:1,#}
+            type: 1,
             type: 2,
             area: ['500px', '500px'],
             shadeClose: true, //点击遮罩关闭
@@ -108,7 +94,7 @@
     $('#userRegister').on('click', function () {
             layer.open({
                 title: '用户注册/登录',
-                {#type:1,#}
+                type: 1,
                 type: 2,
                 area: ['500px', '620px'],
                 shadeClose: true, //点击遮罩关闭
@@ -121,5 +107,16 @@
         }
     );
 
-</script>
 
+    function onMouseover(obj) {
+        var div = document.getElementById(obj);
+        div.style.display = "block";
+    }
+
+    function onMouseout(obj) {
+        var div = document.getElementById(obj);
+        div.style.display = "none";
+    }
+
+
+</script>

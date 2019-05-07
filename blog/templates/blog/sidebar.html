@@ -1,92 +1,105 @@
 {% load staticfiles %}
 
 {# 天气预报#}
-<div class="layui-card">
-    <div class="layui-card-header">天气预报</div>
-    <div class="layui-card-body">
-        卡片式面板面板通常用于非白色背景色的主体内 而映衬出边框投影
+{#<div class="layui-card">#}
+{#    <div class="layui-card-header">天气预报</div>#}
+{#    <div class="layui-card-body">#}
+{#        卡片式面板面板通常用于非白色背景色的主体内 而映衬出边框投影#}
+{#    </div>#}
+{#</div><br>#}
+
+
+
+<!-- Right Column -->
+<!-- Sidebar -->
+<div class="blog-sidebar mt-4">
+    <!-- Blog Search -->
+    <div class="blog-search">
+        <form method="post" action=".">
+            <div class="form-group">
+                <input type="text" class="form-control" name="search" placeholder="Search..">
+            </div>
+        </form>
     </div>
-</div><br>
-{# 日历 #}
-<div class="layui-card">
-    <div class="layui-card-header">日历</div>
-    <div class="layui-card-body">
-        卡片式面板面板通常用于非白色背景色的主体内 而映衬出边框投影
-    </div>
-</div><br>
-{# 搜索 #}
-<div class="search">
-    <form action="." method="get">
-        <input type="text" placeholder="在这里搜索...">
-        <input type="submit" value="搜索">
-    </form>
 
-</div><br>
-<div>
-    <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">最新</a></li>
-        <li role="presentation"><a href="#">热门</a></li>
-        <li role="presentation"><a href="#">评论最多~</a></li>
-    </ul>
-</div>
-{#   最新文章   #}
-<div>
-    <h2 style="font-family: 楷体">最新文章</h2>
-    {% for article in recently_article_list %}
-        <h5>
-            <a href="/blog/detail/{{ article.article_id }}">
-                <span class="glyphicon glyphicon-pencil"> {{ article.title | slice:':10' }}</span>   <!-- 最多显示10个字符 -->
-            </a>
-        </h5>
-    {% endfor %}
-</div>
-{#   最热文章  #}
-<div>
-    <h2 style="font-family: 楷体">最热文章</h2>
-    {% for article in hot_article_list %}
-        <h5>
-            <a href="/blog/detail/{{ article.article_id }}">
-                <span class="glyphicon glyphicon-fire"> {{ article.title | slice:'10' }}  </span>  <!-- 最多显示10个字符 -->
-            </a>
-        </h5>
-    {% endfor %}
-</div>
-
-{#    评论最多文章   #}
-<div>
-    <h2 style="font-family: 楷体">评论最多文章</h2>
-    {% for article in most_comment_article_list %}
-        <h5>
-            <a href="/blog/detail/{{ article.article_id }}">
-                <span class="glyphicon glyphicon-flag"> {{ article.title | slice:':10' }}</span>   <!-- 最多显示10个字符 -->
-            </a>
-        </h5>
-    {% endfor %}
-</div>
-
-
-{#    推荐相似文章   #}
-{% if silimar_article_list %}
-    <div>
-        <h2 style="font-family: 楷体">推荐相似文章</h2>
-        {% for article in silimar_article_list %}
-            <h5>
-                <a href="/blog/detail/{{ article.article_id }}">
-                    <span class="glyphicon glyphicon-education">  {{ article.title | slice:':10' }}</span>
-                    <!-- 最多显示10个字符 -->
-                </a>
-            </h5>
+    <!-- 最新文章 Blog -->
+    <div class="recent-blog mt-4">
+        <h4>最新文章</h4>
+        {% for article in recently_article_list %}
+            <div class="clearfix mb-3">
+                {#            <img class="float-left mr-3" src="img/1.jpg" alt="post" width="70px" height="70px">#}
+                <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                    {{ article.title | slice:':20' }}  <!-- 最多显示10个字符 -->
+                </a></p>
+                <p>{{ article.publish_date |date:'Y-m-d ' }}</p>
+            </div>
         {% endfor %}
     </div>
-{% endif %}
 
-{#<link rel="stylesheet" href="{% static 'layui2.4.5/css/modules/laydate/default/laydate.css' %}">#}
-{#<script type="text/javascript" src="{% static 'layui2.4.5/lay/modules/laydate.js' %}"></script>#}
-{##}
-{#<script>#}
-{#    laydate.render({#}
-{#        elem: '#test1'#}
-{#        , position: 'static'#}
-{#    });#}
-{##}
-{#</script>#}
+    <!-- 最热文章 Blog -->
+    <div class="recent-blog mt-4">
+        <h4>最热文章</h4>
+        {% for article in hot_article_list %}
+            <div class="clearfix mb-3">
+                {#            <img class="float-left mr-3" src="img/1.jpg" alt="post" width="70px" height="70px">#}
+                <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                    {{ article.title | slice:':20' }}  <!-- 最多显示10个字符 -->
+                </a></p>
+                <p>{{ article.publish_date |date:'Y-m-d ' }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- 评论最多文章 Blog -->
+    <div class="recent-blog mt-4">
+        <h4>评论最多文章</h4>
+        {% for article in most_comment_article_list %}
+            <div class="clearfix mb-3">
+                {#            <img class="float-left mr-3" src="img/1.jpg" alt="post" width="70px" height="70px">#}
+                <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                    {{ article.title | slice:':20' }}  <!-- 最多显示10个字符 -->
+                </a></p>
+                <p>{{ article.publish_date |date:'Y-m-d ' }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- 推荐相似文章 Blog -->
+    {% if silimar_article_list %}
+        <div class="recent-blog mt-4">
+            <h4>推荐相似文章</h4>
+            {% for article in silimar_article_list %}
+                <div class="clearfix mb-3">
+                    {#            <img class="float-left mr-3" src="img/1.jpg" alt="post" width="70px" height="70px">#}
+                    <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                        {{ article.title | slice:':20' }}  <!-- 最多显示10个字符 -->
+                    </a></p>
+                    <p>{{ article.publish_date |date:'Y-m-d ' }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <!-- 文章分类  Blog Category -->
+    <div class="blog-category mt-4">
+        <h4>文章分类</h4>
+        <ul>
+            {% for column in columns %}
+                {% if column.id is not 6 %}
+                    <li><a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!--文章标签  Blog Tags -->
+    <div class="blog-tag mt-4">
+        <h4>文章标签</h4>
+        <a href="#">Design Photo</a>
+        <a href="#">Blog</a>
+        <a href="#">News</a>
+        <a href="#">Journal</a>
+        <a href="#">Quotation</a>
+        <a href="#">Jquery</a>
+        <a href="#">Wordpress</a>
+    </div>
+</div>

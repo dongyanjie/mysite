@@ -216,3 +216,15 @@ def guestbook(request):
         return render(request, 'blog/guestbook.html', {'columns': columns,
                                                        'guests_list': guests_list,
                                                        })
+
+
+# 资源分享
+def resources(request):
+    columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    return render(request, 'blog/resources.html', {'columns': columns})
+
+
+# 关于我
+def aboutme(request):
+    columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    return render(request, 'blog/aboutme.html', {'columns': columns})
