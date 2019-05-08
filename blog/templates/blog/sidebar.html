@@ -9,7 +9,6 @@
 {#</div><br>#}
 
 
-
 <!-- Right Column -->
 <!-- Sidebar -->
 <div class="blog-sidebar mt-4">
@@ -94,12 +93,9 @@
     <!--文章标签  Blog Tags -->
     <div class="blog-tag mt-4">
         <h4>文章标签</h4>
-        <a href="#">Design Photo</a>
-        <a href="#">Blog</a>
-        <a href="#">News</a>
-        <a href="#">Journal</a>
-        <a href="#">Quotation</a>
-        <a href="#">Jquery</a>
-        <a href="#">Wordpress</a>
+        {% for tag in tags %}
+            <a href="javascript:;" id="{{ tag.id }}">{{ tag.tag }}</a>
+        {% endfor %}
+
     </div>
 </div>

@@ -6,7 +6,7 @@
 
 {% block left_content %}
 
-     <!-- 路径导航-->
+    <!-- 路径导航-->
     <div class="col-md-12 col-lg-12 col-sm-12 col-12 text-center">
         <div class="seprate-page-title pt-5 pb-4">
             <ul class="breadcrumb">
@@ -16,74 +16,75 @@
         </div>
     </div>
 
-  {% if page_article_list %}
-    <!-- Left column -->
-    {% for article in page_article_list %}
-        <div class="blog">
-            <!-- Blog Title -->
-            <div class="blog-title">
-                <h2><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h2>
+    {% if page_article_list %}
+        <!-- Left column -->
+        {% for article in page_article_list %}
+            <div class="blog">
+                <!-- Blog Title -->
+                <div class="blog-title">
+                    <h2><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h2>
+                </div>
+                <!-- Blog Created Date -->
+                <div class="blog-meta">
+                    <p><span
+                            class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
+                        / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
+                        / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        {% if user in article.dianzan.all %}
+                            <span>已点赞</span>
+                        {% else %}
+                            <span><a href="javascript:;"
+                                     onclick="article_dianzan({{ article.article_id }}, 'like')"><span
+                                    class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                        {% endif %}
+                    </p>
+                </div>
+                <!-- Blog Image -->
+                <div class="blog-image">
+                    <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">
+                </div>
+                <!-- Blog Content -->
+                <div class="blog-content">
+                    <p>{{ article.brief_content |truncatewords:30 }}</p>
+                </div>
+                <!-- Blog Read More Navigation -->
+                <div class="blog-read-more">
+                    <a href="/blog/detail/{{ article.article_id }}">
+                        Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
+                </div>
             </div>
-            <!-- Blog Created Date -->
-            <div class="blog-meta">
-                <p><span
-                        class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
-                    / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
-                    / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    {% if user in article.dianzan.all %}
-                        <span>已点赞</span>
+        {% endfor %}
+
+        <!-- 分页 Blog Pagination -->
+        <div class="blog-pagination">
+            <ul class="pagination">
+                <li class="page-item">
+                    {% if page_article_list.has_previous %}
+                        <a class="page-link" href="?page={{ page_article_list.previous_page_number }}">
+                            <i class="fa fa-caret-left" aria-hidden="true"></i></a>
                     {% else %}
-                        <span><a href="javascript:;" onclick="article_dianzan({{ article.article_id }}, 'like')"><span
-                                class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                        <a class="page-link" href="?page={{ page_article_list.number }}">
+                            <i class="fa fa-caret-left" aria-hidden="true"></i></a>
                     {% endif %}
-                </p>
-            </div>
-            <!-- Blog Image -->
-            <div class="blog-image">
-                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-                <p>{{ article.brief_content |truncatewords:30 }}</p>
-            </div>
-            <!-- Blog Read More Navigation -->
-            <div class="blog-read-more">
-                <a href="/blog/detail/{{ article.article_id }}">
-                    Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
-            </div>
+                </li>
+                {% for num in page_num %}
+                    <li class="page-item"><a href="/blog/index?page={{ num }}" class="page-link">{{ num }}</a></li>
+                {% endfor %}
+
+                <li class="page-item">
+                    {% if page_article_list.has_next %}
+                        <a class="page-link" href="?page={{ page_article_list.next_page_number }}">
+                            <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    {% else %}
+                        <a class="page-link" href="?page={{ page_article_list.paginator.num_pages }}">
+                            <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                    {% endif %}
+                </li>
+            </ul>
         </div>
-    {% endfor %}
-
-    <!-- 分页 Blog Pagination -->
-    <div class="blog-pagination">
-        <ul class="pagination">
-            <li class="page-item">
-                {% if page_article_list.has_previous %}
-                    <a class="page-link" href="?page={{ page_article_list.previous_page_number }}">
-                        <i class="fa fa-caret-left" aria-hidden="true"></i></a>
-                {% else %}
-                    <a class="page-link" href="?page={{ page_article_list.number }}">
-                        <i class="fa fa-caret-left" aria-hidden="true"></i></a>
-                {% endif %}
-            </li>
-            {% for num in page_num %}
-                <li class="page-item"><a href="/blog/index?page={{ num }}" class="page-link">{{ num }}</a></li>
-            {% endfor %}
-
-            <li class="page-item">
-                {% if page_article_list.has_next %}
-                    <a class="page-link" href="?page={{ page_article_list.next_page_number }}">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-                {% else %}
-                    <a class="page-link" href="?page={{ page_article_list.paginator.num_pages }}">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i></a>
-                {% endif %}
-            </li>
-        </ul>
-    </div>
-  {% else %}
+    {% else %}
         <p>抱歉，没有找到您想要的文章~</p>
-  {% endif %}
+    {% endif %}
 
 
 

@@ -37,7 +37,7 @@
             </div>
             <!-- Blog Image -->
             <div class="blog-image">
-                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">
+                {#                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">#}
             </div>
             <!-- Blog Content -->
             <div class="blog-content">
@@ -80,34 +80,35 @@
     </div>
 
 
-<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-<script>
-{#文章点赞    ajax方式#}
-    function article_dianzan(id, action) {
-        $.ajax({
-            url: "{% url 'blog:article_dianzan' %}",
-            type: "POST",
-            data: {
-                'id': id,
-                'action': action,
-            },
-            async: false,
-            success: function (e) {
-                console.log("run");
+    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+    <script>
+        {#文章点赞    ajax方式#}
 
-                if (e == "1") {
-                    layer.msg('感谢点赞,我会继续努力...');
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 1000);
+        function article_dianzan(id, action) {
+            $.ajax({
+                url: "{% url 'blog:article_dianzan' %}",
+                type: "POST",
+                data: {
+                    'id': id,
+                    'action': action,
+                },
+                async: false,
+                success: function (e) {
+                    console.log("run");
 
-                } else {
-                    layer.msg('亲爱的，登录后再来点赞哦~');
-                }
-            },
-        });
-    }
-</script>
+                    if (e == "1") {
+                        layer.msg('感谢点赞,我会继续努力...');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+
+                    } else {
+                        layer.msg('亲爱的，登录后再来点赞哦~');
+                    }
+                },
+            });
+        }
+    </script>
 
 {% endblock %}
 

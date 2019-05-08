@@ -6,7 +6,7 @@ from django.db.models import Count
 from django.contrib.auth.decorators import login_required  # 装饰器 判断是否登录
 from django.views.decorators.csrf import csrf_exempt  # 装饰器  解决csrf问题
 from django.views.decorators.http import require_POST  # 装饰器 只接受post提交
-from itadmin.models import Article, ArticleComment, ArticleColumn  # 文章模型,文章评论模型,文章栏目
+from itadmin.models import Article, ArticleComment, ArticleColumn, ArticleTag  # 文章模型,文章评论模型,文章栏目,文章标签
 from .models import GuestBook
 
 import redis
@@ -22,6 +22,7 @@ r = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=set
 def get_index_page(request):
     # userinfo = UserInfo.objects.filter(user=request.user)
     columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    tags = ArticleTag.objects.all().distinct()  # 标签
 
     all_article = Article.objects.all()
     # 显示最热文章(5条)
@@ -49,6 +50,7 @@ def get_index_page(request):
                   {
                       # 'userinfo': userinfo,
                       'columns': columns,
+                      'tags': tags,
                       'page_article_list': page_article_list,
                       'page_num': range(1, page_num + 1),
                       'recently_article_list': recently_article_list,
@@ -63,6 +65,8 @@ def get_detail_page(request, article_id):
     all_article = Article.objects.all()  # 所有文章
     # 遍历所属栏目
     columns = ArticleColumn.objects.values('id', 'column').distinct()
+    tags = ArticleTag.objects.all().distinct()  # 标签
+
     # redis 计算总浏览量
     total_click = r.incr("article:{}:views".format(article_id))  # 对访问文章的次数进行记录 incr使键值递增
     # 显示最热文章
@@ -110,6 +114,7 @@ def get_detail_page(request, article_id):
     return render(request, 'blog/detail.html',
                   {
                       'columns': columns,
+                      'tags': tags,
                       'curr_article': curr_article,
                       'previous_article': previous_article,
                       'next_article': next_article,
@@ -129,6 +134,7 @@ def get_cetegory_page(request, id):
     print(id)
     cetegory_article = Article.objects.filter(column=id)  # 指定栏目的所有文章
     columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    tags = ArticleTag.objects.all().distinct()  # 标签
 
     # redis 计算总浏览量
     total_click = r.incr("article:{}:views".format(id))  # 对访问文章的次数进行记录 incr使键值递增
@@ -152,6 +158,7 @@ def get_cetegory_page(request, id):
     return render(request, 'blog/category.html',
                   {
                       'columns': columns,
+                      'tags': tags,
                       'page_article_list': page_article_list,
                       'page_num': range(1, page_num + 1),
                       'total_click': total_click,
@@ -221,6 +228,7 @@ def guestbook(request):
 # 资源分享
 def resources(request):
     columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+
     return render(request, 'blog/resources.html', {'columns': columns})
 
 

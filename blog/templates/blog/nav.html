@@ -3,7 +3,8 @@
 <!-- Main Navigation -->
 <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="index.html">
-        <img class="img-fluid" src="{% static 'img/logo.png' %}" alt="logo">
+        {#        <img class="img-fluid" src="{% static 'img/logo.png' %}" alt="logo">#}
+        <strong>懂得</strong><span>生活</span>
     </a>
     <!-- Toggle get grouped for better mobile display -->
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -46,7 +47,7 @@
                             <img src="/{{ user.userinfo.photo_url | striptags }}" class="img-circle" id="my_photo"
                                  name="user_face" style="height: 25px;width: 30px;">
                         {% else %}
-                            <img name="user_face" src="{% static 'images/new.jpg' %}" class="img-circle"
+                            <img name="user_face" src="{% static 'images/photo.jpg' %}" class="img-circle"
                                  id="my_photo" style="height: 25px;width: 30px;">
                         {% endif %}
                         &nbsp;欢迎您：<span> {{ user.username }}</span></a>

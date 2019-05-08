@@ -95,7 +95,7 @@
     <div class="single-blog-comment">
         <div class="row mb-5">
             <div class="col-md-1 col-sm-1 col-lg-1">
-                <img class="img-fluid mb-2" src="img/user-image.png">
+                <img class="img-fluid mb-2" src="{% static 'images/photo.jpg' %}">
             </div>
             <div class="col-md-11 col-sm-11 col-lg-11">
                 <div class="user-name">
@@ -105,7 +105,7 @@
                     </p>
                 </div>
             </div>
-{#  判断是否是本人登录 ，只有本人可以回复#}
+            {#  判断是否是本人登录 ，只有本人可以回复#}
             {% if user.is_authenticated and user.username == 'admin' %}
                 <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
                 &nbsp;&nbsp;&nbsp;<br>
