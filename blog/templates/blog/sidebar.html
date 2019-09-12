@@ -1,12 +1,17 @@
 {% load staticfiles %}
 
 {# 天气预报#}
-{#<div class="layui-card">#}
-{#    <div class="layui-card-header">天气预报</div>#}
-{#    <div class="layui-card-body">#}
-{#        卡片式面板面板通常用于非白色背景色的主体内 而映衬出边框投影#}
-{#    </div>#}
-{#</div><br>#}
+<div class="container">
+    <hr>
+        <div>
+            <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=7" style="border:solid 1px #7ec8ea"
+                    width="290" height="90" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+        <div>
+            <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=11" width="290" height="15"
+                    frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+</div>
 
 
 <!-- Right Column -->
@@ -20,6 +25,7 @@
             </div>
         </form>
     </div>
+
 
     <!-- 最新文章 Blog -->
     <div class="recent-blog mt-4">
