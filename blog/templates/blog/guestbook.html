@@ -1,36 +1,19 @@
+{% extends './base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{% block title %}{% endblock %} </title>
-    {#    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">#}
-    <!-- Custom styles -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
-    <!-- Custom fonts -->
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}">
-    <script src="{% static 'js/jquery.min.js' %}"></script>
 
-</head>
+{% block title %}首页{% endblock %}
+{% block left_content %}
+
+    <!--路径导航  导航条-->
+    <nav class="breadcrumb">
+        <div class="container"><i class="Hui-iconfont">&#xe67f;</i>
+            <a href="/blog/" class="c-primary">首页</a>
+            <span class="c-gray en">&gt;</span> <span class="c-gray">资源分享</span>
+        </div>
+    </nav>
 
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    {% include './nav.html' %}
-    {#    {% include 'account/login.html' %}#}
-</nav>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-12 text-center">
-            <!-- Breadcrumb Navigation -->
-            <div class="seprate-page-title pt-5 pb-4">
-                <h1><span>Contact</span><span> Me</span></h1>
-                <ul class="breadcrumb">
-                    <li><a href="/blog/">Home</a></li>
-                    <li>Guestbook</li>
-                </ul>
-            </div>
             <!-- Contact Content -->
             <div class="contact-me">
                 <p>生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。</p>
@@ -43,8 +26,6 @@
                     <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 
 
@@ -94,12 +75,6 @@
     {% endfor %}
 </div>
 
-</body>
-
-<footer>
-    {% include 'blog/footer.html' %}
-</footer>
-
 <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
 <script>
     $('#tijiao').on('click', function () {
@@ -136,5 +111,6 @@
 
     })
 </script>
-</html>
+
+{% endblock %}
 

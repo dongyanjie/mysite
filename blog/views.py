@@ -21,7 +21,7 @@ r = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=set
 # 首页
 def get_index_page(request):
     # userinfo = UserInfo.objects.filter(user=request.user)
-    columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
     tags = ArticleTag.objects.all().distinct()  # 标签
 
     all_article = Article.objects.all()
@@ -64,12 +64,11 @@ def get_index_page(request):
 def get_detail_page(request, article_id):
     all_article = Article.objects.all()  # 所有文章
     # 遍历所属栏目
-    columns = ArticleColumn.objects.values('id', 'column').distinct()
+    columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
     tags = ArticleTag.objects.all().distinct()  # 标签
 
     # redis 计算总浏览量
-    total_click = r.incr("article:{}:views".format(article_id))  # 对访问文章的次数进行记录 incr使键值递增
-    # 显示最热文章
+     # 显示最热文章
     hot_article_list = Article.objects.order_by('-click')[:5]
     # 显示最新文章
     recently_article_list = Article.objects.order_by('-publish_date')[:5]
@@ -133,7 +132,7 @@ def get_detail_page(request, article_id):
 def get_cetegory_page(request, id):
     print(id)
     cetegory_article = Article.objects.filter(column=id)  # 指定栏目的所有文章
-    columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
     tags = ArticleTag.objects.all().distinct()  # 标签
 
     # redis 计算总浏览量
@@ -218,7 +217,7 @@ def guestbook(request):
             return JsonResponse({'status': '0'})
 
     if request.method == 'GET':
-        columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+        columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
         guests_list = GuestBook.objects.all().order_by('-create_date')
         return render(request, 'blog/guestbook.html', {'columns': columns,
                                                        'guests_list': guests_list,
@@ -227,12 +226,12 @@ def guestbook(request):
 
 # 资源分享
 def resources(request):
-    columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
 
     return render(request, 'blog/resources.html', {'columns': columns})
 
 
 # 关于我
 def aboutme(request):
-    columns = ArticleColumn.objects.values('id', 'column').distinct()  # 所属栏目
+    columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
     return render(request, 'blog/aboutme.html', {'columns': columns})

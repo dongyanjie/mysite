@@ -6,201 +6,291 @@
 {% block left_content %}
 
     {% if curr_article %}
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            {% if curr_article %}
-                <div class="single-blog-title mt-5">
-                    <strong>&nbsp;点赞本文的读者：</strong>
-                    {% for user in curr_article.dianzan.all %}
-                        <p> &nbsp;<span>{{ user.username }}，&nbsp;</span></p>
-                    {% empty %}
-                        <p>
-                            <small>&nbsp;此文章还没有人点赞呢~</small>
-                        </p>
-                    {% endfor %}
-                </div>
-            {% endif %}
+        <!--导航条-->
+        <nav class="breadcrumb">
+            <div class="container"><i class="Hui-iconfont">&#xe67f;</i> <a href="/blog/" class="c-primary">首页</a>
+                <span class="c-gray en">&gt;</span> <span class="c-gray">文章</span>
+                <span class="c-gray en">&gt;</span> <span class="c-gray">{{ curr_article.title }}</span></div>
+        </nav>
 
-            <!-- Blog Title -->
-            <div class="single-blog-title mt-5">
-                <h2><span>{{ curr_article.title }}</span></h2>
-            </div>
-            <!-- Blog Created Date -->
-            <div class="single-blog-meta">
-                <p>&nbsp;<span
-                        class="glyphicon glyphicon-time">{{ curr_article.publish_date |date:'Y-m-d ' }} &nbsp;&nbsp;</span>
-                    <span class="glyphicon glyphicon-eye-open">浏览量 {{ total_click }} &nbsp;&nbsp;</span>
-                    <span class="glyphicon glyphicon-heart">点赞数 {{ curr_article.dianzan.count }}&nbsp;&nbsp;&nbsp;</span>
-                    {% if user in curr_article.dianzan.all %}
-                        <span style="color: #f38e81;">您已点赞</span>
-                    {% else %}
-                        <span><a href="javascript:;"
-                                 onclick="article_dianzan({{ curr_article.article_id }}, 'like')"><span
-                                class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+
+        <div class="row w_main_row">
+
+            {#            <div class="col-lg-9 col-md-9 w_main_left">#}
+            <div class="">
+                <div class="panel panel-default  mb-20">
+                    {% if curr_article %}
+                        <div class="single-blog-title mt-5">
+                            <strong>&nbsp;点赞本文的读者：</strong>
+                            {% for user in curr_article.dianzan.all %}
+                                <p> &nbsp;<span>{{ user.username }}，&nbsp;</span></p>
+                            {% empty %}
+                                <p>
+                                    <small>&nbsp;此文章还没有人点赞呢~</small>
+                                </p>
+                            {% endfor %}
+                        </div>
                     {% endif %}
-                </p>
-                <p>&nbsp;<span class="glyphicon glyphicon-tags"
-                               style="color: #009f95">Tags:</span>&nbsp;&nbsp;{{ curr_article.tag.all |join:', ' }}</p>
-                <hr>
+                    <div class="panel-body pt-10 pb-10">
+                        <!-- Blog Title -->
+                        <h2 class="c_titile">{{ curr_article.title }}</h2>
+                        <!-- Blog Created Date -->
 
+                        <p class="box_c">
+
+                            <span class="d_time">发布时间：{{ curr_article.publish_date |date:'Y-m-d ' }}</span>
+                            <span>浏览量 （{{ total_click }}） &nbsp;&nbsp;</span>
+                            <span>点赞数 （{{ curr_article.dianzan.count }}）&nbsp;&nbsp;</span>
+                            {% if user in curr_article.dianzan.all %}
+                                <span style="color: #f38e81;">您已点赞</span>
+                            {% else %}
+                                <span><a href="javascript:;"
+                                         onclick="article_dianzan({{ curr_article.article_id }}, 'like')"><span
+                                        class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                            {% endif %}
+                        </p>
+
+
+                        <div class="keybq">
+                            <p style="color: #009f95">Tags:</span>&nbsp;&nbsp;{{ curr_article.tag.all |join:', ' }}
+                            </p>
+                        </div>
+
+                        <ul class="infos">
+                            {#                  摘要  #}
+                            <div class="col-lg-1 col-md-1 col-sm-1 text-center">
+                                <smail>摘要</smail>
+                            </div>
+                            <div class="col-lg-11 col-md-11 col-sm-11" style="color: #FD482C;">
+                                {{ curr_article.brief_content }}
+                            </div>
+                            <hr>
+                            {#                 内容   #}
+                            <div class="single-blog-content">
+                                <p>
+                                    <img style="width: 100px;height: 100px;" class="img-fluid"
+                                         src="{% static 'img/ben-kolde-365811-unsplash.jpg' %}"
+                                         alt="single-post-img">
+                                    {{ curr_article.content }}
+                                </p>
+                            </div>
+                            <p><a href="http://www.aliyun.com/product/ecs" target="_blank"><strong><span
+                                    style="color: rgb(0, 0, 255);">前往阿里云官网购买&gt;&gt;</span></strong></a></p>
+                            <p>&nbsp;</p>
+                            <p align="center" class="pageLink">中间字</p>
+
+                        </ul>
+                        <div class="nextinfo">
+                            <a class="last" href="/blog/detail/{{ previous_article.article_id }}">
+                                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                                上一篇：{{ previous_article.title| slice:':10' }}...</a>
+                            <a class="next" href="/blog/detail/{{ next_article.article_id }}">
+                                下一篇：{{ next_article.title| slice:':10' }}...<i class="fa fa-angle-double-right"
+                                                                               aria-hidden="true"></i></a>
+                        </div>
+                        {#    {% else %}#}
+                        {#        <p>没有找到您要的文章，请正确操作哦~</p>#}
+                        {#    {% endif %}#}
+                    </div>
+                </div>
+
+
+                {#       评论区   #}
+                <div class="panel panel-default  mb-20">
+                    <div class="tab-category">
+                        <strong>评论区</strong>
+                        <h4 class="">共 {{ curr_article.article_comment.count }} 条评论</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel-body" style="margin: 0 3%;">
+                            <div class="mb-20">
+                                <ul class="commentList">
+                                    {% for comment in curr_article.article_comment.order_by %}
+                                        <li class="item cl"><i class="avatar size-L radius"><img alt=""
+                                                                                                 src="{% static 'images/photo.jpg' %}"></i>
+                                            <div class="comment-main">
+                                                <header class="comment-header">
+                                                    <div class="comment-meta"><a class="comment-author"
+                                                                                 href="#">{{ comment.commentator }}</a>
+                                                        {{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}
+                                                    </div>
+                                                </header>
+                                                <div class="comment-body">
+                                                    <p> &nbsp;{{ comment.content }}</p>
+                                                </div>
+                                            </div>
+
+                                            {#  判断是否是本人登录 ，只有本人可以回复#}
+                                            {#                                            {% if user.is_authenticated and user.username == 'admin' %}#}
+                                            {#                                                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}#}
+                                            {#                                                </div>#}
+                                            {##}
+                                            {#                                                <div>#}
+                                            {#                    <textarea class="form-control" style="height:50px;width: 500px" placeholder="在这里回复..."#}
+                                            {#                              id="content"></textarea>#}
+                                            {#                                                    <button type="button" class="btn btn-success" id="comment"#}
+                                            {#                                                            style="float: right">回&nbsp;复&nbsp;#}
+                                            {#                                                    </button>#}
+                                            {#                                                </div>#}
+                                            {#                                            {% else %}#}
+                                            {#                                                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}#}
+                                            {#                                                </div>#}
+                                            {#                                                &nbsp;&nbsp;&nbsp;<br>#}
+                                            {#                                            {% endif %}#}
+
+                                        </li>
+                                    {% empty %}
+                                        <br> <p>快来第一个评论吧~</p>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+
+                            <!-- Blog Comments Section -->
+                            <!--用于评论-->
+                            <div class="mt-20" id="ct">
+                                <hr>
+                                {% if user.is_authenticated %}
+                                    <div id="err" class="Huialert Huialert-danger hidden radius">成功状态提示</div>
+
+                                    <header class="comment-header">
+                                        用户：<span>{{ user.username }}</span>
+                                        <div>写评论：<br> <textarea name="id_content" id="id_content"
+                                                                rows="5px" cols="auto"
+                                                                placeholder="在这里写评论哦~"></textarea>
+                                            <div class="text-r mt-10">
+                                                <input type="button" class="btn btn-success" id="add_comment"
+                                                       value="发评论"/>
+                                            </div>
+                                        </div>
+
+                                    </header>
+                                {% else %}
+                                    <br>  <p>您还未登录，请在右上角登录后再来评论~</p>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- Left Column -->
-        <div class="col-lg-12 col-md-12 col-sm-12">
-        <!-- Blog Content -->
-        <div class="single-blog">
-        <div class="blog-image mt-4">
-            <img class="img-fluid" src="img/1.jpg" alt="blog">
+
         </div>
 
-        <div class="row quote-box mt-4 mb-5">
-            <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                <smail>摘要</smail>
-            </div>
-            <div class="col-lg-11 col-md-11 col-sm-11">
-                <p class="quote-box-content">{{ curr_article.brief_content }}</p>
-            </div>
-        </div>
-
-        <div class="single-blog-content">
-            <p>{{ curr_article.content }}</p>
-
-{#            <div class="row">#}
-{#                <div class="col-lg-7 col-md-7 col-sm-6">#}
-{#                    <h4>translation by H. Rackham</h4>#}
-{#                    <p>{{ curr_article.brief_content }}</p>#}
-{#                </div>#}
-{#                <div class="col-lg-5 col-md-5 col-sm-6 pt-5">#}
-{#                    <img class="img-fluid" src="{% static 'img/ben-kolde-365811-unsplash.jpg' %}"#}
-{#                         alt="single-post-img">#}
-{#                </div>#}
-{#            </div>#}
-        </div>
-
-        <!-- Blog Navigation -->
-        <div class="single-blog-post-navigation">
-            <a class="" href="/blog/detail/{{ previous_article.article_id }}">
-                <i class="fa fa-angle-double-left" aria-hidden="true"></i> 上一篇：{{ previous_article.title| slice:':10' }}...</a>
-            <a class="float-right" href="/blog/detail/{{ next_article.article_id }}">
-                下一篇：{{ next_article.title| slice:':10' }}...<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-        </div>
     {% else %}
         <p>没有找到您要的文章，请正确操作哦~</p>
     {% endif %}
 
+{% endblock %}
+{% block sidebar %}
+    <br><br>
+    <!-- 推荐相似文章 Blog -->
+    <div class="bg-fff box-shadow radius mb-20">
+        {% if silimar_article_list %}
 
-<!-- Blog Comments Section -->
-<h4 class="mt-5">共 {{ curr_article.article_comment.count }} 条评论</h4>
-{% for comment in curr_article.article_comment.order_by %}
-    <div class="single-blog-comment">
-        <div class="row mb-5">
-            <div class="col-md-1 col-sm-1 col-lg-1">
-                <img class="img-fluid mb-2" src="{% static 'images/photo.jpg' %}">
+            <div class="tab-category">
+                <a href=""><strong>相似文章</strong></a>
             </div>
-            <div class="col-md-11 col-sm-11 col-lg-11">
-                <div class="user-name">
-                    <h6>{{ comment.commentator }}</h6>
-                    <p>{{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}</p>
-                    <p>&nbsp;&nbsp;&nbsp;<i class="fa fa-reply-all" aria-hidden="true"></i>&nbsp;{{ comment.content }}
-                    </p>
-                </div>
+            <div class="tab-category-item">
+                {% for article in silimar_article_list %}
+                    <ul class="">
+                        <li>
+                            <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                                {{ article.title | slice:':15' }}...  <!-- 最多显示10个字符 -->
+                            </a></p>
+                        </li>
+                    </ul>
+                {% endfor %}
             </div>
-            {#  判断是否是本人登录 ，只有本人可以回复#}
-            {% if user.is_authenticated and user.username == 'admin' %}
-                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
-                &nbsp;&nbsp;&nbsp;<br>
-                <div>
-                    <textarea class="form-control" style="height:50px;width: 500px" placeholder="在这里回复..."
-                              id="content"></textarea>
-                    <button type="button" class="btn btn-success" id="comment" style="float: right">回&nbsp;复&nbsp;
-                    </button>
-                </div>
-            {% else %}
-                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
-                &nbsp;&nbsp;&nbsp;<br>
-            {% endif %}
+        {% endif %}
+    </div>
+    <!-- 最热文章 Blog  热门推荐-->
+    <div class="bg-fff box-shadow radius mb-20">
+        <div class="tab-category">
+            <a href=""><strong>热门推荐</strong></a>
+        </div>
+        <div class="tab-category-item">
+            {% for article in hot_article_list %}
+                <ul class="">
+                    <li>
+                        <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                            {{ article.title | slice:':15' }}...  <!-- 最多显示10个字符 -->
+                        </a>
+                            {#   {{ article.publish_date |date:'Y-m-d ' }}</p>#}
+                            <i class="Hui-iconfont" title="点击量">&nbsp;&nbsp;&#xe6c1;</i> {{ article.click }} </p>
+                    </li>
 
+                </ul>
+            {% endfor %}
         </div>
     </div>
-{% empty %}
-    <br> <p>快来第一个评论吧~</p>
-{% endfor %}
-
-<!-- Leave a Reply Form -->
-<div class="single-blog-comment-form">
-    <h4 class="mt-4">看文章，发评论，不要沉默</h4>
-    {% if user.is_authenticated %}
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-
-                <div class="form-group">
-                    用户：<span>{{ user.username }}</span>
-                </div>
-                <div class="form-group">
-                    写评论：&nbsp;&nbsp;<br> <textarea name="id_content" id="id_content" class="form-control" rows="5"
-                                                   placeholder="在这里写评论哦~"></textarea>
-                </div>
-                <input type="button" class="form-btn" id="add_comment" value="发评论"/>
-            </div>
+    <!--友情链接-->
+    <div class="bg-fff box-shadow radius mb-20">
+        <div class="tab-category">
+            <a href=""><strong>友情链接</strong></a>
         </div>
-    {% else %}
-        <br>  <p>您还未登录，请在右上角登录后再来评论~</p>
-    {% endif %}
-</div>
-</div>
-</div>
+        <div class="tab-category-item">
+            <span><i class="Hui-iconfont">&#xe6f1;</i><a href="#" class="btn-link">百度</a></span>
+            <span><i class="Hui-iconfont">&#xe6f1;</i><a href="#" class="btn-link">淘宝</a></span>
+            <span><i class="Hui-iconfont">&#xe6f1;</i><a href="#" class="btn-link">腾讯</a></span>
+            <span><i class="Hui-iconfont">&#xe6f1;</i><a href="#" class="btn-link">慕课网</a></span>
+            <span><i class="Hui-iconfont">&#xe6f1;</i><a href="#" class="btn-link">h-ui</a></span>
+        </div>
+    </div>
 
-    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-    <script>
-        {#文章点赞    ajax方式#}
 
-        function article_dianzan(id, action) {
-            $.ajax({
-                url: "{% url 'blog:article_dianzan' %}",
-                type: "POST",
-                data: {
-                    'id': id,
-                    'action': action,
-                },
-                async: false,
-                success: function (e) {
-                    console.log("run");
 
-                    if (e == "1") {
-                        layer.msg('感谢点赞,我会继续努力...');
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 1000);
+<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+<script>
+    {#文章点赞    ajax方式#}
 
-                    } else {
-                        layer.msg('亲爱的，登录后再来点赞哦~');
-                    }
-                },
-            });
-        }
+    function article_dianzan(id, action) {
+        $.ajax({
+            url: "{% url 'blog:article_dianzan' %}",
+            type: "POST",
+            data: {
+                'id': id,
+                'action': action,
+            },
+            async: false,
+            success: function (e) {
+                console.log("run");
 
-        {#  发表评论   #}
-        $('#add_comment').on('click', function () {
-            var content = $('#id_content').val();
+                if (e == "1") {
+                    layer.msg('感谢点赞,我会继续努力...');
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1000);
 
-            $.ajax({
-                url: "{% url 'blog:article_comment' %}",
-                type: 'POST',
-                data: {'article_id':{{ curr_article.article_id }}, 'content': content},
-                success: function (e) {
-                    if (e == "1") {
-                        layer.msg('感谢您的评论,我会继续努力...');
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 1000);
-                    } else if (e == "null") {
-                        layer.msg('内容不能为空');
-                    } else {
-                        layer.msg('评论失败，请重试.');
-                    }
-                },
-            });
+                } else {
+                    layer.msg('亲爱的，登录后再来点赞哦~');
+                }
+            },
         });
-    </script>
+    }
+
+    {#  发表评论   #}
+    $('#add_comment').on('click', function () {
+        var content = $('#id_content').val();
+
+        $.ajax({
+            url: "{% url 'blog:article_comment' %}",
+            type: 'POST',
+            data: {'article_id':{{ curr_article.article_id }}, 'content': content},
+            success: function (e) {
+                if (e == "1") {
+                    layer.msg('感谢您的评论,我会继续努力...');
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 1000);
+                } else if (e == "null") {
+                    layer.msg('内容不能为空');
+                } else {
+                    layer.msg('评论失败，请重试.');
+                }
+            },
+        });
+    });
+</script>
 
 {% endblock %}

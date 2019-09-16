@@ -5,55 +5,63 @@
 {% block title %}查找栏目{% endblock %}
 
 {% block left_content %}
+    <!--导航条-->
+    <nav class="breadcrumb">
+        <div class="container"><i class="Hui-iconfont">&#xe67f;</i> <a href="/blog/" class="c-primary">首页</a>
+            <span class="c-gray en">&gt;</span> <span class="c-gray">技术杂谈</span>
+            {#                <span class="c-gray en">&gt;</span> <span class="c-gray">{{ curr_article.title }}</span>#}
+        </div>
+    </nav>
 
-    <!-- 路径导航-->
-    <div class="col-md-12 col-lg-12 col-sm-12 col-12 text-center">
-        <div class="seprate-page-title pt-5 pb-4">
-            <ul class="breadcrumb">
-                <li><a href="/blog/">Home</a></li>
-                <li>Category</li>
+
+    {#    ----------------------------------#}
+    {% if page_article_list %}
+        <div class="art_content">
+            <ul class="index_arc">
+                {% for article in page_article_list %}
+                    <li class="index_arc_item">
+                        <a href="#" class="pic">
+                            <img class="lazyload" data-original="temp/art.jpg" alt="应该选"/>
+                        </a>
+                        {#                    标题#}
+                        <h4 class="title"><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h4>
+                        <div class="date_hits">
+						<span
+                                class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
+                            / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
+                            / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            {% if user in article.dianzan.all %}
+                                <span>已点赞</span>
+                            {% else %}
+                                <span><a href="javascript:;"
+                                         onclick="article_dianzan({{ article.article_id }}, 'like')"><span
+                                        class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                            {% endif %}
+                            <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> 276° </p>
+                            <p class="commonts"><i class="Hui-iconfont" title="评论数">&#xe622;</i> <span
+                                    class="cy_cmt_count">20</span>
+                            </p>
+                        </div>
+                        <!-- Blog Image -->
+                        <div class="blog-image">
+                            {#                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">#}
+                        </div>
+                        {#                文章内容 #}
+                        <div class="desc"><p>{{ article.brief_content |truncatewords:30 }}</p></div>
+
+                        <!-- Blog Read More Navigation -->
+                        <div style="color: red;float: right">
+                            <a href="/blog/detail/{{ article.article_id }}">
+                                Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
+                        </div>
+                        <br>
+                    </li>
+
+                {% endfor %}
             </ul>
         </div>
-    </div>
 
-    {% if page_article_list %}
-        <!-- Left column -->
-        {% for article in page_article_list %}
-            <div class="blog">
-                <!-- Blog Title -->
-                <div class="blog-title">
-                    <h2><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h2>
-                </div>
-                <!-- Blog Created Date -->
-                <div class="blog-meta">
-                    <p><span
-                            class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
-                        / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
-                        / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        {% if user in article.dianzan.all %}
-                            <span>已点赞</span>
-                        {% else %}
-                            <span><a href="javascript:;"
-                                     onclick="article_dianzan({{ article.article_id }}, 'like')"><span
-                                    class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
-                        {% endif %}
-                    </p>
-                </div>
-                <!-- Blog Image -->
-                <div class="blog-image">
-                    <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">
-                </div>
-                <!-- Blog Content -->
-                <div class="blog-content">
-                    <p>{{ article.brief_content |truncatewords:30 }}</p>
-                </div>
-                <!-- Blog Read More Navigation -->
-                <div class="blog-read-more">
-                    <a href="/blog/detail/{{ article.article_id }}">
-                        Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
-                </div>
-            </div>
-        {% endfor %}
+        {#----------------------------------#}
 
         <!-- 分页 Blog Pagination -->
         <div class="blog-pagination">
@@ -87,7 +95,6 @@
     {% endif %}
 
 
-
     <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
     <script>
         {#文章点赞    ajax方式#}
@@ -118,4 +125,9 @@
         }
     </script>
 
+
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'blog/sidebar.html' %}
 {% endblock %}

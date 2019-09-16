@@ -6,7 +6,8 @@ from django.urls import reverse
 # 文章栏目表
 class ArticleColumn(models.Model):
     user = models.ForeignKey(User, related_name='article_column', on_delete=models.CASCADE, verbose_name='创建者')  # 一对多
-    column = models.CharField(max_length=100, verbose_name='栏目')
+    column = models.CharField(max_length=100, verbose_name='栏目名称')
+    classify = models.IntegerField(verbose_name='栏目分类', default=1)  # 1为技术杂谈  2为生活感悟
     created_time = models.DateField(auto_now_add=True, verbose_name='创建时间')
 
     def __str__(self):

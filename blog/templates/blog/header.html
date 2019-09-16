@@ -1,0 +1,118 @@
+{% load staticfiles %}
+
+{#  导航栏#}
+<div class="navbar navbar-fixed-top">
+    <div class="container cl">
+        <a class="navbar-logo hidden-xs" href="/blog/">
+            <img class="logo" src="{% static 'img/logo.png' %}" alt="Lao博客"/>
+        </a>
+        <nav class="nav navbar-nav nav-collapse w_menu" role="navigation">
+            <ul class="cl">
+                <li class="active"><a href="/blog/" data-hover="首页">首页</a></li>
+                <li><a href="{% url 'blog:aboutme' %}" data-hover="关于我">关于我</a></li>
+                <li><a href="{% url 'blog:resources' %}" data-hover="资源分享">资源分享</a></li>
+                <li class="nav-item" onmouseover="onMouseover('cate_list1')" onmouseout="onMouseout('cate_list1')">
+                    <a href="javascript:;">技术杂谈</a>
+                    <ul id="cate_list1" style="display: none">
+                        {% for column in columns %}
+                            {% if column.classify is 1 %}
+                                <li>
+                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item" onmouseover="onMouseover('cate_list2')" onmouseout="onMouseout('cate_list2')">
+                    <a href="javascript:;">生活感悟</a>
+                    <ul id="cate_list2" style="display: none">
+                        {% for column in columns %}
+                            {% if column.classify is 2 %}
+                                <li>
+                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="{% url 'blog:guestbook' %}" data-hover="留言板">留言板</a></li>
+            </ul>
+        </nav>
+        <nav class="navbar-nav navbar-userbar hidden-xs hidden-sm " style="top: 0;">
+            <ul class="cl">
+
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="#" class="nav-link">
+                            {% if user.userinfo.photo_url %}
+                                <img src="/{{ user.userinfo.photo_url | striptags }}" class="img-circle" id="my_photo"
+                                     name="user_face" style="height: 25px;width: 30px;">
+                            {% else %}
+                                <img name="user_face" src="{% static 'images/photo.jpg' %}" class="img-circle"
+                                     id="my_photo" style="height: 25px;width: 30px;">
+                            {% endif %}
+                            &nbsp;欢迎您：<span> {{ user.username }}</span>
+                            &nbsp;&nbsp;&nbsp; <a href="{% url 'account:user_logout' %}"
+                                                  class="nav-link"><span>注销</span></a>
+                        </a>
+                    </li>
+                {% else %}
+
+                    <li><a href="#" id="userLogin"><span>登录</span></a>
+                        <a href="#" id="userRegister"><span>注册</span></a></li>
+
+                {% endif %}
+
+            </ul>
+
+        </nav>
+    </div>
+</div>
+
+
+<script src="{% static 'js/layer.js' %}"></script>
+<script>
+    //弹出一个页面层 登录页
+    $('#userLogin').on('click', function () {
+        layer.open({
+            title: '用户注册/登录',
+            type: 1,
+            type: 2,
+            area: ['500px', '500px'],
+            shadeClose: true, //点击遮罩关闭
+            content: '{% url "account:user_login" %}',
+            btn: ['Cancel'],
+            btn1: function (index, layero) {
+                parent.location.reload();
+            }
+        });
+    });
+    //弹出一个页面层 注册页
+    $('#userRegister').on('click', function () {
+            layer.open({
+                title: '用户注册/登录',
+                type: 1,
+                type: 2,
+                area: ['500px', '620px'],
+                shadeClose: true, //点击遮罩关闭
+                content: '{% url "account:user_register" %}',
+                btn: ['Cancel'],
+                btn1: function (index, layero) {
+                    parent.location.reload();
+                }
+            });
+        }
+    );
+
+
+    function onMouseover(obj) {
+        var div = document.getElementById(obj);
+        div.style.display = "block";
+    }
+
+    function onMouseout(obj) {
+        var div = document.getElementById(obj);
+        div.style.display = "none";
+    }
+
+</script>

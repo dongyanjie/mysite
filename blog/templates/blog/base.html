@@ -4,48 +4,67 @@
 <head>
     <title>{% block title %}{% endblock %} </title>
     {#标题图标#}
-    {#    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">#}
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
 
     <!-- Custom styles -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
-    <!-- Custom fonts -->
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}">
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">#}
+    {#    <!-- Bootstrap core CSS -->#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">#}
+    {#    <!-- Custom fonts -->#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome/css/font-awesome.min.css' %}">#}
+
+
+    {#新加 #}
+    <link rel="Bookmark" href="{% static 'favicon.ico' %}">
+    <link rel="Shortcut Icon" href="favicon.ico"/>
+    <!--[if lt IE 9]>
+{#<script type="text/javascript" src="/staticRes/js/html5shiv.js"></script>#}
+{#<script type="text/javascript" src="/staticRes/js/respond.min.js"></script>#}
+<![endif]-->
+    <link rel="stylesheet" type="text/css" href="{% static 'plugin/h-ui/css/H-ui.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'plugin/Hui-iconfont/1.0.8/iconfont.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'plugin/pifu/pifu.css' %}"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+
+    function showSide() {
+        $('.navbar-nav').toggle();
+    }</script>
+
+
+    {#    结束新加 #}
     <script src="{% static 'js/jquery.min.js' %}"></script>
 
+
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    {% include './nav.html' %}
+
+<header class="navbar-wrapper">
+    {% include './header.html' %}
     {#    {% include 'account/login.html' %}#}
-</nav>
-<!--路径导航-->
-<!--<ol class="breadcrumb">-->
-<!--  <li><a href="#">Home</a></li>-->
-<!--  <li><a href="#">Library</a></li>-->
-<!--  <li class="active">Data</li>-->
-<!--</ol>-->
+</header>
 
 
-<div class="content-section">
-    <div class="container">
-        <!-- Content -->
-        <div class="row">
-            <!-- 左侧栏 -->
-            <div class="col-lg-8 col-md-8">
-                {% block left_content %}{% endblock %}
-            </div>
-            <!-- 右侧栏 -->
-            <div class="col-lg-4 col-md-4">
-                {% include 'blog/sidebar.html' %}
-            </div>
-
+<section class="container pt-20">
+    <!-- Content -->
+    <div class="row">
+        <!-- 左侧栏 -->
+        <div class="col-lg-9 col-md-9">
+            {% block left_content %}{% endblock %}
         </div>
-    </div>
-</div>
+        <!-- 右侧栏 -->
+        <div class="col-lg-3 col-md-3">
+            {% block sidebar %} {% endblock %}
+        </div>
 
-</body>
+    </div>
+</section>
+
 <footer>
     {% include 'blog/footer.html' %}
 </footer>

@@ -38,10 +38,11 @@
         function add_column() {
             var index = layer.open({
                 title: "新增栏目",
-                area: ['400px', '200px'],
+                area: ['400px', '400px'],
                 skin: "layui-layer-rim",
                 type: 1,
-                content: '<div align="center"><p>&nbsp;&nbsp;请输入栏目名称：</p>{{ column_form.column }}</div>',
+                content: '<div align="center">' +
+                    '<p>&nbsp;&nbsp;请输入栏目名称：</p>{{ column_form.column }}<p>&nbsp;&nbsp;请选择栏目类别（1为技术杂谈，2为生活感悟）：</p>{{ column_form.classify }}</div>',
                 btn: ['确定', '取消'],
                 yes: function (index, layero) {
                     column_name = $('#id_column').val();

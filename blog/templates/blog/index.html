@@ -4,60 +4,121 @@
 {% block title %}首页{% endblock %}
 {% block left_content %}
 
-    <!-- 路径导航-->
-    <div class="col-md-12 col-lg-12 col-sm-12 col-12 text-center">
-        <div class="seprate-page-title pt-5 pb-4">
-            <ul class="breadcrumb">
-                <li><a href="/blog/">Home</a></li>
-                <li>Blog</li>
-            </ul>
+
+    <!--路径导航  导航条-->
+    <nav class="breadcrumb">
+        <div class="container"><i class="Hui-iconfont">&#xe67f;</i>
+            <a href="/blog/" class="c-primary">首页</a>
+        </div>
+    </nav>
+
+    <!--滚动图-->
+    <div class="slider_main">
+        <div class="slider">
+            <div class="bd">
+                <ul>
+                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner1.jpg' %}"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner8.png' %}"></a></li>
+                </ul>
+            </div>
+            <ol class="hd cl dots">
+                <li>1</li>
+                <li>2</li>
+            </ol>
+            <a class="slider-arrow prev" href="javascript:void(0)"></a>
+            <a class="slider-arrow next" href="javascript:void(0)"></a>
         </div>
     </div>
 
+
     <!-- Left column -->
-    {% for article in page_article_list %}
-        <div class="blog">
-            <!-- Blog Title -->
-            <div class="blog-title">
-                <h2><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h2>
-            </div>
-            <!-- Blog Created Date -->
-            <div class="blog-meta">
-                <p><span
-                        class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
-                    / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
-                    / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    {% if user in article.dianzan.all %}
-                        <span>已点赞</span>
-                    {% else %}
-                        <span><a href="javascript:;" onclick="article_dianzan({{ article.article_id }}, 'like')"><span
-                                class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
-                    {% endif %}
-                </p>
-            </div>
-            <!-- Blog Image -->
-            <div class="blog-image">
-                {#                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">#}
-            </div>
-            <!-- Blog Content -->
-            <div class="blog-content">
-                <p>{{ article.brief_content |truncatewords:30 }}</p>
-            </div>
-            <!-- Blog Read More Navigation -->
-            <div class="blog-read-more">
-                <a href="/blog/detail/{{ article.article_id }}">
-                    Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
-            </div>
+    <div class="mt-20 bg-fff box-shadow radius mb-5">
+        <div class="tab-category">
+            <a href=""><strong class="current">最新发布</strong></a>
         </div>
-    {% endfor %}
+    </div>
+
+    <div class="art_content">
+        <ul class="index_arc">
+
+
+            {% for article in page_article_list %}
+
+
+                <li class="index_arc_item">
+                    <a href="#" class="pic">
+                        <img class="lazyload" data-original="temp/art.jpg" alt="应该选"/>
+                    </a>
+                    {#                    标题#}
+                    <h4 class="title"><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h4>
+                    <div class="date_hits">
+						<span
+                                class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
+                        / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
+                        / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        {% if user in article.dianzan.all %}
+                            <span>已点赞</span>
+                        {% else %}
+                            <span><a href="javascript:;"
+                                     onclick="article_dianzan({{ article.article_id }}, 'like')"><span
+                                    class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                        {% endif %}
+                        <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> 276° </p>
+                        <p class="commonts"><i class="Hui-iconfont" title="评论数">&#xe622;</i> <span class="cy_cmt_count">20</span>
+                        </p>
+                    </div>
+                    <!-- Blog Image -->
+                    <div class="blog-image">
+                        {#                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">#}
+                    </div>
+                    {#                文章内容 #}
+                    <div class="desc"><p>{{ article.brief_content |truncatewords:30 }}</p></div>
+
+                    <!-- Blog Read More Navigation -->
+                    <div style="color: red;float: right">
+                        <a href="/blog/detail/{{ article.article_id }}">
+                            Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
+                    </div>
+                    <br>
+                </li>
+
+            {% endfor %}
+
+
+            {#                不带图片#}
+            {#				<li class="index_arc_item no_pic">#}
+            {#					<h4 class="title"><a href="/article/5.html">个人博客应该选择什么样的域名和域名后缀</a></h4>#}
+            {#					<div class="date_hits">#}
+            {#						<span>老王</span>#}
+            {#						<span>2个月前</span>#}
+            {#						<span><a href="/article-lists/10.html">建站</a></span>#}
+            {#						<p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> 276 °</p>#}
+            {#						<p class="commonts"><i class="Hui-iconfont" title="点击量">&#xe622;</i> <span id="sourceId::105" class="cy_cmt_count">20</span></p>#}
+            {#					</div>#}
+            {#					<div class="desc"> 不论搭建什么样的网站，选择一个好的域名都是很有必要的，选择一个好的域名对网站的意义也是不言而喻的。每一个网站都有之对应的域名，就像人的名字一样。每个人都想自己有个好听的名字，网站也是一样。一个网站可以有多个域名，但是一个域名只能对应一个网站。&nbsp;一、域名要好记，方便输入&nbsp; &nbsp; &nbsp; &nbsp;域名本身的意义就是为了人们方便记忆才使用的，不然都用IP地址就好了。所以，网站域名一定要选择好记忆的。因为域名是</div>#}
+            {#				</li>#}
+
+        </ul>
+
+
+        {#          		<div class="text-c mb-20" id="moreBlog">#}
+        {#        	        <a class="btn  radius btn-block " href="javascript:;" onclick="moreBlog();">点击加载更多</a>#}
+        {#        	        <a class="btn  radius btn-block hidden" href="javascript:;">加载中……</a>#}
+        {#        	    </div>#}
+
+
+    </div>
+
+
 
     <!-- 分页 Blog Pagination -->
+
     <div class="blog-pagination">
         <ul class="pagination">
             <li class="page-item">
                 {% if page_article_list.has_previous %}
                     <a class="page-link" href="?page={{ page_article_list.previous_page_number }}">
-                        <i class="fa fa-caret-left" aria-hidden="true"></i></a>
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>上一页</a>
                 {% else %}
                     <a class="page-link" href="?page={{ page_article_list.number }}">
                         <i class="fa fa-caret-left" aria-hidden="true"></i></a>
@@ -70,7 +131,7 @@
             <li class="page-item">
                 {% if page_article_list.has_next %}
                     <a class="page-link" href="?page={{ page_article_list.next_page_number }}">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>下一页</a>
                 {% else %}
                     <a class="page-link" href="?page={{ page_article_list.paginator.num_pages }}">
                         <i class="fa fa-caret-right" aria-hidden="true"></i></a>
@@ -111,4 +172,6 @@
     </script>
 
 {% endblock %}
-
+{% block sidebar %}
+    {% include 'blog/sidebar.html' %}
+{% endblock %}

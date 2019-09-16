@@ -5,7 +5,7 @@ from .models import ArticleColumn, ArticleTag, Article
 class ArticleColumnForm(forms.ModelForm):
     class Meta:
         model = ArticleColumn
-        fields = ("column",)
+        fields = ("column", "classify")
 
 #文章标签表单
 class ArticleTagForm(forms.ModelForm):
