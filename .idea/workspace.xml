@@ -2,379 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d87e44-a3aa-4c15-9423-065f2e876a9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/timeline.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/timeline/cd-icon-location.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/timeline/cd-icon-movie.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/timeline/cd-icon-picture.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/40.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logo1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/logob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/qq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/tab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/temp/banner1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/temp/banner8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/temp/slide1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/temp/slide2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/temp/slide3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/temp/slide4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/weixin.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/wx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/H-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/H-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/jquery.SuperSlide.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/jquery.eventFlow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/WdatePicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/lang/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/lang/zh-cn.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/lang/zh-tw.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/WdatePicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/datePicker.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/default/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/default/img.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/datepicker-dev.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/img.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/whyGreen/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/whyGreen/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/whyGreen/img.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/blank.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/fancybox_loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/fancybox_overlay.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/fancybox_sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/fancybox_buttons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-buttons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-buttons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-media.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-thumbs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-thumbs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/jquery.fancybox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/jquery.fancybox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/fancyBox/jquery.fancybox.pack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/css/H-ui.admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/css/H-ui.login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/acrossTab/acrossTab-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/admin-login-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/admin-loginform-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/cn.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/um.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/js/H-ui.admin.page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/js/de_DE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/icon_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/skin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/icon_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/skin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/icon_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/skin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/icon_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/skin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/icon_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/skin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/icon_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/skin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.ie.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/Hui-tags/empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/acrossTab/acrossTab-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/acrossTab/acrossTab-close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/acrossTab/acrossTab.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dataTable/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dataTable/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dataTable/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dropDown/icon-jt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/201.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/202.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/203.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/204.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/205.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/206.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/207.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/208.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/209.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/210.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/100.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/101.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/102.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/103.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/104.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/105.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/106.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/18.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/19.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/20.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/21.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/22.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/23.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/24.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/25.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/26.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/27.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/28.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/29.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/30.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/31.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/32.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/33.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/34.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/35.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/36.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/37.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/38.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/39.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/40.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/41.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/42.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/43.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/44.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/45.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/46.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/47.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/48.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/49.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/50.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/51.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/52.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/53.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/54.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/55.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/56.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/57.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/58.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/59.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/60.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/61.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/62.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/64.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/65.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/66.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/67.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/68.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/69.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/70.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/71.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/72.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/73.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/74.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/75.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/76.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/77.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/78.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/79.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/80.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/81.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/82.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/83.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/84.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/85.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/86.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/87.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/88.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/89.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/90.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/91.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/92.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/93.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/94.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/95.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/96.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/97.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/98.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/99.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/aero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/aero@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/blue@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/green@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/grey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/grey@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/minimal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/minimal@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/orange.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/orange@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/pink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/pink@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/purple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/purple@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/red@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/yellow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/yellow@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iconpic-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/jselect/iconpic-arrow-down2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/loading/loading-b.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/loading/loading-s.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/rollpic/unslider-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/slider-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/star/iconpic-star-S-default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/star/iconpic-star-S.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_arrow-active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_bg-active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/avatar-default-S.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/avatar-default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/noavatar_small.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/validform/iconpic-error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/validform/iconpic-right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/validform/iconpic-warning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav-active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav_right-active.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav_right-hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tab_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/js/H-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/h-ui/js/H-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/additional-methods.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/jquery.validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/messages_zh.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/validate-methods.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery/1.9.1/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery/1.9.1/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/jquery/jquery-migrate-1.2.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/skin/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/skin/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/skin/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/skin/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/skin/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/2.4/skin/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/skin/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/skin/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/skin/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/skin/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/skin/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/layer/3.0/skin/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/laypage/laypage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/laypage/skin/laypage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/pifu/pifu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/pifu/pifu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/bower.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.caret.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.tag-editor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.tag-editor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.tag-editor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/tagEditor/tag-editor.jquery.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/css/wangEditor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/css/wangEditor.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/css/wangEditor.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/emotions1.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/emotions2.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/emotions3.data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/js/lib/jquery-1.10.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/js/lib/jquery-2.2.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/js/wangEditor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/wangEditor/js/wangEditor.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/Uploader.swf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/icons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/icons.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/progress.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/progress.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/images/success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/upload.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/webuploader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/plugin/webuploader/webuploader.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/art.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/at1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/at2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/banner1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/banner2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/banner3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/gg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/slide1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/slide2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/slide3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/temp/slide4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/aboutme.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/aboutme.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/guestbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/guestbook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/resources.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/resources.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/itadmin/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/itadmin/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/itadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/itadmin/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/itadmin/templates/itadmin/article_column.html" beforeDir="false" afterPath="$PROJECT_DIR$/itadmin/templates/itadmin/article_column.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.min.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -413,106 +47,21 @@
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="useSoftWraps" value="true" />
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mysite" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/blog/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3861">
-              <caret line="143" column="45" selection-start-line="143" selection-end-line="144" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/blog/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/blog/sidebar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="883">
-              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/blog/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2975">
-              <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/blog/category.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3402">
-              <caret line="126" selection-start-line="126" selection-end-line="126" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/templates/blog/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding>
-                <marker date="1568427430161" expanded="true" signature="10449:10508" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/contrib/humanize/templatetags/humanize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+            <state relative-caret-position="264">
+              <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/account/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1291">
-              <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -630,17 +179,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="515" />
-    <option name="y" value="15" />
+    <option name="x" value="650" />
+    <option name="y" value="18" />
     <option name="width" value="1235" />
-    <option name="height" value="990" />
+    <option name="height" value="950" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -651,11 +199,6 @@
             <path>
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -666,25 +209,13 @@
             </path>
             <path>
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -696,6 +227,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -827,6 +359,12 @@
       <workItem from="1568419310612" duration="6891000" />
       <workItem from="1568510863894" duration="1497000" />
       <workItem from="1568520937021" duration="3101000" />
+      <workItem from="1568639731581" duration="744000" />
+      <workItem from="1568851507178" duration="772000" />
+      <workItem from="1568990677263" duration="683000" />
+      <workItem from="1568991527143" duration="2104000" />
+      <workItem from="1569550805362" duration="1840000" />
+      <workItem from="1569970407727" duration="343000" />
     </task>
     <task id="LOCAL-00001" summary="更改前端前提交">
       <created>1568273448165</created>
@@ -835,11 +373,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568273448165</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="临时提交，过渡">
+      <created>1568639839014</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568639839014</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293697000" />
+    <option name="totallyTimeSpent" value="300183000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -852,25 +397,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.5028329" side_tool="true" weight="0.14544237" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49716714" visible="true" weight="0.20978552" />
+      <window_info id="Structure" order="0" sideWeight="0.5042493" side_tool="true" weight="0.22319035" />
+      <window_info id="Favorites" order="1" sideWeight="0.5042493" side_tool="true" weight="0.22319035" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.4957507" visible="true" weight="0.22587131" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49865952" weight="0.32719547" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4984202" weight="0.3842282" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.398017" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49921012" weight="0.32577905" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49865952" weight="0.3243626" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932975" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49932975" weight="0.3243626" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.51340485" side_tool="true" visible="true" weight="0.21388102" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48659518" visible="true" weight="0.21388102" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013405" side_tool="true" weight="0.32577905" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.48592493" visible="true" weight="0.19830029" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.3286119" />
-      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49798927" weight="0.30736545" />
+      <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.49798927" weight="0.305949" />
       <window_info anchor="bottom" id="Database Console" order="14" sideWeight="0.49932975" weight="0.3286119" />
+      <window_info anchor="bottom" id="File Transfer" order="15" weight="0.17705382" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -906,9 +453,50 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更改前端前提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改前端前提交" />
+    <MESSAGE value="临时提交，过渡" />
+    <option name="LAST_COMMIT_MESSAGE" value="临时提交，过渡" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mysite$views.coverage" NAME="views Coverage Results" MODIFIED="1555408910948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/itadmin" />
@@ -1094,10 +682,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog/templates/blog/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3861">
           <caret line="143" column="45" selection-start-line="143" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1647">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/blog/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3159">
+          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1127,33 +746,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1291">
+        <state relative-caret-position="1134">
           <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -1161,17 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/blog/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+        <state relative-caret-position="264">
+          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>

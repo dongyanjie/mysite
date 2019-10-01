@@ -68,7 +68,8 @@ def get_detail_page(request, article_id):
     tags = ArticleTag.objects.all().distinct()  # 标签
 
     # redis 计算总浏览量
-     # 显示最热文章
+    total_click = r.incr("article:{}:views".format(article_id))  # 对访问文章的次数进行记录 incr使键值递增
+    # 显示最热文章
     hot_article_list = Article.objects.order_by('-click')[:5]
     # 显示最新文章
     recently_article_list = Article.objects.order_by('-publish_date')[:5]
