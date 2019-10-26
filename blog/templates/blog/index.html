@@ -18,7 +18,9 @@
             <div class="bd">
                 <ul>
                     <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner1.jpg' %}"></a></li>
-                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner8.png' %}"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner2.png' %}"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner3.jpg' %}"></a></li>
+
                 </ul>
             </div>
             <ol class="hd cl dots">
@@ -63,8 +65,8 @@
                                      onclick="article_dianzan({{ article.article_id }}, 'like')"><span
                                     class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
                         {% endif %}
-                        <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> 276° </p>
-                        <p class="commonts"><i class="Hui-iconfont" title="评论数">&#xe622;</i> <span class="cy_cmt_count">20</span>
+                        <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> {{ article.dianzan.count}}° </p>
+                        <p class="commonts"><i class="Hui-iconfont" title="评论数">&#xe622;</i> <span class="cy_cmt_count">{{ article.article_comment.count }}</span>
                         </p>
                     </div>
                     <!-- Blog Image -->

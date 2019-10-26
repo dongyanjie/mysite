@@ -5,7 +5,7 @@
 {% block title %}文章详情页{% endblock %}
 {% block left_content %}
 
-    {% if curr_article %}
+ {% if curr_article %}
         <!--导航条-->
         <nav class="breadcrumb">
             <div class="container"><i class="Hui-iconfont">&#xe67f;</i> <a href="/blog/" class="c-primary">首页</a>
@@ -13,24 +13,25 @@
                 <span class="c-gray en">&gt;</span> <span class="c-gray">{{ curr_article.title }}</span></div>
         </nav>
 
-
+{#----------------------------------------------------------------------#}
         <div class="row w_main_row">
 
             {#            <div class="col-lg-9 col-md-9 w_main_left">#}
-            <div class="">
+{#            <div class="">#}
                 <div class="panel panel-default  mb-20">
-                    {% if curr_article %}
+{#                    {% if curr_article %}#}
                         <div class="single-blog-title mt-5">
                             <strong>&nbsp;点赞本文的读者：</strong>
-                            {% for user in curr_article.dianzan.all %}
-                                <p> &nbsp;<span>{{ user.username }}，&nbsp;</span></p>
-                            {% empty %}
-                                <p>
+                            <p>
+                                {% for user in curr_article.dianzan.all %}
+                                    &nbsp;<span>{{ user.username }}，&nbsp;</span>
+                                {% empty %}
                                     <small>&nbsp;此文章还没有人点赞呢~</small>
-                                </p>
-                            {% endfor %}
+                                {% endfor %}
+                            </p>
                         </div>
-                    {% endif %}
+{#                    {% endif %}#}
+
                     <div class="panel-body pt-10 pb-10">
                         <!-- Blog Title -->
                         <h2 class="c_titile">{{ curr_article.title }}</h2>
@@ -88,9 +89,6 @@
                                 下一篇：{{ next_article.title| slice:':10' }}...<i class="fa fa-angle-double-right"
                                                                                aria-hidden="true"></i></a>
                         </div>
-                        {#    {% else %}#}
-                        {#        <p>没有找到您要的文章，请正确操作哦~</p>#}
-                        {#    {% endif %}#}
                     </div>
                 </div>
 
@@ -101,8 +99,9 @@
                         <strong>评论区</strong>
                         <h4 class="">共 {{ curr_article.article_comment.count }} 条评论</h4>
                     </div>
+
                     <div class="panel-body">
-                        <div class="panel-body" style="margin: 0 3%;">
+{#                     已评论内容显示  #}
                             <div class="mb-20">
                                 <ul class="commentList">
                                     {% for comment in curr_article.article_comment.order_by %}
@@ -139,6 +138,7 @@
                                             {#                                            {% endif %}#}
 
                                         </li>
+
                                     {% empty %}
                                         <br> <p>快来第一个评论吧~</p>
                                     {% endfor %}
@@ -169,11 +169,10 @@
                                     <br>  <p>您还未登录，请在右上角登录后再来评论~</p>
                                 {% endif %}
                             </div>
-
                         </div>
-                    </div>
+
                 </div>
-            </div>
+{#            </div>#}
 
         </div>
 
@@ -181,7 +180,63 @@
         <p>没有找到您要的文章，请正确操作哦~</p>
     {% endif %}
 
+
+    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+    <script>
+        {#文章点赞    ajax方式#}
+
+        function article_dianzan(id, action) {
+            $.ajax({
+                url: "{% url 'blog:article_dianzan' %}",
+                type: "POST",
+                data: {
+                    'id': id,
+                    'action': action,
+                },
+                async: false,
+                success: function (e) {
+                    console.log("run");
+
+                    if (e == "1") {
+                        layer.msg('感谢点赞,我会继续努力...');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+
+                    } else {
+                        layer.msg('亲爱的，登录后再来点赞哦~');
+                    }
+                },
+            });
+        }
+
+        {#  发表评论   #}
+        $('#add_comment').on('click', function () {
+            var content = $('#id_content').val();
+
+            $.ajax({
+                url: "{% url 'blog:article_comment' %}",
+                type: 'POST',
+                data: {'article_id':{{ curr_article.article_id }}, 'content': content},
+                success: function (e) {
+                    if (e == "1") {
+                        layer.msg('感谢您的评论,我会继续努力...');
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else if (e == "null") {
+                        layer.msg('内容不能为空');
+                    } else {
+                        layer.msg('评论失败，请重试.');
+                    }
+                },
+            });
+        });
+    </script>
+
 {% endblock %}
+
+{#      侧边栏显示#}
 {% block sidebar %}
     <br><br>
     <!-- 推荐相似文章 Blog -->
@@ -237,60 +292,5 @@
             <span><i class="Hui-iconfont">&#xe6f1;</i><a href="#" class="btn-link">h-ui</a></span>
         </div>
     </div>
-
-
-
-<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-<script>
-    {#文章点赞    ajax方式#}
-
-    function article_dianzan(id, action) {
-        $.ajax({
-            url: "{% url 'blog:article_dianzan' %}",
-            type: "POST",
-            data: {
-                'id': id,
-                'action': action,
-            },
-            async: false,
-            success: function (e) {
-                console.log("run");
-
-                if (e == "1") {
-                    layer.msg('感谢点赞,我会继续努力...');
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 1000);
-
-                } else {
-                    layer.msg('亲爱的，登录后再来点赞哦~');
-                }
-            },
-        });
-    }
-
-    {#  发表评论   #}
-    $('#add_comment').on('click', function () {
-        var content = $('#id_content').val();
-
-        $.ajax({
-            url: "{% url 'blog:article_comment' %}",
-            type: 'POST',
-            data: {'article_id':{{ curr_article.article_id }}, 'content': content},
-            success: function (e) {
-                if (e == "1") {
-                    layer.msg('感谢您的评论,我会继续努力...');
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 1000);
-                } else if (e == "null") {
-                    layer.msg('内容不能为空');
-                } else {
-                    layer.msg('评论失败，请重试.');
-                }
-            },
-        });
-    });
-</script>
 
 {% endblock %}
