@@ -10,7 +10,7 @@ from .models import ArticleColumn, ArticleTag, Article
 from .forms import ArticleColumnForm, ArticleTagForm, ArticleForm
 
 # 新增文章栏目
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @csrf_exempt   #解决提交表单时遇到的csrf问题
 def article_column(request):
     if request.method == 'POST':
@@ -31,7 +31,7 @@ def article_column(request):
                                                                })
 
 # 修改文章栏目
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @require_POST
 @csrf_exempt
 def edit_article_column(request):
@@ -48,7 +48,7 @@ def edit_article_column(request):
         return HttpResponse('0')
 
 # 删除文章栏目
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @require_POST
 @csrf_exempt
 def del_article_column(request):
@@ -62,7 +62,7 @@ def del_article_column(request):
 
 
 # 新增文章标签
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @csrf_exempt  # 解决提交表单时遇到的csrf问题
 def article_tag(request):
     if request.method == 'POST':
@@ -83,7 +83,7 @@ def article_tag(request):
                                                             })
 
 # 删除文章标签
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @require_POST
 @csrf_exempt
 def del_article_tag(request):
@@ -96,13 +96,13 @@ def del_article_tag(request):
         return HttpResponse('0')
 
 # 文章详情页
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 def article_detail(request, article_id):
     article = get_object_or_404(Article, article_id=article_id)
     return render(request, 'itadmin/article_detail.html', {'article': article})
 
 # 新增文章
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @csrf_exempt   #解决提交表单时遇到的csrf问题
 def article(request):
     if request.method == 'POST':
@@ -150,7 +150,7 @@ def article(request):
                                                                })
 
 # 编辑文章
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @csrf_exempt
 def edit_article(request):
 
@@ -168,7 +168,7 @@ def edit_article(request):
             return HttpResponse('0')
 
 # 删除文章
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @require_POST
 @csrf_exempt
 def del_article(request):

@@ -23,14 +23,18 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
+    # path('', include('blog.urls')),
     path('blog/', include('blog.urls')),
-    path('account/', include('account.urls')),
+    path('userManage/', include('userManage.urls')),
     path('itadmin/', include('itadmin.urls')),
 
-    path('mdeditor/', include('mdeditor.urls')) # 富文本编辑器
+    path('mdeditor/', include('mdeditor.urls'))  # 富文本编辑器
 ]
 
 if settings.DEBUG:
     # static files (images, css, javascript, etc.)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = "blog.views.page_not_found"
+handler500 = "blog.views.page_error"

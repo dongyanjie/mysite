@@ -1,13 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.core.paginator import Paginator, EmptyPage, InvalidPage, PageNotAnInteger
-from django.db.models import Count
+from django.db.models import Count, Q
 
 from django.contrib.auth.decorators import login_required  # 装饰器 判断是否登录
 from django.views.decorators.csrf import csrf_exempt  # 装饰器  解决csrf问题
 from django.views.decorators.http import require_POST  # 装饰器 只接受post提交
-from itadmin.models import Article, ArticleComment, ArticleColumn, ArticleTag  # 文章模型,文章评论模型,文章栏目,文章标签
-from .models import GuestBook
+from itadmin.models import Article, ArticleComment, ArticleColumn, ArticleTag, GuestBook  # 文章模型,文章评论模型,文章栏目,文章标签，留言板
 
 import redis
 from django.conf import settings  # 引入settiongs中的变量
@@ -169,7 +168,7 @@ def get_cetegory_page(request, id):
 
 
 # 文章点赞
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @require_POST
 @csrf_exempt
 def article_dianzan(request):
@@ -187,7 +186,7 @@ def article_dianzan(request):
 
 
 # 文章评论
-@login_required(login_url='/account/login')
+@login_required(login_url='/userManage/login')
 @require_POST
 @csrf_exempt
 def article_comment(request):
@@ -232,7 +231,58 @@ def resources(request):
     return render(request, 'blog/resources.html', {'columns': columns})
 
 
-# 关于我
-def aboutme(request):
+# 下单打印
+def order_print(request):
     columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
-    return render(request, 'blog/aboutme.html', {'columns': columns})
+    return render(request, 'blog/orderPrint.html', {'columns': columns})
+
+
+# 关键字 查找
+# @csrf_exempt
+def get_search_page(request):
+    columns = ArticleColumn.objects.values('id', 'column', 'classify').distinct()  # 所属栏目
+
+    # redis 计算总浏览量
+    total_click = r.incr("article:{}:views".format(id))  # 对访问文章的次数进行记录 incr使键值递增
+    # 显示最热文章
+    hot_article_list = Article.objects.order_by('-click')[:5]
+    # 搜索功能实现
+    info = request.GET.get('info', '')
+    error_msg = ''
+
+    if not info:
+        error_msg = '请输入搜索关键词'
+        return render(request, 'blog/search.html', {'error_msg': error_msg,
+                                                    'columns': columns,
+                                                    })
+
+    search_article = Article.objects.filter(
+        Q(title__icontains=info) | Q(column__column__icontains=info) | Q(content__icontains=info))
+
+    # 分页
+    paginator = Paginator(search_article, 3)  # 每页显示3条
+    page_num = paginator.num_pages  # 分页的数量
+    try:
+        page = int(request.GET.get('page', 1))  # 获取用户输入的页码,默认为 1
+        page_article_list = paginator.page(page)  # 当前页数内的文章
+    except (EmptyPage, InvalidPage, PageNotAnInteger):
+        page_article_list = paginator.page(1)
+
+    return render(request, 'blog/search.html', {'error_msg': error_msg,
+                                                'search_article': search_article,
+                                                'columns': columns,
+                                                'page_article_list': page_article_list,
+                                                'page_num': range(1, page_num + 1),
+                                                'total_click': total_click,
+                                                'hot_article_list': hot_article_list,
+                                                })
+
+
+# 404页面
+def page_not_found(request):
+    return render_to_response('404.html')
+
+
+# 500页面
+def page_error(request):
+    return render_to_response('500.html')

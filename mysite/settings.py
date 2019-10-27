@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+# import pymsql
+# pymsql.install_as_MYSQLdb()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u-hazihj1+vjric8f3t3ubk3i70ed2!v0wolui9k7ic++k$+%#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -38,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',  # 新的过滤器
     # 我的应用
     'blog.apps.BlogConfig',  # 博客
-    'account.apps.AccountConfig',  # 用户管理
+    'userManage.apps.UserManageConfig',  # 用户管理
     'itadmin.apps.ItadminConfig',  # 用户个人后台
 
     'mdeditor',  # Django-mdeditor富文本编辑
@@ -78,21 +81,29 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#
+#     }
+# }
+
+# 配置mysql
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
-        # #配置mysql
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'mysite_db',
-        # 'USER': 'root',
-        # 'PASSWORD': '',
-        # 'HOST': '127.0.0.1',
-        # 'PORT': '3306',
-
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysite_db',
+        'USER': 'root',
+        'PASSWORD': 'dongyanjie@1219',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -128,13 +139,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static1/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static1')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/media/'
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, 'media')
+]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/uploads')
+
 
 # redis配置
 REDIS_HOST = 'localhost'

@@ -879,7 +879,7 @@ function stopDefault(e) {
 							xhr.status = Number(ta.getAttribute('status')) || xhr.status;
 							xhr.statusText = ta.getAttribute('statusText') || xhr.statusText;
 						} else if (scr) {
-							// account for browsers injecting pre around json response
+							// userManage for browsers injecting pre around json response
 							var pre = doc.getElementsByTagName('pre')[0];
 							var b = doc.getElementsByTagName('body')[0];
 							if (pre) {
@@ -1128,7 +1128,7 @@ function stopDefault(e) {
 			els = $(els).get(); // convert to standard array
 		}
 
-		// #386; account for inputs outside the form which use the 'form' attribute
+		// #386; userManage for inputs outside the form which use the 'form' attribute
 		if (formId) {
 			els2 = $(':input[form="' + formId + '"]').get(); // hat tip @thet
 			if (els2.length) {

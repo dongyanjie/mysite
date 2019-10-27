@@ -1,0 +1,32 @@
+{% extends './base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+{% if user.is_authenticated %}
+ <p style="font-family: 楷体;font-size: 20px;color: #393D49;">您目光深邃，一看您就是一位有思想的人。</p>
+    <p> {{ user.username }}，欢迎您的到来！</p>
+    <p>点击右下角Cancel返回继续浏览</p>
+{#<a href="{% url 'userManage:user_logout' %}">注销</a>&nbsp;<a href="{% url 'userManage:password_change' %}">修改密码</a>#}
+{#<br>点击<a href="{% url 'userManage:my_info' %}">查看</a>我的信息#}
+{#<br><a href="{% url 'itadmin:article_column' %}">后台管理</a>#}
+{% else %}
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title"><h3>Login</h3></div>
+     <form action="." method="post">
+			<div class="login-form">
+				   {% csrf_token %}
+                <p style="color : red">{{ error_message }}</p>
+				<div class="control-group">用户名：{{ form.username }}</div>
+				<div class="control-group">密码：{{ form.password }}</div>
+			    <input type="submit" value="登录" class="btn btn-primary btn-large btn-block">
+				<a class="login-link" href="#">忘记密码?</a>
+			</div>
+       </form>
+		</div>
+	</div>
+
+{#<p>如您还没有注册，请点击<a href="{% url 'userManage:user_register' %}">Register</a>注册</p>#}
+{% endif%}
+
+{% endblock %}

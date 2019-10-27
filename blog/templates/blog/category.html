@@ -2,74 +2,56 @@
 {% load staticfiles %}
 {% load humanize %}
 
-{% block title %}查找栏目{% endblock %}
+{% block title %}栏目分类 {% endblock %}
 
 {% block left_content %}
     <!--导航条-->
     <nav class="breadcrumb">
         <div class="container"><i class="Hui-iconfont">&#xe67f;</i> <a href="/blog/" class="c-primary">首页</a>
-            <span class="c-gray en">&gt;</span> <span class="c-gray">技术杂谈</span>
+            <span class="c-gray en">&gt;</span> <span class="c-gray">   </span>
             {#                <span class="c-gray en">&gt;</span> <span class="c-gray">{{ curr_article.title }}</span>#}
         </div>
     </nav>
 
 
-    {#    ----------------------------------#}
     {% if page_article_list %}
-        <div class="art_content">
-            <ul class="index_arc">
-                {% for article in page_article_list %}
-                    <li class="index_arc_item">
-                        <a href="#" class="pic">
-                            <img class="lazyload" data-original="temp/art.jpg" alt="应该选"/>
-                        </a>
-                        {#                    标题#}
-                        <h4 class="title"><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h4>
-                        <div class="date_hits">
-						<span
-                                class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
-                            / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
-                            / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                            {% if user in article.dianzan.all %}
-                                <span>已点赞</span>
-                            {% else %}
-                                <span><a href="javascript:;"
-                                         onclick="article_dianzan({{ article.article_id }}, 'like')"><span
-                                        class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
-                            {% endif %}
-                            <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> 276° </p>
-                            <p class="commonts"><i class="Hui-iconfont" title="评论数">&#xe622;</i> <span
-                                    class="cy_cmt_count">20</span>
-                            </p>
-                        </div>
-                        <!-- Blog Image -->
-                        <div class="blog-image">
-                            {#                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">#}
-                        </div>
-                        {#                文章内容 #}
-                        <div class="desc"><p>{{ article.brief_content |truncatewords:30 }}</p></div>
+        <div class="row">
+            {% for article in page_article_list %}
+                <div class="col-md-6 col-sm-6">
+                    <article class=" blog-teaser">
+                        <header>
+                            <img src="/static1/{{ article.article_pic }}" alt="">
+                            {#                    标题     #}
+                            <h3><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h3>
+                     <span class="meta">
+                        / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                         <span> / 浏览量：{{ article.click }} &nbsp;&nbsp; </span>
+                        <span>   / 评论总数：{{ article.article_comment.count }}</span>
+                     </span>
+                            <hr>
+                        </header>
 
-                        <!-- Blog Read More Navigation -->
-                        <div style="color: red;float: right">
-                            <a href="/blog/detail/{{ article.article_id }}">
+                        <div class="body">
+                            {#                    摘要 ，简要内容...#}
+                            {{ article.brief_content |truncatewords:30 }}
+                        </div>
+                        <div class="clearfix">
+                            <a href="/blog/detail/{{ article.article_id }}" class="btn btn-clean-one">
                                 Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
                         </div>
-                        <br>
-                    </li>
-
-                {% endfor %}
-            </ul>
+                    </article>
+                </div>
+            {% endfor %}
         </div>
 
         {#----------------------------------#}
-
         <!-- 分页 Blog Pagination -->
         <div class="blog-pagination">
             <ul class="pagination">
                 <li class="page-item">
                     {% if page_article_list.has_previous %}
                         <a class="page-link" href="?page={{ page_article_list.previous_page_number }}">
-                            <i class="fa fa-caret-left" aria-hidden="true"></i></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>上一页</a>
                     {% else %}
                         <a class="page-link" href="?page={{ page_article_list.number }}">
                             <i class="fa fa-caret-left" aria-hidden="true"></i></a>
@@ -82,7 +64,7 @@
                 <li class="page-item">
                     {% if page_article_list.has_next %}
                         <a class="page-link" href="?page={{ page_article_list.next_page_number }}">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <i class="fa fa-caret-right" aria-hidden="true"></i>下一页</a>
                     {% else %}
                         <a class="page-link" href="?page={{ page_article_list.paginator.num_pages }}">
                             <i class="fa fa-caret-right" aria-hidden="true"></i></a>
@@ -90,41 +72,10 @@
                 </li>
             </ul>
         </div>
+
     {% else %}
         <p>抱歉，没有找到您想要的文章~</p>
     {% endif %}
-
-
-    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-    <script>
-        {#文章点赞    ajax方式#}
-
-        function article_dianzan(id, action) {
-            $.ajax({
-                url: "{% url 'blog:article_dianzan' %}",
-                type: "POST",
-                data: {
-                    'id': id,
-                    'action': action,
-                },
-                async: false,
-                success: function (e) {
-                    console.log("run");
-
-                    if (e == "1") {
-                        layer.msg('感谢点赞,我会继续努力...');
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 1000);
-
-                    } else {
-                        layer.msg('亲爱的，登录后再来点赞哦~');
-                    }
-                },
-            });
-        }
-    </script>
-
 
 {% endblock %}
 

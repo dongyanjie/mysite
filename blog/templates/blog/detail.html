@@ -5,7 +5,7 @@
 {% block title %}文章详情页{% endblock %}
 {% block left_content %}
 
- {% if curr_article %}
+    {% if curr_article %}
         <!--导航条-->
         <nav class="breadcrumb">
             <div class="container"><i class="Hui-iconfont">&#xe67f;</i> <a href="/blog/" class="c-primary">首页</a>
@@ -13,172 +13,167 @@
                 <span class="c-gray en">&gt;</span> <span class="c-gray">{{ curr_article.title }}</span></div>
         </nav>
 
-{#----------------------------------------------------------------------#}
-        <div class="row w_main_row">
 
-            {#            <div class="col-lg-9 col-md-9 w_main_left">#}
-{#            <div class="">#}
-                <div class="panel panel-default  mb-20">
-{#                    {% if curr_article %}#}
-                        <div class="single-blog-title mt-5">
-                            <strong>&nbsp;点赞本文的读者：</strong>
-                            <p>
-                                {% for user in curr_article.dianzan.all %}
-                                    &nbsp;<span>{{ user.username }}，&nbsp;</span>
-                                {% empty %}
-                                    <small>&nbsp;此文章还没有人点赞呢~</small>
-                                {% endfor %}
-                            </p>
-                        </div>
-{#                    {% endif %}#}
+        {# ----------------------------------------------------------------    #}
+        <div class="widewrapper main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 blog-main">
+                        <article class="blog-teaser">
+                            <header>
 
-                    <div class="panel-body pt-10 pb-10">
-                        <!-- Blog Title -->
-                        <h2 class="c_titile">{{ curr_article.title }}</h2>
-                        <!-- Blog Created Date -->
-
-                        <p class="box_c">
-
-                            <span class="d_time">发布时间：{{ curr_article.publish_date |date:'Y-m-d ' }}</span>
-                            <span>浏览量 （{{ total_click }}） &nbsp;&nbsp;</span>
-                            <span>点赞数 （{{ curr_article.dianzan.count }}）&nbsp;&nbsp;</span>
-                            {% if user in curr_article.dianzan.all %}
-                                <span style="color: #f38e81;">您已点赞</span>
-                            {% else %}
-                                <span><a href="javascript:;"
-                                         onclick="article_dianzan({{ curr_article.article_id }}, 'like')"><span
-                                        class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
-                            {% endif %}
-                        </p>
+                                <div style="float: left;">
+                                    <strong>&nbsp;点赞本文的读者：</strong>
+                                    <p>
+                                        {% for user in curr_article.dianzan.all %}
+                                            &nbsp;<span>{{ user.username }}，&nbsp;</span>
+                                        {% empty %}
+                                            <small>&nbsp;此文章还没有人点赞呢~</small>
+                                        {% endfor %}
+                                    </p>
+                                </div>
 
 
-                        <div class="keybq">
-                            <p style="color: #009f95">Tags:</span>&nbsp;&nbsp;{{ curr_article.tag.all |join:', ' }}
-                            </p>
-                        </div>
-
-                        <ul class="infos">
-                            {#                  摘要  #}
-                            <div class="col-lg-1 col-md-1 col-sm-1 text-center">
-                                <smail>摘要</smail>
-                            </div>
-                            <div class="col-lg-11 col-md-11 col-sm-11" style="color: #FD482C;">
-                                {{ curr_article.brief_content }}
-                            </div>
-                            <hr>
-                            {#                 内容   #}
-                            <div class="single-blog-content">
-                                <p>
-                                    <img style="width: 100px;height: 100px;" class="img-fluid"
-                                         src="{% static 'img/ben-kolde-365811-unsplash.jpg' %}"
-                                         alt="single-post-img">
+                                {#                                <div class="lead-image">#}
+                                <img src="/static1/{{ curr_article.article_pic }}" alt="">
+                                {#                                </div>#}
+                            </header>
+                            <div class="body">
+                                <h2>{{ curr_article.title }}</h2>
+                                <div class="meta">
+                                    <i class="fa fa-list"></i>所属分类 （{{ curr_article.column }}）
+                                    <i class="fa fa-calendar"></i>{{ curr_article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;
+                                    <i class="fa fa-database"></i>浏览量 （{{ total_click }}）&nbsp;&nbsp;
+                                    <i class="fa fa-user"></i>点赞数 （{{ curr_article.dianzan.count }}）&nbsp;&nbsp;
+                                    {% if user in curr_article.dianzan.all %}
+                                        <span style="color: #f38e81;">您已点赞</span>
+                                    {% else %}
+                                        <span><a href="javascript:;" style="color: #FD482C;"
+                                                 onclick="article_dianzan({{ curr_article.article_id }}, 'like')"><span
+                                                class="fa fa-star-half"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
+                                    {% endif %}
+                                    <br> <span
+                                        style="color: #009f95"> Tags:&nbsp;&nbsp;{{ curr_article.tag.all |join:',  ' }}</span>
+                                </div>
+                                <pre>
                                     {{ curr_article.content }}
-                                </p>
-                            </div>
-                            <p><a href="http://www.aliyun.com/product/ecs" target="_blank"><strong><span
-                                    style="color: rgb(0, 0, 255);">前往阿里云官网购买&gt;&gt;</span></strong></a></p>
-                            <p>&nbsp;</p>
-                            <p align="center" class="pageLink">中间字</p>
+                                </pre>
 
-                        </ul>
-                        <div class="nextinfo">
-                            <a class="last" href="/blog/detail/{{ previous_article.article_id }}">
-                                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                                上一篇：{{ previous_article.title| slice:':10' }}...</a>
-                            <a class="next" href="/blog/detail/{{ next_article.article_id }}">
-                                下一篇：{{ next_article.title| slice:':10' }}...<i class="fa fa-angle-double-right"
+                            </div>
+{#                            <p>#}
+{#                                <a href="http://www.aliyun.com/product/ecs" target="_blank"><strong><span#}
+{#                                    style="color: rgb(0, 0, 255);">前往阿里云官网购买&gt;&gt;</span></strong></a>#}
+{#                            </p>#}
+                        </article>
+
+                        <aside class="pagination">
+                            <a class="page-link" href="/blog/detail/{{ previous_article.article_id }}">
+                                <i class="fa fa-caret-left"
+                                   aria-hidden="true"></i>上一篇：{{ previous_article.title| slice:':10' }}...</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="page-link" href="/blog/detail/{{ next_article.article_id }}">
+                                下一篇：{{ next_article.title| slice:':10' }}...<i class="fa fa-caret-right"
                                                                                aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+                        </aside>
+
+                        <aside class="social-icons clearfix">
+                            <h3>分享到.. </h3>
+                            <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-qq"></i></a> <a
+                                href="#"><i class="fa fa-weixin"></i></a>
+                        </aside>
 
 
-                {#       评论区   #}
-                <div class="panel panel-default  mb-20">
-                    <div class="tab-category">
-                        <strong>评论区</strong>
-                        <h4 class="">共 {{ curr_article.article_comment.count }} 条评论</h4>
-                    </div>
+                        <aside class="comments" id="comments">
+                            <hr>
+                            <h2><i class="fa fa-comments"></i> 共 {{ curr_article.article_comment.count }} 条评论</h2>
 
-                    <div class="panel-body">
-{#                     已评论内容显示  #}
-                            <div class="mb-20">
-                                <ul class="commentList">
-                                    {% for comment in curr_article.article_comment.order_by %}
-                                        <li class="item cl"><i class="avatar size-L radius"><img alt=""
-                                                                                                 src="{% static 'images/photo.jpg' %}"></i>
-                                            <div class="comment-main">
-                                                <header class="comment-header">
-                                                    <div class="comment-meta"><a class="comment-author"
-                                                                                 href="#">{{ comment.commentator }}</a>
-                                                        {{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}
-                                                    </div>
-                                                </header>
-                                                <div class="comment-body">
-                                                    <p> &nbsp;{{ comment.content }}</p>
-                                                </div>
-                                            </div>
-
-                                            {#  判断是否是本人登录 ，只有本人可以回复#}
-                                            {#                                            {% if user.is_authenticated and user.username == 'admin' %}#}
-                                            {#                                                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}#}
-                                            {#                                                </div>#}
-                                            {##}
-                                            {#                                                <div>#}
-                                            {#                    <textarea class="form-control" style="height:50px;width: 500px" placeholder="在这里回复..."#}
-                                            {#                              id="content"></textarea>#}
-                                            {#                                                    <button type="button" class="btn btn-success" id="comment"#}
-                                            {#                                                            style="float: right">回&nbsp;复&nbsp;#}
-                                            {#                                                    </button>#}
-                                            {#                                                </div>#}
-                                            {#                                            {% else %}#}
-                                            {#                                                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}#}
-                                            {#                                                </div>#}
-                                            {#                                                &nbsp;&nbsp;&nbsp;<br>#}
-                                            {#                                            {% endif %}#}
-
-                                        </li>
-
-                                    {% empty %}
-                                        <br> <p>快来第一个评论吧~</p>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-
-
-                            <!-- Blog Comments Section -->
-                            <!--用于评论-->
-                            <div class="mt-20" id="ct">
-                                <hr>
-                                {% if user.is_authenticated %}
-                                    <div id="err" class="Huialert Huialert-danger hidden radius">成功状态提示</div>
-
-                                    <header class="comment-header">
-                                        用户：<span>{{ user.username }}</span>
-                                        <div>写评论：<br> <textarea name="id_content" id="id_content"
-                                                                rows="5px" cols="auto"
-                                                                placeholder="在这里写评论哦~"></textarea>
-                                            <div class="text-r mt-10">
-                                                <input type="button" class="btn btn-success" id="add_comment"
-                                                       value="发评论"/>
-                                            </div>
+                            {% for comment in curr_article.article_comment.order_by %}
+                                <article class="comment">
+                                    <header class="clearfix">
+{#                                        <img src="{% static 'img/avatar.png' %}" alt="A Smart" class="avatar">#}
+                                        <div class="meta">
+                                            <h3><a href="#">{{ comment.commentator }}</a></h3>
+                                            <span class="date">
+                                           {{ comment.created_time |date:'Y-m-d H:i:s'|naturaltime }}
+                                    </span>
+                                            <span class="separator">
+                                        -
+                                    </span>
+                                            <a href="#create-comment" class="reply-link">Reply</a>
                                         </div>
-
                                     </header>
-                                {% else %}
-                                    <br>  <p>您还未登录，请在右上角登录后再来评论~</p>
-                                {% endif %}
-                            </div>
-                        </div>
+                                    <div class="body">
+                                        {{ comment.content }}
+                                    </div>
+                                </article>
+                            {% empty %}
+                                <br> <p>快来第一个评论吧~</p>
+                            {% endfor %}
+                            {#  回复评论 。。#}
+                            {#                        <article class="comment reply">#}
+                            {#                            <header class="clearfix">#}
+                            {#                                <img src="img/avatar.png" alt="A Smart Guy" class="avatar">#}
+                            {#                                <div class="meta">#}
+                            {#                                    <h3><a href="#">John Doe</a></h3>#}
+                            {#                                    <span class="date">#}
+                            {#                                        24 August 2015#}
+                            {#                                    </span>#}
+                            {#                                    <span class="separator">#}
+                            {#                                        -#}
+                            {#                                    </span>#}
+                            {##}
+                            {#                                    <a href="#create-comment" class="reply-link">Reply</a>#}
+                            {#                                </div>#}
+                            {#                            </header>#}
+                            {#                             <div class="body">#}
+                            {#                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere sit perspiciatis debitis, vel ducimus praesentium expedita, assumenda ipsum cum corrupti dolorum modi. Rem ipsam similique sapiente obcaecati tenetur beatae voluptatibus.#}
+                            {#                            </div>#}
+                            {#                        </article>#}
+
+                        </aside>
+                        <!-- Blog Comments Section -->
+                        <!--用于评论-->
+                        <aside class="create-comment" id="create-comment">
+                            <hr>
+                            {% if user.is_authenticated %}
+                                <h2><i class="fa fa-pencil"></i> Add Comment</h2>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" id="comment-name"
+                                               placeholder="{{ user.username }}| Your Name"
+                                               class="form-control input-lg">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" name="email" id="comment-email" placeholder="Email"
+                                               class="form-control input-lg">
+                                    </div>
+                                </div>
+                                <textarea rows="10" name="id_content" id="id_content" placeholder="在这里写评论~ "
+                                          class="form-control input-lg"></textarea>
+
+                                <div class="buttons clearfix">
+                                    <button type="button" class="btn btn-xlarge btn-clean-one" id="add_comment"
+                                            value=""> 发评论
+                                    </button>
+                                </div>
+
+                            {% else %}
+                                <br>
+                                <p>您还未登录，请<a href="#"><span style="color: #FD482C">&nbsp;登录&nbsp;</span></a>后再来评论~</p>
+                            {% endif %}
+                        </aside>
+
+                    </div>
 
                 </div>
-{#            </div>#}
-
+            </div>
         </div>
-
     {% else %}
         <p>没有找到您要的文章，请正确操作哦~</p>
     {% endif %}
+
 
 
     <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
@@ -204,7 +199,7 @@
                         }, 1000);
 
                     } else {
-                        layer.msg('亲爱的，登录后再来点赞哦~');
+                        layer.msg('亲，登录后再来点赞哦~');
                     }
                 },
             });
@@ -236,21 +231,21 @@
 
 {% endblock %}
 
+
 {#      侧边栏显示#}
 {% block sidebar %}
-    <br><br>
-    <!-- 推荐相似文章 Blog -->
-    <div class="bg-fff box-shadow radius mb-20">
-        {% if silimar_article_list %}
 
-            <div class="tab-category">
-                <a href=""><strong>相似文章</strong></a>
-            </div>
-            <div class="tab-category-item">
+    <!-- 推荐相似文章 Blog -->
+    <div class="aside-widget">
+        {% if silimar_article_list %}
+            <header>
+                <h3><strong>相似文章</strong></h3>
+            </header>
+            <div class="body">
                 {% for article in silimar_article_list %}
-                    <ul class="">
+                    <ul class="clean-list">
                         <li>
-                            <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                            <p>-<a href="/blog/detail/{{ article.article_id }}">
                                 {{ article.title | slice:':15' }}...  <!-- 最多显示10个字符 -->
                             </a></p>
                         </li>
@@ -259,28 +254,31 @@
             </div>
         {% endif %}
     </div>
-    <!-- 最热文章 Blog  热门推荐-->
-    <div class="bg-fff box-shadow radius mb-20">
-        <div class="tab-category">
-            <a href=""><strong>热门推荐</strong></a>
-        </div>
-        <div class="tab-category-item">
-            {% for article in hot_article_list %}
-                <ul class="">
-                    <li>
-                        <p>{{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
-                            {{ article.title | slice:':15' }}...  <!-- 最多显示10个字符 -->
-                        </a>
-                            {#   {{ article.publish_date |date:'Y-m-d ' }}</p>#}
-                            <i class="Hui-iconfont" title="点击量">&nbsp;&nbsp;&#xe6c1;</i> {{ article.click }} </p>
-                    </li>
 
+
+    <!-- 最热文章 Blog  热门推荐-->
+    <div class="aside-widget">
+        <header>
+            <h3><strong>热门推荐</strong></h3>
+        </header>
+        <div class="body">
+            {% for article in hot_article_list %}
+                <ul class="clean-list">
+                    <li>
+                        {{ forloop.counter }}、<a href="/blog/detail/{{ article.article_id }}">
+                        {{ article.title | slice:':15' }}...  <!-- 最多显示10个字符 -->
+                    </a>
+                        {#   {{ article.publish_date |date:'Y-m-d ' }}</p>#}
+                        <i class="Hui-iconfont" title="点击量">&nbsp;&nbsp;&#xe6c1;</i> {{ article.click }}
+                    </li>
                 </ul>
             {% endfor %}
         </div>
     </div>
+
+
     <!--友情链接-->
-    <div class="bg-fff box-shadow radius mb-20">
+    <div class="aside-widget">
         <div class="tab-category">
             <a href=""><strong>友情链接</strong></a>
         </div>

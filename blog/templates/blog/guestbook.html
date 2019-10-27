@@ -8,109 +8,103 @@
     <nav class="breadcrumb">
         <div class="container"><i class="Hui-iconfont">&#xe67f;</i>
             <a href="/blog/" class="c-primary">首页</a>
-            <span class="c-gray en">&gt;</span> <span class="c-gray">资源分享</span>
+            <span class="c-gray en">&gt;</span> <span class="c-gray">留言板</span>
         </div>
     </nav>
 
+    <div class="contact-me">
+        <h3 style="font-family: 楷体">生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。
+            <br>My Email: <a href="mailto:735238082@qq.com">735238082@qq.com</a></h3>
+        {#        <h5><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; &nbsp; China ShanDong QingDao</h5>#}
+    </div>
 
-<div class="container">
-            <!-- Contact Content -->
-            <div class="contact-me">
-                <p>生活是一种绵延不绝的渴望，渴望不断上升，变得更伟大而高贵。</p>
-                <h4>email: <a href="mailto:735238082@qq.com">735238082@qq.com</a></h4>
-                <h6><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; &nbsp; China ShanDong QingDao</h6>
-                <!-- Social Media Account -->
-                <div class="contact-social mt-3">
-                    <a href="#"><i class="fa fa-qq" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-weixin" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 clean-superblock" id="contact">
+                <h2 style="font-family: 楷体">留下您的宝贵建议~ 🙂</h2>
+
+                <form class="contact-form">
+                    <input type="text" name="name" id="name" placeholder="Your Name..."
+                           class="form-control input-lg">
+                    <input type="email" name="email" id="email" placeholder="Your Email..."
+                           class="form-control input-lg">
+                    <textarea rows="10" name="content" id="content" placeholder="Your Message..."
+                              class="form-control input-lg"></textarea>
+
+                    <div class="buttons clearfix">
+                        <button type="button" id="tijiao" class="btn btn-xlarge btn-clean-one">提&nbsp;交&nbsp;留&nbsp;言
+                        </button>
+                    </div>
+                </form>
             </div>
-</div>
+        </div>
+    </div>
 
 
-{#  留言表单  #}
-<div style="text-align: center;font-family: 新宋体" class="container">
-    <div class="input-group input-group-lg">
-        <h4><span class="input-group-addon">您的姓名：</span></h4>
-        <input type="text" class="form-control" placeholder="怎么称呼 ..." id="name">
-    </div>
-    <div class="input-group input-group-lg ">
-        <h4><span class="input-group-addon">您的邮箱：</span></h4>
-        <input type="text" class="form-control" placeholder="留下您的邮箱，方便与您交流 ..." id="email">
-    </div>
-    <div class="input-group input-group-lg">
-        <h4><span class="input-group-addon">留言内容：</span></h4>
-        <textarea class="form-control" style="height:200px;" placeholder="亲，留下您的宝贵意见 ..." id="content"></textarea>
-    </div>
-    <br>
-    <button type="button" class="btn btn-group-lg btn-success" style="width:20%;height: 50px;font-size: 20px"
-            id="tijiao">提&nbsp;交&nbsp;留&nbsp;言
-    </button>
-</div>
-<hr>
-{#    留言列表模块    #}
-<div class="container page-body">
-    {% for guest in guests_list %}
-        <div>
+    <hr>
+    {#    留言列表模块    #}
+    <div class="container page-body">
+        {% for guest in guests_list %}
+            <div>
            <span>
                  <strong style="color: #393D49;font-size: 15px;color:#2F4056">{{ guest.name }}</strong>&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;{{ guest.create_date |date:'Y-m-d H:i:s' }}
-                  &nbsp;<span class="glyphicon glyphicon-comment"></span>
+                  &nbsp;<span class="fa-user-times"></span>
            </span>
 
-            {% if user.is_authenticated and user.username == 'admin' %}
-                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
-                &nbsp;&nbsp;&nbsp;<br>
-                <div>
-                    <textarea class="form-control" style="height:50px;" placeholder="在这里回复..." id="content"></textarea>
-                    <button type="button" class="btn btn-success" id="comment" style="float: right">回&nbsp;复&nbsp;
-                    </button>
-                </div>
-            {% else %}
-                <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
-                &nbsp;&nbsp;&nbsp;<br>
-            {% endif %}
-        </div>
-        <hr>
-    {% endfor %}
-</div>
+                {% if user.is_authenticated and user.username == 'admin' %}
+                    <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
+                    &nbsp;&nbsp;&nbsp;<br>
+                    <div>
+                        <textarea class="form-control" style="height:50px;" placeholder="在这里回复..."
+                                  id="content"></textarea>
+                        <button type="button" class="btn btn-success" id="comment" style="float: right">回&nbsp;复&nbsp;
+                        </button>
+                    </div>
+                {% else %}
+                    <div class="guest-content "><br> &nbsp;&nbsp;&nbsp;{{ guest.content }}</div>
+                    &nbsp;&nbsp;&nbsp;<br>
+                {% endif %}
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
 
-<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
-<script>
-    $('#tijiao').on('click', function () {
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var content = $('#content').val();
-        if (name == '') {
-            layer.msg('留下您的姓名呗~');
-            return;
-        }
-        if (email == '') {
-            layer.msg('填上您的邮箱哦~');
-            return;
-        }
-        if (content == '') {
-            layer.msg('留下您的宝贵意见~');
-            return;
-        }
-        $.ajax({
-            url: '{% url 'blog:guestbook' %}',
-            type: 'post',
-            data: {'name': name, 'email': email, 'content': content},
-            success: function (e) {
-                if (e.status == 1) {
-                    layer.msg('感谢您的留言，我会继续努力...')
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 1000);
-                } else {
-                    layer.msg('请正确填写o...')
-                }
+    <script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script>
+        $('#tijiao').on('click', function () {
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var content = $('#content').val();
+            if (name == '') {
+                layer.msg('留下您的姓名呗~');
+                return;
             }
-        })
+            if (email == '') {
+                layer.msg('填上您的邮箱哦~');
+                return;
+            }
+            if (content == '') {
+                layer.msg('留下您的宝贵意见~');
+                return;
+            }
+            $.ajax({
+                url: '{% url 'blog:guestbook' %}',
+                type: 'post',
+                data: {'name': name, 'email': email, 'content': content},
+                success: function (e) {
+                    if (e.status == 1) {
+                        layer.msg('感谢您的留言，我会继续努力...')
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        layer.msg('请正确填写o...')
+                    }
+                }
+            })
 
-    })
-</script>
+        })
+    </script>
 
 {% endblock %}
 

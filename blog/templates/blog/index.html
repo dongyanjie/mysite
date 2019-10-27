@@ -4,7 +4,6 @@
 {% block title %}首页{% endblock %}
 {% block left_content %}
 
-
     <!--路径导航  导航条-->
     <nav class="breadcrumb">
         <div class="container"><i class="Hui-iconfont">&#xe67f;</i>
@@ -12,109 +11,66 @@
         </div>
     </nav>
 
-    <!--滚动图-->
-    <div class="slider_main">
-        <div class="slider">
-            <div class="bd">
-                <ul>
-                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner1.jpg' %}"></a></li>
-                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner2.png' %}"></a></li>
-                    <li><a href="#" target="_blank"><img src="{% static 'img/temp/banner3.jpg' %}"></a></li>
-
-                </ul>
-            </div>
-            <ol class="hd cl dots">
-                <li>1</li>
-                <li>2</li>
-            </ol>
-            <a class="slider-arrow prev" href="javascript:void(0)"></a>
-            <a class="slider-arrow next" href="javascript:void(0)"></a>
-        </div>
-    </div>
-
-
-    <!-- Left column -->
-    <div class="mt-20 bg-fff box-shadow radius mb-5">
-        <div class="tab-category">
-            <a href=""><strong class="current">最新发布</strong></a>
-        </div>
-    </div>
-
-    <div class="art_content">
-        <ul class="index_arc">
+    {#    留作 首页 精选文章 排名#}
+    {#    <div class="row">#}
+    {#        <div class="col-md-6 col-sm-6">#}
+    {#            <article class="blog-teaser">#}
+    {#                <header>#}
+    {#                    <img src="img/3.jpg" alt="">#}
+    {#                    <h3><a href="single.html">Blackor - Responsive HTML5 Theme</a></h3>#}
+    {#                    <span class="meta">19 August 2015, John Doe</span>#}
+    {#                    <hr>#}
+    {#                </header>#}
+    {#                <div class="body">#}
+    {#                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sit. Doloribus dolores neque#}
+    {#                    eos. Velit eveniet, necessitatibus aut sit tenetur perferendis! Commodi pariatur dignissimos, quis#}
+    {#                    sequi odit iusto cumque quod!#}
+    {#                </div>#}
+    {#                <div class="clearfix">#}
+    {#                    <a href="single.html" class="btn btn-clean-one">Read more</a>#}
+    {#                </div>#}
+    {#            </article>#}
+    {#        </div>#}
+    {#    </div>#}
 
 
-            {% for article in page_article_list %}
-
-
-                <li class="index_arc_item">
-                    <a href="#" class="pic">
-                        <img class="lazyload" data-original="temp/art.jpg" alt="应该选"/>
-                    </a>
-                    {#                    标题#}
-                    <h4 class="title"><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h4>
-                    <div class="date_hits">
-						<span
-                                class="glyphicon glyphicon-time">{{ article.publish_date |date:'Y-m-d ' }}&nbsp;&nbsp;&nbsp;</span>
-                        / <span class="glyphicon glyphicon-edit">分类: {{ article.column }}&nbsp;&nbsp;&nbsp;</span>
+    <div class="row">
+        {% for article in page_article_list %}
+            <div class="col-md-6 col-sm-6">
+                <article class=" blog-teaser">
+                    <header>
+                        <img src="/static1/{{ article.article_pic }}" alt="">
+                        {#                         <img src="{% static '{{ article.article_pic }}' %}" alt="">#}
+                        {#                    标题     #}
+                        <h3><a href="/blog/detail/{{ article.article_id }}">{{ article.title }}</a></h3>
+                    <span class="meta">
                         / <span>点赞数 {{ article.dianzan.count }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        {% if user in article.dianzan.all %}
-                            <span>已点赞</span>
-                        {% else %}
-                            <span><a href="javascript:;"
-                                     onclick="article_dianzan({{ article.article_id }}, 'like')"><span
-                                    class="glyphicon glyphicon-thumbs-up"></span>点赞&nbsp;&nbsp;&nbsp;</a></span>
-                        {% endif %}
-                        <p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> {{ article.dianzan.count}}° </p>
-                        <p class="commonts"><i class="Hui-iconfont" title="评论数">&#xe622;</i> <span class="cy_cmt_count">{{ article.article_comment.count }}</span>
-                        </p>
-                    </div>
-                    <!-- Blog Image -->
-                    <div class="blog-image">
-                        {#                <img class="img-fluid" src="{% static 'img/1.jpg' %}" alt="blog">#}
-                    </div>
-                    {#                文章内容 #}
-                    <div class="desc"><p>{{ article.brief_content |truncatewords:30 }}</p></div>
+                         <span> / 浏览量：{{ article.click }} &nbsp;&nbsp; </span>
+                        <span>   / 评论总数：{{ article.article_comment.count }}</span>
+                    </span>
+                        <hr>
+                    </header>
 
-                    <!-- Blog Read More Navigation -->
-                    <div style="color: red;float: right">
-                        <a href="/blog/detail/{{ article.article_id }}">
+                    <div class="body">
+                        {#                    摘要 ，简要内容...#}
+                        {{ article.brief_content |truncatewords:30 }}
+                    </div>
+                    <div class="clearfix">
+                        <a href="/blog/detail/{{ article.article_id }}" class="btn btn-clean-one">
                             Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i> </a>
                     </div>
-                    <br>
-                </li>
+                </article>
+            </div>
+        {% endfor %}
+    </div>
 
-            {% endfor %}
-
-
-            {#                不带图片#}
-            {#				<li class="index_arc_item no_pic">#}
-            {#					<h4 class="title"><a href="/article/5.html">个人博客应该选择什么样的域名和域名后缀</a></h4>#}
-            {#					<div class="date_hits">#}
-            {#						<span>老王</span>#}
-            {#						<span>2个月前</span>#}
-            {#						<span><a href="/article-lists/10.html">建站</a></span>#}
-            {#						<p class="hits"><i class="Hui-iconfont" title="点击量">&#xe6c1;</i> 276 °</p>#}
-            {#						<p class="commonts"><i class="Hui-iconfont" title="点击量">&#xe622;</i> <span id="sourceId::105" class="cy_cmt_count">20</span></p>#}
-            {#					</div>#}
-            {#					<div class="desc"> 不论搭建什么样的网站，选择一个好的域名都是很有必要的，选择一个好的域名对网站的意义也是不言而喻的。每一个网站都有之对应的域名，就像人的名字一样。每个人都想自己有个好听的名字，网站也是一样。一个网站可以有多个域名，但是一个域名只能对应一个网站。&nbsp;一、域名要好记，方便输入&nbsp; &nbsp; &nbsp; &nbsp;域名本身的意义就是为了人们方便记忆才使用的，不然都用IP地址就好了。所以，网站域名一定要选择好记忆的。因为域名是</div>#}
-            {#				</li>#}
-
-        </ul>
-
-
-        {#          		<div class="text-c mb-20" id="moreBlog">#}
-        {#        	        <a class="btn  radius btn-block " href="javascript:;" onclick="moreBlog();">点击加载更多</a>#}
-        {#        	        <a class="btn  radius btn-block hidden" href="javascript:;">加载中……</a>#}
-        {#        	    </div>#}
-
-
+    <div class="paging">
+        <a href="#" class="older"></a>
     </div>
 
 
 
     <!-- 分页 Blog Pagination -->
-
     <div class="blog-pagination">
         <ul class="pagination">
             <li class="page-item">
@@ -143,6 +99,7 @@
     </div>
 
 
+
     <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
     <script>
         {#文章点赞    ajax方式#}
@@ -166,7 +123,7 @@
                         }, 1000);
 
                     } else {
-                        layer.msg('亲爱的，登录后再来点赞哦~');
+                        layer.msg('亲，登录后再来点赞哦~');
                     }
                 },
             });
@@ -174,6 +131,7 @@
     </script>
 
 {% endblock %}
+
 {% block sidebar %}
     {% include 'blog/sidebar.html' %}
 {% endblock %}
