@@ -24,7 +24,7 @@
                             {#                                <img name="user_face" src="{% static 'images/photo.jpg' %}" class="img-circle"#}
                             {#                                     id="my_photo" style="height: 25px;width: 30px;">#}
                             {#                            {% endif %}#}
-                            &nbsp;欢迎您：<span> {{ user.username }}</span>
+                            &nbsp;欢迎您：<span style="color: #4476A7;"> {{ user.username }}</span>
                             &nbsp;&nbsp;&nbsp; <a href="{% url 'userManage:user_logout' %}"
                                                   class="nav-link"><span>注销</span></a>
                         </a>
@@ -52,7 +52,8 @@
                         {% for column in columns %}
                             {% if column.classify is 1 %}
                                 <li>
-                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>
+{#                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>#}
+                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}</a>
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -64,7 +65,8 @@
                         {% for column in columns %}
                             {% if column.classify is 2 %}
                                 <li>
-                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>
+{#                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}({{ columns.count }})</a>#}
+                                    <a href="/blog/cetegory/{{ column.id }}">{{ column.column }}</a>
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -95,13 +97,13 @@
             title: '用户注册/登录',
             type: 1,
             type: 2,
-            area: ['500px', '500px'],
+            area: ['500px', '400px'],
             shadeClose: true, //点击遮罩关闭
             content: '{% url "userManage:user_login" %}',
-            btn: ['Cancel'],
-            btn1: function (index, layero) {
-                parent.location.reload();
-            }
+         // btn: ['返回'],
+         //   btn1: function (index, layero) {
+         //       parent.location.reload();
+         //   }
         });
     });
     //弹出一个页面层 注册页
@@ -110,13 +112,13 @@
                 title: '用户注册/登录',
                 type: 1,
                 type: 2,
-                area: ['500px', '620px'],
+                area: ['500px', '400px'],
                 shadeClose: true, //点击遮罩关闭
                 content: '{% url "userManage:user_register" %}',
-                btn: ['Cancel'],
-                btn1: function (index, layero) {
-                    parent.location.reload();
-                }
+         //     btn: ['返回'],
+         //     btn1: function (index, layero) {
+         //         parent.location.reload();
+         //   }
             });
         }
     );

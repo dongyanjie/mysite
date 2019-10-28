@@ -53,7 +53,7 @@ def user_register(request):
         userinfo_form = UserInfoForm(request.POST)
         user_val = request.POST['username']
         if User.objects.filter(username=user_val):
-            return render(request, 'userManage/register.html', {'form': user_form, 'error_message': '· 该用户名已注册，请重新输入.'})
+            return render(request, 'userManage/register.html', {'form': user_form, 'error_message': '· 该用户名已被注册，请重新输入.'})
         if user_form.is_valid():
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
@@ -62,9 +62,9 @@ def user_register(request):
             new_userinfo.user = new_user
             new_userinfo.save()
             # UserInfo.objects.create(user=new_user)
-            return HttpResponse('· 恭喜,注册成功，请点击<a href="/userManage/login/">Login</a>登录.')
+            return HttpResponse('· 恭喜,注册成功，请点击直接<a href="/userManage/login/" style="color: #FD482C">登录</a>.')
         else:
-            return render(request, 'userManage/register.html', {'form': user_form, 'error_message': '· 两次密码不一致，请重新输入.'})
+            return render(request, 'userManage/register.html', {'form': user_form, 'error_message': '· 两次密码不一致，请重新输入！'})
     if request.method == 'GET':
         user_form = RegisterForm()
         userinfo_form = UserInfoForm()

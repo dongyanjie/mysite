@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u-hazihj1+vjric8f3t3ubk3i70ed2!v0wolui9k7ic++k$+%#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # 我的应用
     'blog.apps.BlogConfig',  # 博客
     'userManage.apps.UserManageConfig',  # 用户管理
-    'itadmin.apps.ItadminConfig',  # 用户个人后台
+    'itadmin.apps.ItadminConfig',  # 后台管理
 
     'mdeditor',  # Django-mdeditor富文本编辑
 

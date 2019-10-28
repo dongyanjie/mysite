@@ -7,14 +7,33 @@ from django.forms import widgets
 
 # 登录表单
 class LoginForm(forms.Form):
-    username = forms.CharField(label='userName')
-    password = forms.CharField(label='passWord', widget=forms.PasswordInput)
+    username = forms.CharField(label='userName',
+                               widget=forms.TextInput(
+                                   attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '请输入用户名',
+                                          'class': 'layui-input'}))
+    password = forms.CharField(label='passWord',
+                               widget=forms.PasswordInput(
+                                   attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '请输入密码',
+                                          'class': 'layui-input'})
+                               )
 
 
 # 注册表单
 class RegisterForm(forms.ModelForm):
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Conform password', widget=forms.PasswordInput)
+    username = forms.CharField(label='userName',
+                               widget=forms.TextInput(
+                                   attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '请输入用户名',
+                                          'class': 'layui-input'}))
+    email = forms.CharField(label='Email',
+                            widget=forms.TextInput(
+                                attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '请输入邮箱',
+                                       'class': 'layui-input'}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(
+        attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '请输入密码',
+               'class': 'layui-input'}))
+    password2 = forms.CharField(label='Conform password', widget=forms.PasswordInput(
+        attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '请再次输入密码',
+               'class': 'layui-input'}))
 
     class Meta:
         model = User
@@ -23,7 +42,7 @@ class RegisterForm(forms.ModelForm):
     def clean_pwd(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
-            raise forms.ValidationError("两次密码不一致")
+            raise forms.ValidationError("两次密码不一致！")
         return cd['password2']
 
 
