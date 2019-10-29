@@ -2,670 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d87e44-a3aa-4c15-9423-065f2e876a9b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/plugin/pifu/pifu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/plugin/pifu/pifu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/imagecrop.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/timeline.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/timeline/cd-icon-location.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/timeline/cd-icon-movie.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/timeline/cd-icon-picture.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Montserrat-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Montserrat-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Montserrat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/Montserrat-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/fonts/font-awesome/fonts/fontawesome-webfontd41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/photo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/qq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/user/2019_04_19/20181215142442.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/weixin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/001.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/app-design.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/ben-kolde-365811-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/book.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/brand-design.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/freelancer-back.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/freelancer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/graphics-design.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/header-img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/hello-background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/hello.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/logo1 .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/logob .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/mind.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/qq.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/rocket.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/searchicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/step-dott.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/tab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/banner2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/banner3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/slide1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/slide2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/slide3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/temp/slide4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/web-design.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/weixin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/work-exp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/wx.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/H-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/H-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/js/H-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/blog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/cropbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/csrf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.SuperSlide.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.eventFlow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery1.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/json2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/skin/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/skin/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/layer/default/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/skin/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/skin/default/loading-0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/skin/default/loading-1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/skin/default/loading-2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/xadmin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/layui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/layui.mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/layui.mobile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/code.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/laydate/default/laydate.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/layer/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/layer/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/layer/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/css/modules/layer/default/layer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/layer/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/layer/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/css/modules/layer/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/font/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/font/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/font/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/font/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/font/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/10.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/10.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/11.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/11.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/12.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/12.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/13.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/13.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/14.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/14.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/15.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/15.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/16.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/16.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/17.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/17.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/18.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/18.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/19.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/19.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/20.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/20.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/21.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/21.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/22.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/22.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/23.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/23.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/25.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/25.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/26.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/26.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/27.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/27.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/28.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/28.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/29.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/29.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/3.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/3.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/30.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/30.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/31.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/31.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/32.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/32.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/33.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/33.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/34.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/34.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/35.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/35.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/36.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/36.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/37.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/37.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/38.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/38.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/39.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/39.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/4.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/4.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/40.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/40.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/41.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/41.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/42.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/42.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/43.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/43.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/44.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/44.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/45.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/45.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/46.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/46.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/47.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/47.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/48.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/48.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/49.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/49.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/5.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/5.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/50.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/50.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/51.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/51.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/52.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/52.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/53.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/53.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/54.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/54.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/55.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/55.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/56.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/56.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/57.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/57.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/58.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/58.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/59.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/59.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/6.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/6.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/60.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/60.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/61.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/61.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/62.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/62.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/63.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/63.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/64.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/64.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/65.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/65.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/66.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/66.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/67.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/67.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/68.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/68.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/69.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/69.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/7.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/7.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/70.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/70.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/71.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/71.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/8.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/8.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/images/face/9.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/images/face/9.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/colorpicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/element.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/flow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/laydate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/layedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/layedit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/laypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/laypage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/laytpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/laytpl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/mobile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/rate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/lay/modules/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/layui.all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/layui2.4.5/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/layui2.4.5/layui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/WdatePicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/lang/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/lang/zh-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/lang/zh-tw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/WdatePicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/datePicker.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/default/datepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/default/img.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/datepicker-dev.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/datepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/img.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/twoer/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/whyGreen/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/whyGreen/datepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/My97DatePicker/4.8/skin/whyGreen/img.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/blank.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/fancybox_loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/fancybox_overlay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/fancybox_sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/fancybox_buttons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-buttons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-media.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-thumbs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/helpers/jquery.fancybox-thumbs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/jquery.fancybox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/jquery.fancybox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/fancyBox/jquery.fancybox.pack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/additional-methods.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/jquery.validate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/messages_zh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/jquery.validation/1.14.0/validate-methods.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/laypage/laypage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/laypage/skin/laypage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/pifu/pifu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/pifu/pifu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.caret.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.tag-editor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.tag-editor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/jquery.tag-editor.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/tagEditor/tag-editor.jquery.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/css/wangEditor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/css/wangEditor.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/css/wangEditor.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/emotions1.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/emotions2.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/emotions3.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/fonts/icomoon.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/js/lib/jquery-1.10.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/js/lib/jquery-2.2.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/js/wangEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/wangEditor/js/wangEditor.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/Uploader.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/icons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/icons.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/progress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/progress.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/images/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/upload.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/webuploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/plugin/webuploader/webuploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/art.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/at1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/at2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/banner1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/banner2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/banner3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/gg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/slide1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/slide2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/slide3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/temp/slide4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/common.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/img/user-image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/js/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/js/modernizr.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/modernizr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/iconfont.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/iconfont.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/Hui-iconfont/1.0.8/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/Hui-iconfont/1.0.8/iconfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/css/H-ui.admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/css/H-ui.admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/css/H-ui.login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/css/H-ui.login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/acrossTab/acrossTab-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/acrossTab/acrossTab-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/admin-login-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/admin-login-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/admin-loginform-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/admin-loginform-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/cn.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/cn.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/loading.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/loading.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/images/um.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/images/um.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/js/H-ui.admin.page.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/js/H-ui.admin.page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/js/de_DE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/js/de_DE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/blue/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/blue/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/blue/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/blue/icon_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/icon_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/blue/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/blue/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/default/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/default/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/default/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/default/icon_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/icon_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/default/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/default/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/green/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/green/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/green/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/green/icon_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/icon_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/green/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/green/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/orange/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/orange/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/orange/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/orange/icon_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/icon_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/orange/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/orange/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/red/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/red/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/red/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/red/icon_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/icon_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/red/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/red/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/yellow/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/yellow/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/yellow/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/yellow/icon_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/icon_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui.admin/skin/yellow/skin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui.admin/skin/yellow/skin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/css/H-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/css/H-ui.ie.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.ie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/css/H-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/css/H-ui.reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/css/H-ui.reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/Hui-tags/empty.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/Hui-tags/empty.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/acrossTab/acrossTab-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/acrossTab/acrossTab-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/acrossTab/acrossTab-close.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/acrossTab/acrossTab-close.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/acrossTab/acrossTab.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/acrossTab/acrossTab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/dataTable/sort_asc.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dataTable/sort_asc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/dataTable/sort_both.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dataTable/sort_both.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/dataTable/sort_desc.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dataTable/sort_desc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/dropDown/icon-jt.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/dropDown/icon-jt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/201.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/201.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/202.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/202.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/203.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/203.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/204.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/204.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/205.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/205.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/206.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/206.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/207.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/207.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/208.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/208.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/209.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/209.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/210.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/210.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/0.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/0.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/1.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/1.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/10.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/10.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/100.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/100.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/101.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/101.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/102.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/102.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/103.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/103.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/104.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/104.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/105.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/105.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/106.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/106.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/11.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/11.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/12.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/12.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/13.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/13.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/14.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/14.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/15.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/15.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/16.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/16.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/18.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/18.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/19.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/19.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/2.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/2.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/20.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/20.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/21.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/21.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/22.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/22.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/23.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/23.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/25.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/25.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/26.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/26.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/27.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/27.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/28.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/28.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/29.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/29.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/3.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/3.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/30.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/30.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/31.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/31.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/32.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/32.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/33.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/33.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/34.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/34.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/35.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/35.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/36.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/36.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/37.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/37.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/38.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/38.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/39.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/39.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/4.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/4.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/40.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/40.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/41.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/41.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/42.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/42.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/43.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/43.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/44.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/44.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/45.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/45.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/46.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/46.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/47.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/47.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/48.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/48.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/49.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/49.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/5.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/5.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/50.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/50.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/51.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/51.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/52.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/52.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/53.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/53.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/54.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/54.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/55.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/55.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/56.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/56.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/57.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/57.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/58.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/58.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/59.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/59.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/6.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/6.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/60.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/60.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/61.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/61.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/62.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/62.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/63.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/63.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/64.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/64.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/65.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/65.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/66.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/66.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/67.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/67.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/68.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/68.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/69.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/69.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/7.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/7.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/70.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/70.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/71.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/71.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/72.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/72.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/73.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/73.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/74.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/74.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/75.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/75.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/76.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/76.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/77.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/77.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/78.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/78.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/79.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/79.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/8.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/8.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/80.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/80.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/81.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/81.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/82.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/82.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/83.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/83.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/84.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/84.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/85.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/85.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/86.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/86.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/87.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/87.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/88.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/88.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/89.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/89.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/9.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/9.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/90.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/90.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/91.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/91.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/92.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/92.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/93.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/93.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/94.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/94.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/95.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/95.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/96.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/96.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/97.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/97.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/98.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/98.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/QQ/99.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/QQ/99.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/face/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/face/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/aero.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/aero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/aero@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/aero@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/blue@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/blue@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/green@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/green@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/grey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/grey@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/grey@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/minimal.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/minimal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/minimal@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/minimal@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/orange.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/orange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/orange@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/orange@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/pink@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/pink@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/purple@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/purple@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/red@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/red@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iCheck/yellow@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iCheck/yellow@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/iconpic-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/iconpic-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/jselect/iconpic-arrow-down2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/jselect/iconpic-arrow-down2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/loading/loading-b.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/loading/loading-b.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/loading/loading-s.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/loading/loading-s.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/rollpic/unslider-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/rollpic/unslider-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/slider-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/slider-arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/star/iconpic-star-S-default.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/star/iconpic-star-S-default.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/star/iconpic-star-S.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/star/iconpic-star-S.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/steps/step_arrow-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_arrow-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/steps/step_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/steps/step_bg-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_bg-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/steps/step_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/steps/step_bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/ucnter/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/Thumbs.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/ucnter/avatar-default-S.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/avatar-default-S.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/ucnter/avatar-default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/avatar-default.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/ucnter/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/ucnter/noavatar_small.gif" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/ucnter/noavatar_small.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/validform/iconpic-error.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/validform/iconpic-error.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/validform/iconpic-right.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/validform/iconpic-right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/validform/iconpic-warning.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/validform/iconpic-warning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tabNav-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tabNav-hover.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav-hover.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tabNav.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tabNav_right-active.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav_right-active.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tabNav_right-hover.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav_right-hover.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tabNav_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tabNav_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/images/verticalTab/tab_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/images/verticalTab/tab_bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/js/H-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/plugin/h-ui/js/H-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/h-ui/js/H-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/jquery/1.9.1/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/jquery/1.9.1/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/jquery/jquery-migrate-1.2.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/skin/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/skin/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/skin/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/skin/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/skin/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/2.4/skin/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/skin/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/skin/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/skin/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/skin/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/skin/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layer/3.0/skin/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/layui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/layui.mobile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/code.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/laydate/default/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/layer/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/layer/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/layer/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/layer/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/layer/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/css/modules/layer/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/font/iconfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/font/iconfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/font/iconfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/font/iconfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/10.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/11.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/12.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/13.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/14.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/15.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/16.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/17.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/18.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/19.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/20.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/22.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/23.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/24.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/25.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/26.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/27.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/28.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/29.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/30.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/31.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/32.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/33.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/34.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/35.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/36.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/37.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/38.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/39.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/4.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/40.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/41.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/42.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/43.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/44.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/45.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/46.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/47.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/48.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/49.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/5.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/50.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/51.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/52.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/53.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/54.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/55.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/56.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/57.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/58.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/59.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/6.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/60.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/61.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/62.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/63.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/64.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/65.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/66.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/67.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/68.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/69.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/7.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/70.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/71.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/8.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/images/face/9.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/code.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/colorpicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/element.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/flow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/laydate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/layedit.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/laypage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/laytpl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/mobile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/rate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/slider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/tree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/upload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/lay/modules/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/layui.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/layui2.4.5/layui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/pifu/pifu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static1/plugin/pifu/pifu.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -695,7 +34,26 @@
     <favorites_list name="mysite" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/plugin/pifu/pifu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="16" lean-forward="true" selection-start-column="3" selection-end-line="10" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/plugin/pifu/pifu.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="55" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -753,8 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/simple-calendar.js" />
-        <option value="$PROJECT_DIR$/static/css/guestbook.css" />
         <option value="$PROJECT_DIR$/account/models.py" />
         <option value="$PROJECT_DIR$/itadmin/urls.py" />
         <option value="$PROJECT_DIR$/itadmin/templates/itadmin/base.html" />
@@ -804,10 +160,12 @@
         <option value="$PROJECT_DIR$/blog/templates/blog/detail.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/index.html" />
         <option value="$PROJECT_DIR$/blog/templates/blog/search.html" />
+        <option value="$PROJECT_DIR$/static/plugin/pifu/pifu.js" />
+        <option value="$PROJECT_DIR$/static/plugin/pifu/pifu.css" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="width" value="997" />
     <option name="height" value="1038" />
@@ -825,6 +183,24 @@
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+              <item name="pifu" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -838,7 +214,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static1/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/plugin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -852,11 +228,11 @@
       <recent name="D:\works\mysite\static\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\works\mysite\static\plugin" />
       <recent name="D:\works\mysite\static1\img" />
       <recent name="D:\works\mysiteTmp\itadmin\templates" />
       <recent name="D:\works\mysiteTmp\itadmin" />
       <recent name="D:\works\mysiteTmp\userManage\templates" />
-      <recent name="D:\works\mysiteTmp\static1\plugin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -998,7 +374,7 @@
       <workItem from="1572166436644" duration="775000" />
       <workItem from="1572179475621" duration="2386000" />
       <workItem from="1572190264665" duration="15717000" />
-      <workItem from="1572358966807" duration="2076000" />
+      <workItem from="1572358966807" duration="2462000" />
     </task>
     <task id="LOCAL-00001" summary="更改前端前提交">
       <created>1568273448165</created>
@@ -1025,7 +401,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394638000" />
+    <option name="totallyTimeSpent" value="395024000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1038,6 +414,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5042493" side_tool="true" weight="0.22319035" />
       <window_info id="Favorites" order="1" sideWeight="0.5042493" side_tool="true" weight="0.22319035" />
@@ -1118,12 +495,6 @@
     <SUITE FILE_PATH="coverage/mysite$views.coverage" NAME="views Coverage Results" MODIFIED="1555408910948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/itadmin" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/img/favicon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/img/1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1397,6 +768,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/plugin/pifu/pifu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="16" lean-forward="true" selection-start-column="3" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/plugin/pifu/pifu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="55" selection-end-column="3" />
         </state>
       </provider>
     </entry>
