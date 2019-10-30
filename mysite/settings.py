@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u-hazihj1+vjric8f3t3ubk3i70ed2!v0wolui9k7ic++k$+%#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.dodey.top','116.62.193.180','127.0.0.1']
 
