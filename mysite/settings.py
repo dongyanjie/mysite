@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'userManage.apps.UserManageConfig',  # 用户管理
     'itadmin.apps.ItadminConfig',  # 后台管理
 
+    'mdeditor',  # Django-mdeditor富文本编辑
+
 ]
 
 MIDDLEWARE = [
@@ -141,6 +143,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [
