@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from mdeditor.fields import MDTextField
+from mdeditor.fields import MDTextField
 
 from django.urls import reverse
 
@@ -38,13 +38,14 @@ class ArticleTag(models.Model):
 class Article(models.Model):
     article_id = models.AutoField(primary_key=True)  # 文章唯一id
     author = models.ForeignKey(User, related_name='article_author', on_delete=models.CASCADE)  # 作者
-    article_pic = models.CharField(max_length=100, verbose_name='文章插图', )  # 文章插图
+    article_pic = models.ImageField(upload_to='articlePic/', verbose_name='文章插图', )  # 文章插图
 
     title = models.CharField(max_length=100, verbose_name='标题', )  # 标题
     column = models.ForeignKey(ArticleColumn, verbose_name='栏目', related_name='article_column', on_delete=models.CASCADE)  # 文章所属(栏目)
     tag = models.ManyToManyField(ArticleTag, related_name='article_tag', verbose_name='标签', blank=True)  # 文章标签
     brief_content = models.TextField(verbose_name='摘要', blank=True, null=True)  # 摘要
-    content = models.TextField(verbose_name='内容')  # 主要内容
+    # content = models.TextField(verbose_name='内容')  # 主要内容
+    content = MDTextField()
     publish_date = models.DateTimeField(auto_now_add=True, verbose_name='发布时间')  # 发布日期
     click = models.IntegerField(verbose_name='浏览量', default=0)  # 浏览量（点击数）
     dianzan = models.ManyToManyField(User, related_name='article_dianzan', verbose_name='点赞数', blank=True)  # 点赞数

@@ -27,8 +27,9 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('userManage/', include('userManage.urls')),
     path('itadmin/', include('itadmin.urls')),
+    path('oprint/', include('oprint.urls')),
 
-    path('mdeditor/', include('mdeditor.urls'))  # 富文本编辑器
+    path('mdeditor/', include('mdeditor.urls')),  # 富文本编辑器
 ]
 
 if settings.DEBUG:

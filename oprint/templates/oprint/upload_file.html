@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+{% load staticfiles %}
+
+{% block title %}下单打印{% endblock %}
+{% block left_content %}
+
+    <form action="{% url 'oprint:upload_file' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.file }}
+        <input type="submit" value="提交">
+    </form>
+
+{% endblock %}

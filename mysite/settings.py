@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',  # 博客
     'userManage.apps.UserManageConfig',  # 用户管理
     'itadmin.apps.ItadminConfig',  # 后台管理
+    'oprint.apps.OprintConfig',  # 打印
 
     'mdeditor',  # Django-mdeditor富文本编辑
 
