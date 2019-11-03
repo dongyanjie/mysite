@@ -4,11 +4,22 @@
 {% block title %}下单打印{% endblock %}
 {% block left_content %}
 
+
     <form action="{% url 'oprint:upload_file' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.title }}
-        {{ form.file }}
+        <p>文件打印</p>
+
+        {#        <ul>#}
+        {#            <li>单双面：{{ form.sided }}</li>#}
+        {#            <li>黑白彩印：{{ form.color }}</li>#}
+        {#            <li>打印份数：{{ form.print_number }}</li>#}
+        {#            <li>总页数：{{ form.page_count }}</li>#}
+        {#            <li>价格：{{ form.price }}</li>#}
+        {##}
+        {#        </ul>#}
+        {{ err }}
+
+        {{ form.as_ul }}
         <input type="submit" value="提交">
     </form>
-
 {% endblock %}

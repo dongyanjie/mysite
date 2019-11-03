@@ -4,10 +4,28 @@
 {% block title %}下单打印{% endblock %}
 {% block left_content %}
 
-    <form action="{% url 'oprint:' %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'oprint:upload_photo' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.title }}
-        {{ form.file }}
+
+        <p>照片打印</p>
+        {{ err }}
+{#        <ul>#}
+        {#            <li>{{ form.photo_url }}</li>#}
+        {#            <li> 尺寸：{{ form.photo_size }}</li>#}
+        {#            <li> 打印份数：{{ form.print_number }}</li>#}
+        {#            <li>总价：{{ form.price }}</li>#}
+        {#            <li>您的姓名:{{ form.name }}</li>#}
+        {#            <li>联系方式{{ form.phone_or_qq }}</li>#}
+        {#            <li>什么时间要? {{ form.what_time }}</li>#}
+        {#            <li>配送地点(或自取){{ form.what_place }}</li>#}
+        {#            <li>打印点(打印码){{ form.print_point }}</li>#}
+        {#            <li>备注{{ form.remark }}</li>#}
+        {#            <li>打印状态{{ form.print_status }}</li>#}
+        {#        </ul>#}
+        {##}
+        {#        <input type="file" name="photo_url" id="photo_url">#}
+
+                {{ form.as_ul }}
         <input type="submit" value="提交">
     </form>
 

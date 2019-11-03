@@ -1,0 +1,10 @@
+1.使用 django-admin 来创建 HelloWorld 项目：
+
+django-admin startproject HelloWorld
+
+2.接下来我们进入 HelloWorld 目录输入以下命令，启动服务器：
+
+python3 manage.py runserver 0.0.0.0:8000
+
+3.创建一个应用
+$ python manage.py startapp app_name
