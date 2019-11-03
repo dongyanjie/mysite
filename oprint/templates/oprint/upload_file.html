@@ -8,6 +8,7 @@
     <form action="{% url 'oprint:upload_file' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <p>文件打印</p>
+        <p style="color:firebrick;"></p>{{ error }}
 
         {#        <ul>#}
         {#            <li>单双面：{{ form.sided }}</li>#}
@@ -15,11 +16,75 @@
         {#            <li>打印份数：{{ form.print_number }}</li>#}
         {#            <li>总页数：{{ form.page_count }}</li>#}
         {#            <li>价格：{{ form.price }}</li>#}
-        {##}
         {#        </ul>#}
-        {{ err }}
 
         {{ form.as_ul }}
-        <input type="submit" value="提交">
+        <input type="button" value="提交" id="tijiao">
     </form>
+
+
+
+    <script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+    <script>
+        {# 提交文件    ajax方式#}
+        $('#tijiao').on('click', function () {
+
+            //创建对象
+            var formdata = new FormData();
+            //这里FormData是一个jquery对象，用来绑定values对象，也可以用来上传二进制文件，有了他就可以不用form表单来上传文件了
+
+            formdata.append('file_url', $('[name=file_url]')[0].files[0]);
+
+            formdata.append('sided', $('[name=sided]').val());
+            formdata.append('color', $('[name=color]').val());
+            formdata.append('page_count', $('[name=page_count]').val());
+            formdata.append('print_number ', $('[name=print_number]').val());
+            formdata.append('price ', $('[name=price]').val());
+
+            formdata.append('name ', $('[name=name]').val());
+            formdata.append('phone_or_qq', $('[name=phone_or_qq]').val());
+            formdata.append('what_time ', $('[name=what_time]').val());
+            formdata.append('what_place ', $('[name=what_place]').val());
+            formdata.append('print_point ', $('[name=print_point]').val());
+            formdata.append('remark ', $('[name=remark]').val());
+            formdata.append('csrfmiddlewaretoken', $('[name=csrfmiddlewaretoken]').val());
+
+            if ($('[name=file_url]')[0].files[0] == '') {
+                layer.msg('请选择要上传的文件~');
+                return;
+            }
+            if ($('[name=name]').val() == '') {
+                layer.msg('请输入您的姓名~');
+                return;
+            }
+            if ($('[name=phone_or_qq]').val() == '') {
+                layer.msg('请输入您的联系方式~');
+                return;
+            }
+            if ($('[name=print_point]').val() == '') {
+                layer.msg('亲，打印码是一定要填的呀！~');
+                return;
+            }
+
+            $.ajax({
+                url: '{% url 'oprint:upload_file' %}',
+                type: 'post',
+                //让数据不被处理
+                processData: false,
+                contentType: false,
+                data: formdata,
+                dataType: 'JSON',
+                success: function (e) {
+                    if (e.status == 1) {
+                        layer.msg('提交成功，稍后可查询订单 ...', {time: 2000})
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        layer.alert('提交失败，请检查文件格式是否正确 ...', {time: 2000})
+                    }
+                }
+            })
+        })
+    </script>
 {% endblock %}

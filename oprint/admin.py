@@ -10,7 +10,7 @@ class FilePrintAdmin(admin.ModelAdmin):
                     "name", "phone_or_qq", "what_time", "what_place", "print_point", "remark",
                     "create_time", "print_status",
                     )  # 列出列表中的项目
-    search_fields = ['name']
+    search_fields = ['file_url']
     # 设置哪些字段可以点击进入编辑界面，
     list_display_links = ('sided', 'color', 'print_status')
 
@@ -22,7 +22,7 @@ class PhotoPrintAdmin(admin.ModelAdmin):
         "name", "phone_or_qq", "what_time", "what_place", "print_point", "remark",
         "create_time", "print_status",
     )  # 列出列表中的项目
-    search_fields = ['name']
+    search_fields = ['photo_url']
     # 设置哪些字段可以点击进入编辑界面，
     list_display_links = ('photo_size', 'print_status')
 
