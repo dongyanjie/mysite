@@ -37,7 +37,7 @@ class ArticleTag(models.Model):
 class Article(models.Model):
     article_id = models.AutoField(primary_key=True)  # 文章唯一id
     author = models.ForeignKey(User, related_name='article_author', on_delete=models.CASCADE)  # 作者
-    article_pic = models.CharField(max_length=100, verbose_name='文章插图', )  # 文章插图
+    article_pic = models.FileField(upload_to='articlePic/', verbose_name='文章插图', blank=True, null=True)  # 文章插图
 
     title = models.CharField(max_length=100, verbose_name='标题', )  # 标题
     column = models.ForeignKey(ArticleColumn, verbose_name='栏目', related_name='article_column', on_delete=models.CASCADE)  # 文章所属(栏目)
