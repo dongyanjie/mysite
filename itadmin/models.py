@@ -38,10 +38,11 @@ class ArticleTag(models.Model):
 class Article(models.Model):
     article_id = models.AutoField(primary_key=True)  # 文章唯一id
     author = models.ForeignKey(User, related_name='article_author', on_delete=models.CASCADE)  # 作者
-    article_pic = models.ImageField(upload_to='articlePic/', verbose_name='文章插图', )  # 文章插图
+    article_pic = models.FileField(upload_to='articlePic/', verbose_name='文章插图', blank=True, null=True)  # 文章插图
 
     title = models.CharField(max_length=100, verbose_name='标题', )  # 标题
-    column = models.ForeignKey(ArticleColumn, verbose_name='栏目', related_name='article_column', on_delete=models.CASCADE)  # 文章所属(栏目)
+    column = models.ForeignKey(ArticleColumn, verbose_name='栏目', related_name='article_column',
+                               on_delete=models.CASCADE)  # 文章所属(栏目)
     tag = models.ManyToManyField(ArticleTag, related_name='article_tag', verbose_name='标签', blank=True)  # 文章标签
     brief_content = models.TextField(verbose_name='摘要', blank=True, null=True)  # 摘要
     # content = models.TextField(verbose_name='内容')  # 主要内容
@@ -55,6 +56,7 @@ class Article(models.Model):
             return "{}...".format(str(self.brief_content)[0:20])
         else:
             return str(self.brief_content)
+
     #   只有内容是管理员生成，用户无法修改时，allow_tags才设置为True
     short_brief_content.allow_tags = True
 

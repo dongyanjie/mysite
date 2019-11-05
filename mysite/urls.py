@@ -20,6 +20,9 @@ from django.urls import path, include
 # 以下添加扩展url和媒体文件url
 from django.conf.urls.static import static
 from django.conf import settings
+from django.urls import path, re_path
+from django.views.static import serve
+from mysite.settings import MEDIA_ROOT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,12 +33,13 @@ urlpatterns = [
     path('oprint/', include('oprint.urls')),
 
     path('mdeditor/', include('mdeditor.urls')),  # 富文本编辑器
+    re_path(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+
 ]
 
 if settings.DEBUG:
     # static files (images, css, javascript, etc.)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 
 handler404 = "blog.views.page_not_found"
 handler500 = "blog.views.page_error"

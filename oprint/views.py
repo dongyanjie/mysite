@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import FilePrint, PhotoPrint
 from .forms import FilePrintForm, PhotoPrintForm
@@ -13,8 +13,9 @@ def upload_file(request):
 
         # 获取表单元素
         file_url = request.FILES.get('file_url', None)
-        if file_url is None:
-            return JsonResponse({'status': '0', 'error': '亲，您还没有上传文件呢！'})
+        # 获取文件大小 //返回Byte(B)
+        if file_url.size >= (8 * 1024 * 1024):
+            return JsonResponse({'status': '9', 'error': '请重新上传小于8M的文件!'})
 
         sided = request.POST.get('sided')
         color = request.POST.get('color')
@@ -66,8 +67,9 @@ def upload_photo(request):
 
         # 获取表单元素
         photo_url = request.FILES.get('photo_url', None)
-        if photo_url is None:
-            return JsonResponse({'status': '0', 'error': '亲，您还没有上传照片呢！'})
+        # 获取图片大小 //返回Byte(B)
+        if photo_url.size >= (2 * 1024 * 1024):
+            return JsonResponse({'status': '9', 'error': '请重新上传小于2M的图片!'})
 
         photo_size = request.POST.get('photo_size')
         print_number = request.POST.get('print_number')
@@ -104,3 +106,12 @@ def upload_photo(request):
     else:
         form = PhotoPrintForm()
     return render(request, 'oprint/upload_photo.html', {'form': form, })
+
+
+# 查询订单
+def search_order(request):
+    if request.method == 'GET':
+        return JsonResponse({'status': '1'})
+        # do something处理业务
+
+    return JsonResponse({'status': '0'})

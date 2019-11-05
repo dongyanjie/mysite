@@ -13,7 +13,7 @@ class FilePrint(models.Model):
 
     sided = models.IntegerField(verbose_name='打印单双面', default=1, )  # 1为单面 2为双面
     color = models.IntegerField(verbose_name='打印彩色黑白', default=1, )  # 1为黑白 2为彩印
-    page_count = models.CharField(verbose_name='总页数', max_length=100, )  # 总页数
+    page_count = models.CharField(verbose_name='总页数', max_length=200, )  # 总页数
     print_number = models.IntegerField(verbose_name='打印份数', default=1, )  # 打印份数
     price = models.CharField(max_length=100, verbose_name='总价格', )  # 总价格
 

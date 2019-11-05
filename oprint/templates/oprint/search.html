@@ -1,0 +1,117 @@
+{% load staticfiles %}
+
+<form class="layui-form layui-form-pane" action="" method="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        <legend><a name="input"><h1 style="font-family: 楷体;color: #00CC99;">----打印进度查询----</h1></a></legend>
+    </fieldset>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入姓名: </label>
+        <div class="layui-input-block">
+            <input type="text" name="title" autocomplete="off" placeholder="按姓名查询订单" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="button" id="search1" class="layui-btn layui-btn-bg" lay-filter="formDemo">查询</button>
+        </div>
+    </div>
+</form>
+
+{#---------------------------------------------------------------#}
+
+
+<div class="layui-form">
+    <table class="layui-table" id="search_order">
+        <colgroup>
+            <col width="150">
+            <col width="150">
+            <col width="200">
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>打印文件名</th>
+            <th>打印份数</th>
+            <th>价格</th>
+            <th>提交订单时间</th>
+            <th>打印进度</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>董衍杰</td>
+            <td>a.png</td>
+            <td>1</td>
+            <td>8</td>
+            <td>2019-11-05</td>
+            <td>1</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+{##}
+{#<script>#}
+{# 查询订单    ajax方式#}
+{#    $('#search1').on('click', function () {#}
+{#        var name = $('[name=name]').val();#}
+{#        var csrfmiddlewaretoken = $('[name=csrfmiddlewaretoken]').val()#}
+{##}
+{#        if (name == '') {#}
+{#            layer.msg('查询姓名不能为空~');#}
+{#            return;#}
+{#        }#}
+{##}
+{#        $.ajax({#}
+{#            url: '{% url 'oprint:search_order' %}',#}
+{#            type: 'GET',#}
+{#            //让数据不被处理#}
+{#            processData: false,#}
+{#            contentType: false,#}
+{#            data: {#}
+{#                'name': name,#}
+{#                'csrfmiddlewaretoken': csrfmiddlewaretoken#}
+{#            },#}
+{#            dataType: 'JSON',#}
+{#            success: function (response, stutas, xhr) {#}
+{##}
+{#$("#resultcount").append("设备 (共计" + response.length + ")"); //显示查询结果数量#}
+{#                $.each(response, function (i, item) { //response为返回结果，是一个array，然后对该array进行遍历，fields属性中包含所有查询内容，pk为每条结果的主键字段#}
+{#                    var vfields = item.fields;#}
+{#                    var _len = $("#servers tr").length;#}
+{#                    $("#servers tbody").append("<tr >" //id="+_len+" class='success'#}
+{#                        + "<td width='2%'><input id='ckbid' name='ckb' type='checkbox'/></td>"#}
+{#                        + "<td id='num'>" + _len + "</td>"#}
+{#                        + "<td id='PKID' style='display:none'>" + item.pk + "</td>"#}
+{#                        + "<td id='APP'>" + vfields.APP + "</td>"#}
+{#                        + "<td id='IP'>" + vfields.IP + "</td>"#}
+{#                        + "<td id='ServerName'>" + vfields.ServerName + "</td>"#}
+{#                        + "<td id='DomainName'>" + vfields.DomainName + "</td>"#}
+{#                        + "<td id='CPU'>" + vfields.CPU + "</td>"#}
+{#                        + "<td id='MemorySize'>" + vfields.MemorySize + "</td>"#}
+{#                        + "<td id='DISK'>" + vfields.DISK + "</td>"#}
+{#                        + "<td id='SN'>" + vfields.SN + "</td>"#}
+{#                        + "<td id='Type'>" + vfields.Type + "</td>"#}
+{#                        + "<td id='OSVersion'>" + vfields.OSVersion + "</td>"#}
+{#                        + "<td id='iDRAC'>" + vfields.iDRAC + "</td>"#}
+{#                        + "<td id='Rack'>" + vfields.Rack + "</td>"#}
+{#                        + "<td id='Person'>" + vfields.Person + "</td>"#}
+{#                        + "<td id='Person_app'>" + vfields.Person_app + "</td>"#}
+{#                        + "<td id='OS_mark'>" + vfields.OS_mark + "</td>"#}
+{#                        + "<td><input type='button' id='bbt' value='保存' /></td>"#}
+{#                        + "</tr>");#}
+{#                })#}
+{#            },#}
+{#            error: function (xhr, errorText, errorStatus) {#}
+{#                alert(xhr.status + ' error: ' + xhr.statusText);#}
+{#            },#}
+{#            timeout: 5000#}
+{#        });#}
+{##}
+{#    })#}
+{#</script>#}
