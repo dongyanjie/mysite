@@ -1,4 +1,4 @@
-{% load staticfiles %}
+﻿{% load staticfiles %}
 
 <form class="layui-form layui-form-pane" action="" method="" enctype="multipart/form-data">
     {#    {% csrf_token %}#}
@@ -36,7 +36,7 @@
     $('#search1').on('click', function () {
 
         var search_name = $('#search_name').val();
-        console.log(search_name);
+          {#  console.log(search_name);  #}
 
         if (search_name == '') {
             layer.msg('请输入要查询的姓名~');
@@ -48,8 +48,7 @@
             data: '',
             dataType: 'JSON',
             success: function (data) {
-                {#   console.log(data.photo_data);    #}
-                console.log(data);
+                {#   console.log(data);  #}
 
                 if (data.photo_data != "[]" || data.file_data != "[]") {
                     $("#p1").empty();
