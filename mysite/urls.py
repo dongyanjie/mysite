@@ -31,7 +31,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('userManage/', include('userManage.urls')),
     path('itadmin/', include('itadmin.urls')),
-
+    path('oprint/', include('oprint.urls')),
+	
     path('mdeditor/', include('mdeditor.urls')),  # 富文本编辑器
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}), #media显示
 

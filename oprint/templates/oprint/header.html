@@ -1,0 +1,110 @@
+{% load staticfiles %}
+
+<div class="widewrapper masthead">
+    <div class="container">
+        <a href="/blog/" id="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Blog">
+        </a>
+        {#          <a href="#" style="color: #2980B9">&nbsp;&nbsp;&nbsp;把时间用在思考上是最能节省时间的事情 。</a>#}
+        <a href="{% url 'oprint:upload_file' %}" data-hover="自助下单打印">
+            <span style="color: #FD482C;font-size: 20px;font-family: 微软雅黑">点击：自助下单打印</span></a>
+
+        {#  导航栏#}
+        <nav class="pull-right clean-nav">
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="#">
+
+                            {#                            头像显示 #}
+                            {#                            {% if user.userinfo.photo_url %}#}
+                            {#                                <img src="/{{ user.userinfo.photo_url | striptags }}" class="img-circle" id="my_photo"#}
+                            {#                                     name="user_face" style="height: 25px;width: 30px;">#}
+                            {#                            {% else %}#}
+                            {#                                <img name="user_face" src="{% static 'images/photo.jpg' %}" class="img-circle"#}
+                            {#                                     id="my_photo" style="height: 25px;width: 30px;">#}
+                            {#                            {% endif %}#}
+                            &nbsp;欢迎您：<span style="color: #4476A7;"> {{ user.username }}</span>
+                            &nbsp;&nbsp;&nbsp; <a href="{% url 'userManage:user_logout' %}"
+                                                  class="nav-link"><span>注销</span></a>
+                        </a>
+                    </li>
+                {% else %}
+                    <li><a href="#" id="userLogin"><span>登录</span></a>&nbsp;&nbsp;&nbsp;
+                        <a href="#" id="userRegister"><span>注册</span></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- Blog Search -->
+<div class="widewrapper subheader">
+    <div class="container">
+        <div class="clean-nav">
+            <ul class="nav nav-pills navbar-nav">
+                <li><a href="/blog/" data-hover="博客首页">博客首页</a></li>
+                <li><a href="{% url 'oprint:upload_file' %}" data-hover="文件打印">文件打印</a></li>
+                <li><a href="{% url 'oprint:upload_photo' %}" data-hover="照片打印">照片打印</a></li>
+            </ul>
+        </div>
+
+        <div class="clean-searchbox">
+            <form action="{% url "blog:get_search_page" %}" method="get">
+                {% csrf_token %}
+                <input class="searchfield" name="info" type="text" placeholder="搜索你喜欢的内容.." required>
+                <button class="searchbutton" type="submit" value="查找">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'plugin/layer/3.0/layer.js' %}"></script>
+<script>
+    //弹出一个页面层 登录页
+    $('#userLogin').on('click', function () {
+        layer.open({
+            title: '用户注册/登录',
+            type: 1,
+            type: 2,
+            area: ['350px', '400px'],
+            shadeClose: true, //点击遮罩关闭
+            content: '{% url "userManage:user_login" %}',
+            // btn: ['返回'],
+            //   btn1: function (index, layero) {
+            //       parent.location.reload();
+            //   }
+        });
+    });
+    //弹出一个页面层 注册页
+    $('#userRegister').on('click', function () {
+            layer.open({
+                title: '用户注册/登录',
+                type: 1,
+                type: 2,
+                area: ['350px', '400px'],
+                shadeClose: true, //点击遮罩关闭
+                content: '{% url "userManage:user_register" %}',
+                //     btn: ['返回'],
+                //     btn1: function (index, layero) {
+                //         parent.location.reload();
+                //   }
+            });
+        }
+    );
+
+
+    function onMouseover(obj) {
+        var div = document.getElementById(obj);
+        div.style.display = "block";
+    }
+
+    function onMouseout(obj) {
+        var div = document.getElementById(obj);
+        div.style.display = "none";
+    }
+
+</script>

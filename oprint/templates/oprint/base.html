@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %} </title>
+
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" id="theme-styles">
+
+    {#标题图标#}
+    <link rel="Bookmark" href="{% static 'favicon.ico' %}">
+    <link rel="Shortcut Icon" href="{% static 'favicon.ico' %}"/>
+
+    <![endif]-->
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'plugin/h-ui/css/H-ui.min.css' %}"/>#}
+    <link rel="stylesheet" type="text/css" href="{% static 'plugin/Hui-iconfont/1.0.8/iconfont.min.css' %}"/>
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}"/>#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'plugin/pifu/pifu.css' %}"/>#}
+    <link rel="stylesheet" href="{% static 'plugin/layui2.4.5/css/layui.css' %}" media="all">
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {#    <script src="{% static 'plugin/layui2.4.5/layui.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'plugin/layer/3.0/layer.js' %}"></script>
+
+
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+        function showSide() {
+            $('.navbar-nav').toggle();
+        }
+    </script>
+
+</head>
+
+<header class="navbar-wrapper">
+    {% include './header.html' %}
+</header>
+
+
+<section class="widewrapper main">
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+            <!-- 左侧栏 -->
+            <div class="col-md-9 col-sm-9 blog-main">
+                {% block left_content %}{% endblock %}
+            </div>
+            <!-- 右侧栏 -->
+            <div class="col-md-3 col-sm-3 blog-aside">
+                {% block sidebar %} {% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% include './search.html' %}
+    </div>
+</section>
+
+<footer>
+    {% include 'blog/footer.html' %}
+</footer>
+
+</html>
+

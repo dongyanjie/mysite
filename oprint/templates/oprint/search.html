@@ -1,0 +1,149 @@
+{% load staticfiles %}
+
+<form class="layui-form layui-form-pane" action="" method="" enctype="multipart/form-data">
+    {#    {% csrf_token %}#}
+    <fieldset>
+        <legend><a name="input"><h1 style="font-family: 楷体;color: #00CC99;">----打印进度查询----</h1></a></legend>
+    </fieldset>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入姓名: </label>
+        <div class="layui-input-block">
+            <input type="text" id="search_name" autocomplete="off" placeholder="按姓名查询订单" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="button" id="search1" class="layui-btn layui-btn-bg" lay-filter="formDemo">查询</button>
+        </div>
+    </div>
+</form>
+
+
+<p id="p1"></p>
+<div class="layui-form">
+    <table class="layui-table" id="search_order_table">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<br>
+
+<script>
+    {#查询订单    ajax方式#}
+    $('#search1').on('click', function () {
+
+        var search_name = $('#search_name').val();
+        console.log(search_name);
+
+        if (search_name == '') {
+            layer.msg('请输入要查询的姓名~');
+            return;
+        }
+        $.ajax({
+            url: "{% url 'oprint:order_search' %}?search_name=" + search_name,
+            type: 'GET',
+            data: '',
+            dataType: 'JSON',
+            success: function (data) {
+                {#   console.log(data.photo_data);    #}
+                console.log(data);
+
+                if (data.photo_data != "[]" || data.file_data != "[]") {
+                    $("#p1").empty();
+                    var obj_file = eval(data.file_data);
+                    var obj_photo = eval(data.photo_data);
+
+                    {#   表格头   #}
+                    var thead = $('<thead></thead>');
+                    thead.empty().append("<tr>\n" +
+                        "            <th>姓名</th>\n" +
+                        "            <th>打印文件名</th>\n" +
+                        "            <th>打印份数</th>\n" +
+                        "            <th>价格</th>\n" +
+                        "            <th>提交订单时间</th>\n" +
+                        "            <th>打印进度</th>\n" +
+                        "        </tr>");
+                    $('#search_order_table thead').replaceWith(thead);
+
+                    {# 表格体   #}
+                    var tbody = $('<tbody></tbody>');
+
+
+                    {# 文件订单遍历   #}
+                    $(obj_file).each(function (index) {
+                        var val = obj_file[index];
+                        {#var name = val.fields.name#}
+                        var file_url = (val.fields.file_url.split("/"))[2];
+                        var create_time = (val.fields.create_time.split("."))[0];
+                        var print_status = val.fields.print_status;
+                        {#1为已提交 2为管理员已接收 3为待配送 4为已完成#}
+                        if (print_status == '1') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>已提交</a>";
+                        } else if (print_status == '2') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>管理员已接收</a>";
+                        } else if (print_status == '3') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>等待付款配送</a>";
+                        } else if (print_status == '4') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>订单已完成</a>";
+                        }
+
+                        var tr = $('<tr></tr>');
+                        tr.append('<td>' + val.fields.name + '</td>'
+                            + '<td>' + file_url + '</td>'
+                            + '<td>' + val.fields.print_number + '</td>'
+                            + '<td>' + val.fields.price + '</td>'
+                            + '<td>' + create_time + '</td>'
+                            + '<td>' + res + '</td>'
+                        );
+                        tbody.append(tr);
+                    });
+
+
+                    {# 照片订单遍历   #}
+                       $(obj_photo).each(function (index) {
+                        var val = obj_photo[index];
+                        {#var name = val.fields.name#}
+                        var photo_url = (val.fields.photo_url.split("/"))[2];
+                        var create_time = (val.fields.create_time.split("."))[0];
+                        var print_status = val.fields.print_status;
+                        {#1为已提交 2为管理员已接收 3为待配送 4为已完成#}
+                        if (print_status == '1') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>已提交</a>";
+                        } else if (print_status == '2') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>管理员已接收</a>";
+                        } else if (print_status == '3') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>等待付款配送</a>";
+                        } else if (print_status == '4') {
+                            var res = "<a href='javascript:;' style='color:#2980B9'>订单已完成</a>";
+                        }
+
+                        var tr = $('<tr></tr>');
+                        tr.append('<td>' + val.fields.name + '</td>'
+                            + '<td>' + photo_url + '</td>'
+                            + '<td>' + val.fields.print_number + '</td>'
+                            + '<td>' + val.fields.price + '</td>'
+                            + '<td>' + create_time + '</td>'
+                            + '<td>' + res + '</td>'
+                        );
+                        tbody.append(tr);
+                    });
+
+
+                    $('#search_order_table tbody').replaceWith(tbody);
+                } else {
+                    {#  先清空表格 再载入新数据   #}
+                    $('#search_order_table thead').empty();
+                     $('#search_order_table tbody').empty();
+                    $("#p1").text(data.message);
+                    layer.msg(data.message, {time: 2000});
+                }
+
+            }
+
+        })
+
+    })
+</script>
