@@ -9,7 +9,7 @@ from django.db import models
 # 文件打印表
 class FilePrint(models.Model):
     id = models.AutoField(primary_key=True)  # 自增id
-    file_url = models.ImageField(upload_to='filePrint/%Y_%m_%d/', verbose_name='存储路径', blank=True, null=True)  # 存储路径
+    file_url = models.FileField(upload_to='filePrint/%Y_%m_%d/', verbose_name='存储路径', blank=True, null=True)  # 存储路径
 
     sided = models.IntegerField(verbose_name='打印单双面', default=1, )  # 1为单面 2为双面
     color = models.IntegerField(verbose_name='打印彩色黑白', default=1, )  # 1为黑白 2为彩印
@@ -41,8 +41,8 @@ class FilePrint(models.Model):
 # 照片打印表
 class PhotoPrint(models.Model):
     id = models.AutoField(primary_key=True)  # 自增id
-    photo_url = models.ImageField(upload_to='photoPrint/%Y_%m_%d/', verbose_name='存储路径', blank=True,
-                                  null=True)  # 存储路径  默认不允许为空，
+    photo_url = models.FileField(upload_to='photoPrint/%Y_%m_%d/', verbose_name='存储路径', blank=True,
+                                 null=True)  # 存储路径  默认不允许为空，
 
     photo_size = models.IntegerField(verbose_name='照片尺寸', default=1, )  # 1寸 2寸 6寸
     print_number = models.IntegerField(verbose_name='打印份数', default=1, )  # 打印份数

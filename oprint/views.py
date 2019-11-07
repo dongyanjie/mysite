@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import FilePrint, PhotoPrint
 from .forms import FilePrintForm, PhotoPrintForm
+import json
+from django.views.decorators.csrf import csrf_exempt  # 装饰器  解决csrf问题
 
 
 # 文件上传
@@ -15,7 +17,7 @@ def upload_file(request):
         file_url = request.FILES.get('file_url', None)
         # 获取文件大小 //返回Byte(B)
         if file_url.size >= (8 * 1024 * 1024):
-            return JsonResponse({'status': '9', 'error': '请重新上传小于8M的文件!'})
+            return JsonResponse({'status': '9', 'message': '请重新上传小于8M的文件! 如文件过大,请发给QQ 735238082'})
 
         sided = request.POST.get('sided')
         color = request.POST.get('color')
@@ -69,7 +71,7 @@ def upload_photo(request):
         photo_url = request.FILES.get('photo_url', None)
         # 获取图片大小 //返回Byte(B)
         if photo_url.size >= (2 * 1024 * 1024):
-            return JsonResponse({'status': '9', 'error': '请重新上传小于2M的图片!'})
+            return JsonResponse({'status': '9', 'message': '请重新上传小于2M的图片! 如文件过大,请发给QQ 735238082'})
 
         photo_size = request.POST.get('photo_size')
         print_number = request.POST.get('print_number')
@@ -109,9 +111,37 @@ def upload_photo(request):
 
 
 # 查询订单
-def search_order(request):
-    if request.method == 'GET':
-        return JsonResponse({'status': '1'})
-        # do something处理业务
+# @csrf_exempt
+def order_search(request):
+    from django.core import serializers
 
-    return JsonResponse({'status': '0'})
+    if request.method == 'GET':
+        # 搜索功能实现
+        get_ajax_name = request.GET.get('search_name', None)
+
+        # 和前端约定的返回格式
+        result = {"status": '0', "message": '您要查询的姓名下目前没有订单!', "file_data": [], "photo_data": []}
+
+        # 查询结果为QuerySet
+        photo_list = PhotoPrint.objects.filter(name=get_ajax_name)
+        file_list = FilePrint.objects.filter(name=get_ajax_name)
+
+        # 转为json格式
+        result['photo_data'] = serializers.serialize("json", photo_list)
+        result['file_data'] = serializers.serialize("json", file_list)
+
+        # print(result['file_data'])
+        # exit()
+
+        # 返回数据
+        if photo_list is None and file_list is None:
+            return JsonResponse(result)
+        elif photo_list is None:
+            result['status'] = 1
+            return JsonResponse(result)
+        elif file_list is None:
+            result['status'] = 1
+            return JsonResponse(result)
+        else:
+            result['status'] = 1
+            return JsonResponse(result)
