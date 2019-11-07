@@ -1,13 +1,10 @@
-{% load staticfiles %}
+﻿{% load staticfiles %}
 
 <div class="widewrapper masthead">
     <div class="container">
-        <a href="/blog/" id="logo">
-            <img src="{% static 'img/logo.png' %}" alt="Blog">
-        </a>
-        {#          <a href="#" style="color: #2980B9">&nbsp;&nbsp;&nbsp;把时间用在思考上是最能节省时间的事情 。</a>#}
-        <a href="{% url 'oprint:upload_file' %}" data-hover="自助下单打印">
-            <span style="color: #FD482C;font-size: 20px;font-family: 微软雅黑">点击：自助下单打印</span></a>
+        <div class="panel panel-default">
+            <a href="#"> <img src="{% static 'img/banner.png' %}" alt="Blog" width="auto" height="290px"></a>
+        </div>
 
         {#  导航栏#}
         <nav class="pull-right clean-nav">
