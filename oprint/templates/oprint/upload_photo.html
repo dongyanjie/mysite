@@ -1,4 +1,4 @@
-{% extends './base.html' %}
+﻿{% extends './base.html' %}
 {% load staticfiles %}
 
 {% block title %}懂得Talk-下单打印-您的满意是我们最大的动力{% endblock %}
@@ -182,7 +182,7 @@
                 return;
             }
             if ($('[name=print_point]').val() != 'dxy') {
-                layer.alert('请输入正确的打印码, 若第一次打印请联系QQ735238082获取打印码~');
+                layer.alert('请输入正确的打印码, 若第一次打印请联系QQ735238082获取打印码~', {time: 3000});
                 return;
             }
 
