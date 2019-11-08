@@ -1,4 +1,4 @@
-﻿{% load staticfiles %}
+{% load staticfiles %}
 
 <div class="widewrapper masthead">
     <div class="container">
@@ -7,8 +7,7 @@
         </a>
         {#          <a href="#" style="color: #2980B9">&nbsp;&nbsp;&nbsp;把时间用在思考上是最能节省时间的事情 。</a>#}
         <a href="{% url 'oprint:upload_file' %}" data-hover="自助下单打印">
-            <span style="color: #b21f2d;font-size: 20px;font-family: 微软雅黑">点击：自助下单打印</span></a>
-
+            <span style="color: #FD482C;font-size: 20px;font-family: 微软雅黑">点击：自助下单打印</span></a>
 
         {#  导航栏#}
         <nav class="pull-right clean-nav">
@@ -45,7 +44,7 @@
         <div class="clean-nav">
             <ul class="nav nav-pills navbar-nav">
                 <li><a href="/blog/" data-hover="首页">首页</a></li>
-             {#   <li><a href="{% url 'blog:resources' %}" data-hover="资源分享">资源分享</a></li>   #}
+                <li><a href="{% url 'blog:resources' %}" data-hover="资源分享">资源分享</a></li>
 
                 <li class="nav-item" onmouseover="onMouseover('cate_list1')" onmouseout="onMouseout('cate_list1')">
                     <a href="javascript:;">技术杂谈</a>
@@ -98,7 +97,7 @@
             title: '用户注册/登录',
             type: 1,
             type: 2,
-            area: ['350px', '400px'],
+            area: ['500px', '400px'],
             shadeClose: true, //点击遮罩关闭
             content: '{% url "userManage:user_login" %}',
          // btn: ['返回'],
@@ -113,7 +112,7 @@
                 title: '用户注册/登录',
                 type: 1,
                 type: 2,
-                area: ['350px', '400px'],
+                area: ['500px', '400px'],
                 shadeClose: true, //点击遮罩关闭
                 content: '{% url "userManage:user_register" %}',
          //     btn: ['返回'],
