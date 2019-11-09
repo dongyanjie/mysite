@@ -10,7 +10,7 @@
         <fieldset>
             <legend><a name="input"><h1 style="font-family: 楷体;color: #009f95;">----文件打印----</h1></a>
                 <h3 style="font-family: 楷体;color: #92B8B1;">单面0.13元/张 ,双面0.18元/张 ,彩印0.9元/张 </h3>
-                <br><span style="font-family: 楷体">(目前仅支持上传DOC,DOCX,PDF,PPT,TXT等常用文件格式!)</span>
+                <br><span style="font-family: 楷体">(目前仅支持上传 doc, docx, pdf, ppt, txt, xls, xlsx 等常用文件格式!)</span>
             </legend>
         </fieldset>
         <p style="color: #FD482C;">{{ error }}</p>
@@ -198,7 +198,7 @@
             var ext = url_val.substr(url_val.lastIndexOf(".") + 1);
 
             var flag = false;
-            var arr = ["doc", "DOC", "docx", "DOCX", "pdf", "PDF", "ppt", "PPT", "jpg", "png"];
+            var arr = ["doc", "DOC", "docx", "DOCX", "pdf", "PDF", "ppt", "PPT", "jpg", "png", "txt", "xls", "xlsx"];
             // console.log(ext);
             //循环比较
             for (var i = 0; i < arr.length; i++) {
@@ -225,13 +225,9 @@
                 layer.msg('请输入您的联系方式~');
                 return;
             }
-           if ($('[name=page_count]').val() == ''){
-                layer.msg('文档总页数 需要您手动输入的，请检查~~');
-                return;
-            }
 
             if ($('[name=print_point]').val() != 'dxy') {
-                layer.alert('请输入正确的打印码, 若第一次打印请联系QQ735238082获取打印码~', {time: 3000});
+                layer.alert('请输入正确的打印码, 若第一次使用 请联系QQ735238082获取打印码~', {time: 3000});
                 return;
             }
 

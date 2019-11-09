@@ -1,4 +1,4 @@
-from django import forms
+﻿from django import forms
 from django.forms import widgets
 from .models import FilePrint, PhotoPrint
 
@@ -41,7 +41,7 @@ class FilePrintForm(forms.Form):
                                       'class': 'layui-input'}))
     phone_or_qq = forms.CharField(label='联系方式',
                                   widget=forms.TextInput(
-                                      attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '联系方式',
+                                      attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '联系电话',
                                              'class': 'layui-input'}))
     what_time = forms.CharField(label='什么时间要? ', required=False,
                                 widget=forms.TextInput(
@@ -60,7 +60,7 @@ class FilePrintForm(forms.Form):
     remark = forms.CharField(label='备注', required=False,
                              widget=forms.Textarea(
                                  attrs={'autocomplete': 'off',
-                                        'placeholder': '如有特殊要求请备注好 ...',
+                                        'placeholder': '如有特殊要求请备注好 ... 如：不是全部打印的话，请说明打印那几页  ...',
                                         'class': 'layui-textarea'}))
 
 
@@ -90,7 +90,7 @@ class PhotoPrintForm(forms.Form):
                                       'class': 'layui-input'}))
     phone_or_qq = forms.CharField(label='联系方式',
                                   widget=forms.TextInput(
-                                      attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '联系方式',
+                                      attrs={'lay-verify': 'required', 'autocomplete': 'off', 'placeholder': '联系电话',
                                              'class': 'layui-input'}))
     what_time = forms.CharField(label='什么时间要? ', required=False,
                                 widget=forms.TextInput(
@@ -109,7 +109,7 @@ class PhotoPrintForm(forms.Form):
     remark = forms.CharField(label='备注', required=False,
                              widget=forms.Textarea(
                                  attrs={'autocomplete': 'off',
-                                        'placeholder': '如有特殊要求请备注好 ...',
+                                        'placeholder': '如有特殊要求请备注好 ... 如：不是全部打印的话，请说明打印那几页  ...',
                                         'class': 'layui-textarea'}))
 
     # class Meta:
