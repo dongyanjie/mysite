@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response, get_object_or_404
+﻿from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.core.paginator import Paginator, EmptyPage, InvalidPage, PageNotAnInteger
 from django.db.models import Count, Q
@@ -34,7 +34,7 @@ def get_index_page(request):
         '-total_comments')[:5]
 
     # 分页
-    paginator = Paginator(all_article, 3)  # 每页显示3条
+    paginator = Paginator(all_article, 6)  # 每页显示6条
     page_num = paginator.num_pages  # 分页的数量
     try:
         page = int(request.GET.get('page', 1))  # 获取用户输入的页码,默认为 1
@@ -147,7 +147,7 @@ def get_cetegory_page(request, id):
         '-total_comments')[:5]
 
     # 分页
-    paginator = Paginator(cetegory_article, 3)  # 每页显示3条
+    paginator = Paginator(cetegory_article, 6)  # 每页显示6条
     page_num = paginator.num_pages  # 分页的数量
     try:
         page = int(request.GET.get('page', 1))  # 获取用户输入的页码,默认为 1
@@ -260,7 +260,7 @@ def get_search_page(request):
         Q(title__icontains=info) | Q(column__column__icontains=info) | Q(content__icontains=info))
 
     # 分页
-    paginator = Paginator(search_article, 3)  # 每页显示3条
+    paginator = Paginator(search_article, 6)  # 每页显示6条
     page_num = paginator.num_pages  # 分页的数量
     try:
         page = int(request.GET.get('page', 1))  # 获取用户输入的页码,默认为 1

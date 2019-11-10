@@ -79,7 +79,7 @@
         <div class="clean-searchbox">
             <form action="{% url "blog:get_search_page" %}" method="get">
                 {% csrf_token %}
-                <input class="searchfield" name="info" type="text" placeholder="Search.." required>
+                <input class="searchfield" name="info" type="text" placeholder="搜索您喜欢的内容..." required>
                 <button class="searchbutton" type="submit" value="查找">
                     <i class="fa fa-search"></i>
                 </button>

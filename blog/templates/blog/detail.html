@@ -1,4 +1,4 @@
-{% extends './base.html' %}
+﻿{% extends './base.html' %}
 {% load staticfiles %}
 {% load humanize %}
 
@@ -35,7 +35,7 @@
 
 
                                 {#                                <div class="lead-image">#}
-                                <img src="/static/{{ curr_article.article_pic }}" alt="">
+                                <img src="{{ MEDIA_URL }}{{ curr_article.article_pic }}" alt="">
                                 {#                                </div>#}
                             </header>
                             <div class="body">
