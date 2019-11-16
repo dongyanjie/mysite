@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+﻿from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
@@ -28,16 +28,16 @@ def user_login(request):
             #     ip = request.META['REMOTE_ADDR']
             if user:
                 login(request, user)
-                return redirect(reverse('userManage:user_login'))
+                return redirect(reverse('usermanage:user_login'))
             else:
                 login_form = LoginForm()
-                return render(request, 'userManage/login.html',
+                return render(request, 'usermanage/login.html',
                               {'form': login_form, 'error_message': '用户名或密码不正确，请重新输入~'})
         else:
             return HttpResponse('0')
     if request.method == 'GET':
         login_form = LoginForm()
-        return render(request, 'userManage/login.html', {'form': login_form})
+        return render(request, 'usermanage/login.html', {'form': login_form})
 
 
 # 用户注销
@@ -53,7 +53,7 @@ def user_register(request):
         userinfo_form = UserInfoForm(request.POST)
         user_val = request.POST['username']
         if User.objects.filter(username=user_val):
-            return render(request, 'userManage/register.html', {'form': user_form, 'error_message': '· 该用户名已被注册，请重新输入.'})
+            return render(request, 'usermanage/register.html', {'form': user_form, 'error_message': '· 该用户名已被注册，请重新输入.'})
         if user_form.is_valid():
             new_user = user_form.save(commit=False)
             new_user.set_password(user_form.cleaned_data['password'])
@@ -62,25 +62,25 @@ def user_register(request):
             new_userinfo.user = new_user
             new_userinfo.save()
             # UserInfo.objects.create(user=new_user)
-            return HttpResponse('· 恭喜,注册成功，请点击直接<a href="/userManage/login/" style="color: #FD482C">登录</a>.')
+            return HttpResponse('· 恭喜,注册成功，请点击直接<a href="/usermanage/login/" style="color: #FD482C">登录</a>.')
         else:
-            return render(request, 'userManage/register.html', {'form': user_form, 'error_message': '· 两次密码不一致，请重新输入！'})
+            return render(request, 'usermanage/register.html', {'form': user_form, 'error_message': '· 两次密码不一致，请重新输入！'})
     if request.method == 'GET':
         user_form = RegisterForm()
         userinfo_form = UserInfoForm()
-        return render(request, 'userManage/register.html', {'form': user_form, 'info_form': userinfo_form})
+        return render(request, 'usermanage/register.html', {'form': user_form, 'info_form': userinfo_form})
 
 
 # 用户信息展示
-@login_required(login_url='/userManage/login/')
+@login_required(login_url='/usermanage/login/')
 def my_info(request):
     user = User.objects.get(username=request.user.username)
     userinfo = UserInfo.objects.get(user=user)
-    return render(request, 'userManage/myinfo.html', {'user': user, 'userinfo': userinfo})
+    return render(request, 'usermanage/myinfo.html', {'user': user, 'userinfo': userinfo})
 
 
 # 编辑用户信息
-@login_required(login_url='/userManage/login/')
+@login_required(login_url='/usermanage/login/')
 def myinfo_edit(request):
     user = User.objects.get(username=request.user.username)
     userinfo = UserInfo.objects.get(user=request.user)
@@ -97,20 +97,20 @@ def myinfo_edit(request):
             userinfo.about = userinfo_cd['about']
             user.save()
             userinfo.save()
-        return HttpResponseRedirect(reverse('userManage:my_info'))
+        return HttpResponseRedirect(reverse('usermanage:my_info'))
     else:
         user_form = UserForm(instance=request.user)
         userinfo_form = UserInfoForm({'birth': userinfo.birth,
                                       'phone': userinfo.phone,
                                       'about': userinfo.about,
                                       })
-        return render(request, 'userManage/myinfo_edit.html', {'user_form': user_form,
+        return render(request, 'usermanage/myinfo_edit.html', {'user_form': user_form,
                                                                'userinfo_form': userinfo_form,
                                                                })
 
 
 # 用户头像上传
-@login_required(login_url='/userManage/login/')
+@login_required(login_url='/usermanage/login/')
 def my_image(request):
     if request.method == 'POST':
         img = request.POST['img']
@@ -119,4 +119,4 @@ def my_image(request):
         userinfo.save()
         return HttpResponse("1")
     else:
-        return render(request, 'userManage/imagecrop.html')
+        return render(request, 'usermanage/imagecrop.html')

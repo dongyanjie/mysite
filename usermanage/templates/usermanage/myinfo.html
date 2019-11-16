@@ -1,0 +1,38 @@
+﻿{% extends './base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>我的信息</h1>
+<div>
+    Username: <div class="col-md-6">{{user.username}}</div>
+    Email: <div class="col-md-6">{{user.email}}</div>
+    Birth: <div class="col-md-6">{{userinfo.birth | date:'Y-m-d'}}</div>
+    Phone: <div class="col-md-6">{{userinfo.phone}}</div>
+    about: <div class="col-md-6">{{userinfo.about}}</div>
+<br><br>
+<a href="/usermanage/myinfo-edit">编辑</a>
+</div>
+<div style="margin-right:100px">
+      {% if userinfo.photo_url %}
+        <img src="/{{ userinfo.photo_url | striptags }}" class="img-circle" id="my_photo" name="user_face" width="120px" height="160px">
+      {% else %}
+        <img name="user_face" src="{% static 'images/photo.jpg' %}" class="img-circle" id="my_photo">
+      {% endif %}
+    <input type="button" value="上传我的头像" id="upload_image" onclick="upload_image_layer()">
+       
+</div>
+
+<script type="text/javascript" src='{% static "js/jquery.js" %}'></script>
+<script type="text/javascript" src="{% static 'js/layer.js' %}"></script>
+<script>
+function upload_image_layer(){
+    layer.open({
+        title:"上传头像",
+        area: ['650px', '600px'],
+        type:2,
+        content:"{% url 'usermanage:my_image' %}",
+    });
+}
+</script>
+
+{% endblock %}

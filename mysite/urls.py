@@ -29,7 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('blog/', include('blog.urls')),
-    path('userManage/', include('userManage.urls')),
+    path('usermanage/', include('usermanage.urls')),
     path('itadmin/', include('itadmin.urls')),
     path('oprint/', include('oprint.urls')),
 	

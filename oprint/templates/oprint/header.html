@@ -22,7 +22,7 @@
                             {#                                     id="my_photo" style="height: 25px;width: 30px;">#}
                             {#                            {% endif %}#}
                             &nbsp;欢迎您：<span style="color: #4476A7;"> {{ user.username }}</span>
-                            &nbsp;&nbsp;&nbsp; <a href="{% url 'userManage:user_logout' %}"
+                            &nbsp;&nbsp;&nbsp; <a href="{% url 'usermanage:user_logout' %}"
                                                   class="nav-link"><span>注销</span></a>
                         </a>
                     </li>
@@ -69,7 +69,7 @@
             type: 2,
             area: ['350px', '400px'],
             shadeClose: true, //点击遮罩关闭
-            content: '{% url "userManage:user_login" %}',
+            content: '{% url "usermanage:user_login" %}',
             // btn: ['返回'],
             //   btn1: function (index, layero) {
             //       parent.location.reload();
@@ -84,7 +84,7 @@
                 type: 2,
                 area: ['350px', '400px'],
                 shadeClose: true, //点击遮罩关闭
-                content: '{% url "userManage:user_register" %}',
+                content: '{% url "usermanage:user_register" %}',
                 //     btn: ['返回'],
                 //     btn1: function (index, layero) {
                 //         parent.location.reload();

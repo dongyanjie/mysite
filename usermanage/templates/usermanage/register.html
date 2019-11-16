@@ -1,0 +1,52 @@
+﻿{% extends './base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="login">
+        <div class="login-screen">
+            <h3 class="layui-form-label">注册</h3>
+            <br>
+
+            <form class="layui-form" action="." method="post">
+                {% csrf_token %}
+                <p style="color: #FD482C">{{ error_message }}</p>
+
+               <br> <div class="layui-form-item">
+                    <label class="layui-form-label">用户名</label>
+                    <div class="layui-input-block">
+                        {{ form.username }}
+                    </div>
+                </div>
+                <br><div class="layui-form-item">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-block">
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">密码</label>
+                    <div class="layui-input-block">
+                        {{ form.password }}
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">确认密码</label>
+                    <div class="layui-input-block">
+                        {{ form.password2 }}
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">注册</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        <p class="login-link">若您已有账户，请直接点击<a href="{% url 'usermanage:user_login' %}"
+                                                             style="color: #FD482C">&nbsp;登录</a></p>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}

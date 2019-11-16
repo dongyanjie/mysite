@@ -1,4 +1,4 @@
-from django import forms
+﻿from django import forms
 from django.contrib.auth.models import User
 from .models import UserInfo
 # 内置小部件， 包括文本输入，各种复选框和选择器，上传文件以及多值输入的处理。

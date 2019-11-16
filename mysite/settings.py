@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u-hazihj1+vjric8f3t3ubk3i70ed2!v0wolui9k7ic++k$+%#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.dodey.top','116.62.193.180','127.0.0.1']
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',  # 新的过滤器
     # 我的应用
     'blog.apps.BlogConfig',  # 博客
-    'userManage.apps.UserManageConfig',  # 用户管理
+    'usermanage.apps.UsermanageConfig',  # 用户管理
     'itadmin.apps.ItadminConfig',  # 后台管理
 	'oprint.apps.OprintConfig',  # 打印模块
 
